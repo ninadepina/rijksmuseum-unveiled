@@ -69,7 +69,7 @@ if (!slug && !id) {
 }
 
 const updateUser = (user) => {
-	document.querySelector('#avatar').src = user.avatar;
+	document.querySelector('#avatar').src = user.avatar || 'https://openseauserdata.com/files/7ebafc8b0f146e86d96fb0d541fe7169.png';
 	document.querySelector('#avatar').alt = `avatar of ${user.name + ' ' + user.surname}`;
 	user.bio = user.bio.html;
 	user.name = user.name + ' ' + user.surname;
