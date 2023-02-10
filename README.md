@@ -15,7 +15,7 @@
 
 **Fetching data from [Tribe API](http://whois.fdnd.nl/):**
 <details>
-<summary>code</summary>
+<summary></summary>
 
 I started with fetching my own data from the API:
 ```javascript
