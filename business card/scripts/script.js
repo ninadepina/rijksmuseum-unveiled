@@ -45,6 +45,15 @@ card.addEventListener('keydown', (e) => {
 	}
 });
 
+const avatar = document.querySelector('#avatar');
+
+avatar.addEventListener('click', (e) => {
+	if (window.matchMedia('screen and (max-width: 520px)').matches) {
+		avatar.classList.toggle('clickMobile');
+		e.stopPropagation();
+	}
+});
+
 ////////////////////////////////////////////////////////////
 // Bio section card
 const openBio = document.querySelectorAll('.click');
