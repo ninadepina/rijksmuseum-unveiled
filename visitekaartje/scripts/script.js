@@ -36,22 +36,22 @@ const textFunction = document.querySelector('.function');
 textFunction.textContent = 'openBio';
 
 openBio.forEach((openBioButton) => {
-	openBioButton.addEventListener('click', (event) => {
+	openBioButton.addEventListener('click', (e) => {
 		cardBio.classList.toggle('display');
 
 		cardBio.classList.contains('display')
 			? (textFunction.textContent = 'closeBio')
 			: (textFunction.textContent = 'openBio');
 
-		event.stopPropagation();
+		e.stopPropagation();
 	});
 });
 
 const links = document.querySelectorAll('a');
 
 links.forEach((link) => {
-	link.addEventListener('click', (event) => {
-		event.stopPropagation();
+	link.addEventListener('click', (e) => {
+		e.stopPropagation();
 	});
 });
 
@@ -70,6 +70,7 @@ if (!slug && !id) {
 
 const updateUser = (user) => {
 	document.querySelector('#avatar').src = user.avatar;
+	document.querySelector('#avatar').alt = `avatar of ${user.name + ' ' + user.surname}`;
 	user.bio = user.bio.html;
 	user.name = user.name + ' ' + user.surname;
 	document.querySelector('#website').href = user.website;
