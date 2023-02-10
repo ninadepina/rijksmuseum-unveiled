@@ -7,15 +7,13 @@
 ## 🚀Week 1
 As for the kick-off from the minor Web Design & Development and the Web App from Scratch course, we got the assignment to create a digital business card in HTML, CSS & Javascript.
 
-**HTML/CSS/JS breakdown sketch:**
 <details>
-<summary>✍🏼</summary>
+<summary>✍🏼HTML/CSS/JS breakdown sketch:</summary>
 
 </details>
 
-**Fetching data from [Tribe API](http://whois.fdnd.nl/):**
 <details>
-<summary>👩🏼‍💻</summary>
+<summary>👩🏼‍💻Fetching data from [Tribe API](http://whois.fdnd.nl/):</summary>
 
 I started with fetching my own data from the API:
 ```javascript
