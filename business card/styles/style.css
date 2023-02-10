@@ -202,7 +202,7 @@ button.animateLink::after {
 	width: 20px;
 	height: 20px;
 }
-#avatar.clickMobile{
+#avatar.clickMobile {
 	border-radius: 0.5px;
 	scale: 10.4;
 	transform-origin: top right;
