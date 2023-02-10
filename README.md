@@ -13,7 +13,9 @@ As for the kick-off from the minor Web Design & Development and the Web App from
 </details>
 
 <details>
-<summary>👩🏼‍💻Fetching data from [Tribe API](http://whois.fdnd.nl/):</summary>
+<summary>👩🏼‍💻Fetching data from Tribe API:</summary>
+
+[Link to the Tribe API](http://whois.fdnd.nl/)
 
 I started with fetching my own data from the API:
 ```javascript
