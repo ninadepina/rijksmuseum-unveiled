@@ -1,4 +1,21 @@
 ////////////////////////////////////////////////////////////
+// Default user
+const defaultUser = {
+	member: {
+		avatar: 'https://avatars.githubusercontent.com/u/89778503?v=4',
+		bio: { html: 'Innovative Communication and Multi Media Design student, with affection for designing and programming. I like to learn new things and I like to keep improving them.' },
+		gitHubHandle: 'ninadepina',
+		id: 'cldex67a348bw0auohxefw4ce',
+		name: 'Nina',
+		prefix: 'Madame',
+		role: ['student'],
+		slug: 'ninadepina',
+		surname: 'Vens',
+		website: 'https://ninadepina-card-wafs.vercel.app'
+	}
+};
+
+////////////////////////////////////////////////////////////
 // Rotating card
 const card = document.querySelector('.card');
 const cardBack = document.querySelector('.cardBack');
@@ -62,7 +79,7 @@ links.forEach((link) => {
 const dataFields = document.querySelectorAll('.dataField');
 
 const defaultMemberSlug = 'ninadepina';
-// const defaultMemberId = 'cldex67a348bw0auohxefw4ce';
+const defaultMemberId = 'cldex67a348bw0auohxefw4ce';
 const slug = new URLSearchParams(window.location.search).get('slug');
 const id = new URLSearchParams(window.location.search).get('id');
 
@@ -97,7 +114,12 @@ const fetchUser = async () => {
 	if (id) url = `https://whois.fdnd.nl/api/v1/member?id=${id}`;
 	try {
 		user = await (await fetch(url)).json();
+		if (!user.member) throw new Error();
 	} catch {
+		user = defaultUser;
+		id
+			? window.history.replaceState('id', 'id', `?id=${defaultMemberId}`)
+			: window.history.replaceState('slug', 'slug', `?slug=${defaultMemberSlug}`);
 		console.log('Error, losertje!');
 	}
 	updateUser(user.member);
