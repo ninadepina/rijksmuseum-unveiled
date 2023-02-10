@@ -5,14 +5,17 @@
 ---
 
 ## 🚀Week 1
-<details>
-<summary>Business card (fetching data from API)</summary>
-
 **HTML/CSS/JS breakdown sketch:**
+<details>
+<summary>open breakdown</summary>
+
+</details>
 
 ---
 
 **Fetching data from [Tribe API](http://whois.fdnd.nl/):**
+<details>
+<summary>code</summary>
 
 I started with fetching my own data from the API:
 ```javascript
