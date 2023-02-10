@@ -1,0 +1,200 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	outline: none;
+	user-select: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: #333;
+}
+
+/* h1 only for semantic value and screenreaders */
+h1 {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+}
+
+/* ---------------------------------- */
+/* ---------- [CODE BLOCK] ---------- */
+/* ---------------------------------- */
+
+a {
+	text-decoration: none;
+}
+
+.red {
+	color: #f1a1ad;
+}
+.pink {
+	color: #cc79d1;
+}
+.lpink {
+	color: #bf96e4;
+}
+.blue {
+	color: #88abf9;
+}
+.lblue {
+	color: #9bdcfb;
+}
+.green {
+	color: #cae697;
+}
+.yellow {
+	color: #fad649;
+}
+.grey {
+	color: #a6adca;
+}
+.green::after,
+.blue::after {
+	background-color: currentColor;
+}
+.indent {
+	padding-left: 30px;
+}
+
+.openBioCode {
+	margin-top: 0.8em;
+	width: fit-content;
+}
+
+.bio {
+	display: none;
+	position: absolute;
+	padding: 2em 2.4em;
+	align-self: flex-start;
+	width: 100%;
+	height: calc(100% - 3.8em);
+	overflow: hidden;
+	background-color: #e0e0e0;
+}
+.bio.display {
+	display: block;
+	overflow-y: auto;
+}
+
+.bio,
+.cardBack::after,
+code {
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 14px;
+}
+
+/* class for animation on hover */
+.animateLink {
+	display: inline;
+	position: relative;
+	overflow: hidden;
+}
+.animateLink::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	bottom: -1px;
+	width: 0;
+	height: 2%;
+	transition-property: width;
+	transition: 0.3s ease-out;
+}
+
+.animateLink:is(:hover, :focus, :active)::after {
+	left: 0;
+	right: auto;
+	width: 100%;
+}
+
+/* ---------------------------------- */
+/* ------------- [CARD] ------------- */
+/* ---------------------------------- */
+
+.card {
+	position: relative;
+	width: 30rem;
+	height: 15rem;
+	perspective: 150rem;
+	cursor: pointer;
+	transform: rotateZ(-90deg);
+}
+.card:focus-visible {
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+.cardFront,
+.cardBack {
+	position: absolute;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+	background-color: #121212;
+	transition: 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+.cardBack {
+	transform: rotateX(180deg);
+	padding: 0 1em;
+	visibility: hidden;
+}
+
+/* classes for switching side of card */
+.card.rotate .cardFront {
+	transform: rotateX(-180deg);
+}
+.card.rotate .cardBack {
+	transform: rotateX(0deg);
+}
+.cardBack.show {
+	visibility: visible;
+}
+
+/* desktop */
+@media only screen and (min-width: 520px) {
+	.card {
+		transform: none;
+	}
+}
+
+.avatar {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	width: 20px;
+	height: 20px;
+}
+.avatar:has(:hover, :focus, :active) #avatar {
+	border-radius: 0.5px;
+	scale: 10.4;
+	transform-origin: top right;
+	transition: 0.8s;
+}
+
+#avatar {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+	transform-origin: top right;
+	transition: 0.8s;
+}

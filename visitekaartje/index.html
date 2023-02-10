@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ninadepina</title>
 
+		<link rel="stylesheet" href="styles/style.css" type="text/css" />
+		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+		<script defer src="scripts/script.js"></script>
+	</head>
+
+	<body>
+		<main>
+			<h1>Rotating business card</h1>
+			<section aria-label="flip card" tabindex="0" class="card">
+				<section class="cardBack">
+					<code
+						><span class="lpink">const </span><span class="grey">me </span><span class="lblue">= </span
+						><span class="yellow">{</span>
+						<div class="indent">
+							<span class="grey">prefix</span><span class="lblue">: '</span
+							><span class="green dataField" id="prefix" data-maxlength="34">(prefix)</span
+							><span class="lblue">',</span>
+						</div>
+						<div class="indent">
+							<span class="grey">name</span><span class="lblue">: '</span
+							><span class="green dataField" id="name" data-maxlength="36">(name)</span
+							><span class="lblue">',</span>
+						</div>
+						<div class="indent">
+							<span class="grey">role</span><span class="lblue">: '</span
+							><span class="green dataField" id="role" data-maxlength="36">(role)</span
+							><span class="lblue">',</span>
+						</div>
+						<div class="indent">
+							<span class="grey">contact</span><span class="lblue">: </span><span class="pink">{</span>
+							<div class="indent">
+								<span class="grey">website</span><span class="lblue">: '</span
+								><a target="_blank" class="green animateLink dataField" id="website" data-maxlength="30"
+									>(website)</a
+								><span class="lblue">',</span>
+							</div>
+							<div class="indent">
+								<span class="grey">GitHub</span><span class="lblue">: '</span
+								><a
+									target="_blank"
+									class="green animateLink dataField"
+									id="gitHubHandle"
+									data-maxlength="32"
+									>(github)</a
+								><span class="lblue">'</span>
+							</div>
+							<span class="pink">}</span>
+						</div>
+						<span class="yellow">}</span>
+						<div class="openBioCode">
+							<span class="lblue">this.</span><span class="blue">addEventListener</span
+							><span class="yellow">(</span><span class="lblue">'</span
+							><span tabindex="0" class="green click animateLink">click</span
+							><span class="lblue">', </span><span class="blue click function animateLink">function</span
+							><span class="pink">()</span><span class="yellow">)</span><span class="lblue">;</span>
+						</div></code
+					>
+
+					<section class="avatar">
+						<img tabindex="0" id="avatar" src="" alt="" />
+					</section>
+
+					<section class="bio">
+						<p class="dataField" id="bio">
+							There's supposed to be a bio right here, but as you can see.. there isn't... :(
+						</p>
+					</section>
+				</section>
+
+				<section class="cardFront">
+					<code
+						><span class="lblue">this.</span><span class="blue">addEventListener</span
+						><span class="yellow">(</span><span class="lblue">'</span><span class="green">click</span
+						><span class="lblue">', </span><span class="pink">() </span><span class="lpink">=></span
+						><span class="pink"> {</span>
+						<div class="indent">
+							<span class="lblue">this.</span><span class="grey">businessCard</span
+							><span class="lblue"> = </span><span class="red">true</span><span class="lblue">;</span>
+						</div>
+						<span class="pink">}</span><span class="yellow">)</span><span class="lblue">;</span>
+					</code>
+				</section>
+			</section>
+		</main>
+	</body>
+</html>

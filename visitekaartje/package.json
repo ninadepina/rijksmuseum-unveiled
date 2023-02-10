@@ -1,0 +1,20 @@
+{
+  "name": "businesscard",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninadepina/businessCard.git"
+  },
+  "author": "Nina Vens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ninadepina/businessCard/issues"
+  },
+  "homepage": "https://github.com/ninadepina/businessCard#readme"
+}
