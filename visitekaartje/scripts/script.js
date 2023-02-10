@@ -3,7 +3,9 @@
 const defaultUser = {
 	member: {
 		avatar: 'https://avatars.githubusercontent.com/u/89778503?v=4',
-		bio: { html: 'Innovative Communication and Multi Media Design student, with affection for designing and programming. I like to learn new things and I like to keep improving them.' },
+		bio: {
+			html: 'Innovative Communication and Multi Media Design student, with affection for designing and programming. I like to learn new things and I like to keep improving them.'
+		},
 		gitHubHandle: 'ninadepina',
 		id: 'cldex67a348bw0auohxefw4ce',
 		name: 'Nina',
@@ -120,7 +122,7 @@ const fetchUser = async () => {
 		id
 			? window.history.replaceState('id', 'id', `?id=${defaultMemberId}`)
 			: window.history.replaceState('slug', 'slug', `?slug=${defaultMemberSlug}`);
-		console.log('Error, losertje!');
+		console.log('This user does not exist, default user is being loaded');
 	}
 	updateUser(user.member);
 };
