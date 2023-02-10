@@ -7,7 +7,7 @@
 ## 🚀Week 1
 **HTML/CSS/JS breakdown sketch:**
 <details>
-<summary>open breakdown</summary>
+<summary>✍🏼</summary>
 
 </details>
 
@@ -15,7 +15,7 @@
 
 **Fetching data from [Tribe API](http://whois.fdnd.nl/):**
 <details>
-<summary>**Fetching data from [Tribe API](http://whois.fdnd.nl/):**</summary>
+<summary>👩🏼‍💻</summary>
 
 I started with fetching my own data from the API:
 ```javascript
