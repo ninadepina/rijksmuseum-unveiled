@@ -13,7 +13,7 @@ As for the kick-off from the minor Web Design & Development and the Web App from
 </details>
 
 <details>
-<summary>👩🏼‍💻Fetching data from Tribe API:</summary>
+<summary>👩🏼‍💻Fetching data from the Tribe API:</summary>
 
 - [Link to the Tribe API](http://whois.fdnd.nl/)
 
@@ -39,9 +39,7 @@ const updateUser = (user) => {
 	user.gitHubHandle = '@' + user.gitHubHandle;
 
 	dataFields.forEach((dataField) => {
-
 		dataField.textContent = user[dataField.id];
-
 	});
 };
 
