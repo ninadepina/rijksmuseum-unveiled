@@ -9,7 +9,7 @@ As for the kick-off from the minor Web Design & Development and the Web App from
 
 <details>
 <summary>✍🏼HTML/CSS/JS breakdown sketch:</summary>
-
+![breakdown sketch business card](https://user-images.githubusercontent.com/89778503/218146127-58fb2185-d056-45e6-9231-09de02ccf353.png)
 </details>
 
 <details>
