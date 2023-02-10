@@ -13,7 +13,7 @@ const defaultUser = {
 		role: ['student'],
 		slug: 'ninadepina',
 		surname: 'Vens',
-		website: 'https://ninadepina-card-wafs.vercel.app'
+		website: 'https://ninadepina-wafs-card.vercel.app'
 	}
 };
 
