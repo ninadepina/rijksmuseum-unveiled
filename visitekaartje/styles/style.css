@@ -91,11 +91,19 @@ a {
 	overflow-y: auto;
 }
 
+button,
 .bio,
 .cardBack::after,
 code {
 	font-family: 'Lucida Console', Monaco, monospace;
 	font-size: 14px;
+}
+
+button {
+	display: inline;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 /* class for animation on hover */
@@ -111,12 +119,15 @@ code {
 	right: 0;
 	bottom: -1px;
 	width: 0;
-	height: 2%;
+	height: 1px;
 	transition-property: width;
 	transition: 0.3s ease-out;
 }
+button.animateLink::after {
+	height: 2px;
+}
 
-.animateLink:is(:hover, :focus, :active)::after {
+.animateLink:is(:hover, :focus-visible, :active)::after {
 	left: 0;
 	right: auto;
 	width: 100%;

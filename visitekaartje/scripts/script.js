@@ -1,7 +1,6 @@
 ////////////////////////////////////////////////////////////
 // Rotating card
 const card = document.querySelector('.card');
-const cardFront = document.querySelector('.cardFront');
 const cardBack = document.querySelector('.cardBack');
 
 const flipCard = () => {
@@ -21,7 +20,7 @@ const flipCard = () => {
 };
 
 card.addEventListener('click', flipCard);
-card.addEventListener('keypress', (e) => {
+card.addEventListener('keydown', (e) => {
 	if (e.key === 'Enter') {
 		flipCard();
 	}
@@ -43,6 +42,9 @@ openBio.forEach((openBioButton) => {
 			? (textFunction.textContent = 'closeBio')
 			: (textFunction.textContent = 'openBio');
 
+		e.stopPropagation();
+	});
+	openBioButton.addEventListener('keydown', (e) => {
 		e.stopPropagation();
 	});
 });
@@ -69,7 +71,8 @@ if (!slug && !id) {
 }
 
 const updateUser = (user) => {
-	document.querySelector('#avatar').src = user.avatar || 'https://openseauserdata.com/files/7ebafc8b0f146e86d96fb0d541fe7169.png';
+	document.querySelector('#avatar').src =
+		user.avatar || 'https://openseauserdata.com/files/7ebafc8b0f146e86d96fb0d541fe7169.png';
 	document.querySelector('#avatar').alt = `avatar of ${user.name + ' ' + user.surname}`;
 	user.bio = user.bio.html;
 	user.name = user.name + ' ' + user.surname;
