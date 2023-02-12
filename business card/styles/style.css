@@ -3,9 +3,10 @@
 *::before {
 	box-sizing: border-box;
 	outline: none;
-	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 * {
 	margin: 0;
@@ -31,14 +32,55 @@ h1 {
 	height: 1px;
 }
 
-/* ---------------------------------- */
-/* ---------- [CODE BLOCK] ---------- */
-/* ---------------------------------- */
-
 a {
 	text-decoration: none;
 }
 
+button {
+	display: inline;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+button,
+.bio,
+.cardBack::after,
+code {
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 14px;
+}
+
+/* ---------------------------------- */
+/* class for animation on hover */
+.animateLink {
+	display: inline;
+	position: relative;
+	overflow: hidden;
+}
+.animateLink::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	bottom: -1px;
+	width: 0;
+	height: 1px;
+	transition-property: width;
+	transition: 0.3s ease-out;
+}
+button.animateLink::after {
+	height: 2px;
+}
+
+.animateLink:is(:hover, :focus-visible, :active)::after {
+	left: 0;
+	right: auto;
+	width: 100%;
+}
+
+/* ---------------------------------- */
+/* classes for code block */
 .red {
 	color: #f1a1ad;
 }
@@ -71,72 +113,8 @@ a {
 	padding-left: 30px;
 }
 
-.openBioCode {
-	margin-top: 0.8em;
-	width: fit-content;
-}
-
-.bio {
-	display: none;
-	position: absolute;
-	padding: 2em 2.4em;
-	align-self: flex-start;
-	width: 100%;
-	height: calc(100% - 3.8em);
-	overflow: hidden;
-	background-color: #e0e0e0;
-}
-.bio.display {
-	display: block;
-	overflow-y: auto;
-}
-
-button,
-.bio,
-.cardBack::after,
-code {
-	font-family: 'Lucida Console', Monaco, monospace;
-	font-size: 14px;
-}
-
-button {
-	display: inline;
-	background: none;
-	border: none;
-	cursor: pointer;
-}
-
-/* class for animation on hover */
-.animateLink {
-	display: inline;
-	position: relative;
-	overflow: hidden;
-}
-.animateLink::after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	right: 0;
-	bottom: -1px;
-	width: 0;
-	height: 1px;
-	transition-property: width;
-	transition: 0.3s ease-out;
-}
-button.animateLink::after {
-	height: 2px;
-}
-
-.animateLink:is(:hover, :focus-visible, :active)::after {
-	left: 0;
-	right: auto;
-	width: 100%;
-}
-
 /* ---------------------------------- */
-/* ------------- [CARD] ------------- */
-/* ---------------------------------- */
-
+/* business card */
 .card {
 	position: relative;
 	width: 30rem;
@@ -146,7 +124,7 @@ button.animateLink::after {
 	transform: rotateZ(-90deg);
 }
 .card:focus-visible {
-	border: 1px solid #e0e0e0;
+	outline: 1px solid #e0e0e0;
 	border-radius: 5px;
 }
 .cardFront,
@@ -195,18 +173,14 @@ button.animateLink::after {
 	}
 }
 
+/* ---------------------------------- */
+/* avatar */
 .avatar {
 	position: absolute;
 	top: 1em;
 	right: 1em;
 	width: 20px;
 	height: 20px;
-}
-#avatar.clickMobile {
-	border-radius: 0.5px;
-	scale: 10.4;
-	transform-origin: top right;
-	transition: 0.8s;
 }
 
 #avatar {
@@ -216,4 +190,32 @@ button.animateLink::after {
 	border-radius: 2px;
 	transform-origin: top right;
 	transition: 0.8s;
+}
+#avatar.clickMobile {
+	border-radius: 0.5px;
+	scale: 10.4;
+	transform-origin: top right;
+	transition: 0.8s;
+}
+
+/* ---------------------------------- */
+/* bio overlay */
+.openBioCode {
+	margin-top: 0.8em;
+	width: fit-content;
+}
+
+.bio {
+	display: none;
+	position: absolute;
+	padding: 2em 2.4em;
+	align-self: flex-start;
+	width: 100%;
+	height: calc(100% - 3.8em);
+	overflow: hidden;
+	background-color: #e0e0e0;
+}
+.bio.display {
+	display: block;
+	overflow-y: auto;
 }
