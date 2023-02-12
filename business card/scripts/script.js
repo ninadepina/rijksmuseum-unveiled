@@ -1,26 +1,28 @@
-////////////////////////////////////////////////////////////
-// Default user
-const defaultUser = {
-	member: {
-		avatar: 'https://avatars.githubusercontent.com/u/89778503?v=4',
-		bio: {
-			html: 'Innovative Communication and Multi Media Design student, with affection for designing and programming. I like to learn new things and I like to keep improving them.'
-		},
-		gitHubHandle: 'ninadepina',
-		id: 'cldex67a348bw0auohxefw4ce',
-		name: 'Nina',
-		prefix: 'Madame',
-		role: ['student'],
-		slug: 'ninadepina',
-		surname: 'Vens',
-		website: 'https://ninadepina-wafs-card.vercel.app'
-	}
-};
+import { defaultUser } from './defaultUser.js';
+
+const defaultMemberSlug = 'ninadepina';
+const defaultMemberId = 'cldex67a348bw0auohxefw4ce';
+const slug = new URLSearchParams(window.location.search).get('slug');
+const id = new URLSearchParams(window.location.search).get('id');
 
 ////////////////////////////////////////////////////////////
-// Rotating card
+////////////////////////////////////////////////////////////
+// DOM elements
+
 const card = document.querySelector('.card');
 const cardBack = document.querySelector('.cardBack');
+const avatar = document.querySelector('#avatar');
+
+const openBio = document.querySelectorAll('.click');
+const cardBio = document.querySelector('.bio');
+const textFunction = document.querySelector('.function');
+const links = document.querySelectorAll('a');
+
+const dataFields = document.querySelectorAll('.dataField');
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Rotating card
 
 const flipCard = () => {
 	card.classList.toggle('rotate');
@@ -45,8 +47,6 @@ card.addEventListener('keydown', (e) => {
 	}
 });
 
-const avatar = document.querySelector('#avatar');
-
 avatar.addEventListener('click', (e) => {
 	if (window.matchMedia('screen and (max-width: 520px)').matches) {
 		avatar.classList.toggle('clickMobile');
@@ -55,10 +55,14 @@ avatar.addEventListener('click', (e) => {
 });
 
 ////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 // Bio section card
-const openBio = document.querySelectorAll('.click');
-const cardBio = document.querySelector('.bio');
-const textFunction = document.querySelector('.function');
+
+links.forEach((link) => {
+	link.addEventListener('click', (e) => {
+		e.stopPropagation();
+	});
+});
 
 textFunction.textContent = 'openBio';
 
@@ -73,26 +77,23 @@ openBio.forEach((openBioButton) => {
 		e.stopPropagation();
 	});
 	openBioButton.addEventListener('keydown', (e) => {
-		e.stopPropagation();
-	});
-});
+		cardBio.classList.contains('display') ? (avatar.tabIndex = -1) : (avatar.tabIndex = 0);
 
-const links = document.querySelectorAll('a');
+		cardBio.classList.contains('display')
+			? links.forEach((link) => {
+					link.tabIndex = -1;
+			  })
+			: links.forEach((link) => {
+					link.tabIndex = 0;
+			  });
 
-links.forEach((link) => {
-	link.addEventListener('click', (e) => {
 		e.stopPropagation();
 	});
 });
 
 ////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 // API
-const dataFields = document.querySelectorAll('.dataField');
-
-const defaultMemberSlug = 'ninadepina';
-const defaultMemberId = 'cldex67a348bw0auohxefw4ce';
-const slug = new URLSearchParams(window.location.search).get('slug');
-const id = new URLSearchParams(window.location.search).get('id');
 
 if (!slug && !id) {
 	window.history.replaceState('slug', 'slug', `?slug=${defaultMemberSlug}`);
@@ -102,11 +103,14 @@ const updateUser = (user) => {
 	document.querySelector('#avatar').src =
 		user.avatar || 'https://openseauserdata.com/files/7ebafc8b0f146e86d96fb0d541fe7169.png';
 	document.querySelector('#avatar').alt = `avatar of ${user.name + ' ' + user.surname}`;
+
 	user.bio = user.bio.html;
 	user.name = user.name + ' ' + user.surname;
+
 	document.querySelector('#website').href = user.website;
 	user.website = user.website.split('://')[1] || user.website.split('://')[0];
 	if (!user.website.startsWith('www.')) user.website = 'www.' + user.website;
+
 	document.querySelector('#gitHubHandle').href = 'https://github.com/' + user.gitHubHandle;
 	user.gitHubHandle = '@' + user.gitHubHandle;
 

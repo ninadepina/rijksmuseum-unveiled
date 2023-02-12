@@ -1,0 +1,11 @@
+{
+  "name": "business-card",
+  "version": "1.0.0",
+  "description": "html/css/js business card",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nina Vens",
+  "license": "MIT"
+}
