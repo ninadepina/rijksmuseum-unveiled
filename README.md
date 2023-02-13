@@ -4,7 +4,6 @@
 'Dutch Delights: Rijksmuseum Unveiled' is a Single Page Application that let's you explore the Rijksmuseum's collection. You can search for artworks, artists and get more information about them.
 
 <br/>
-<br/>
 
 This application is made with [RijksData](https://data.rijksmuseum.nl/object-metadata/api/), an API from the Rijksmuseum.
 
