@@ -141,3 +141,9 @@ const updateUser = (user) => {
 
 ![breakdownRijks](https://user-images.githubusercontent.com/89778503/218432705-98d193de-718b-4ef7-b286-bbbbc2cd93b9.png)
 </details>
+
+<details>
+<summary>🎨Hi-Fi sketches:</summary>
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNo4HkDDtzDw2uV6XBUG9jg%2FScorro%3Fnode-id%3D20%253A3%26t%3DVzXyuiRkjEDXHaRG-1" allowfullscreen></iframe>
+</details>
