@@ -145,5 +145,7 @@ const updateUser = (user) => {
 <details>
 <summary>🎨Hi-Fi sketches:</summary>
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNo4HkDDtzDw2uV6XBUG9jg%2FScorro%3Fnode-id%3D20%253A3%26t%3DVzXyuiRkjEDXHaRG-1" allowfullscreen></iframe>
+<a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNo4HkDDtzDw2uV6XBUG9jg%2FScorro%3Fnode-id%3D20%253A3%26t%3DVzXyuiRkjEDXHaRG-1
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="Figma link to Hi-Fi sketches"/></a>
 </details>
