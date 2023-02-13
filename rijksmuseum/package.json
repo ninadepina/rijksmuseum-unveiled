@@ -1,0 +1,14 @@
+{
+  "name": "rijksmuseum",
+  "version": "1.0.0",
+  "description": "Single page application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nina Vens",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
