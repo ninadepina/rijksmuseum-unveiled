@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀Week 1
+## Week 1: 'Hellooo'🤸🏽‍♀️
 As for the kick-off from the minor Web Design & Development and the Web App from Scratch course, we got the assignment to create a digital business card in HTML, CSS & Javascript.
 <details>
 <summary>✍🏼HTML/CSS/JS breakdown sketch:</summary>
@@ -126,3 +126,5 @@ const updateUser = (user) => {
 </details>
 
 ---
+
+## Week 2: 'Hello API'🐒
