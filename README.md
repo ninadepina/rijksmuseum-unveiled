@@ -133,11 +133,11 @@ const updateUser = (user) => {
 <details>
 <summary>✍🏼Lo-Fi wireflow sketch:</summary>
 
-
+![wireflowRijks](https://user-images.githubusercontent.com/89778503/218432660-d8a4ab2f-897a-468f-96ee-e478a831a7a8.png)
 </details>
 
 <details>
 <summary>✍🏼HTML/CSS/JS breakdown sketch:</summary>
 
-
+![breakdownRijks](https://user-images.githubusercontent.com/89778503/218432705-98d193de-718b-4ef7-b286-bbbbc2cd93b9.png)
 </details>
