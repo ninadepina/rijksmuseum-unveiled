@@ -1,6 +1,8 @@
 # HTML/CSS/JS Business card
 As for the kick-off from the minor Web Design & Development and the Web App from Scratch course, we got the assignment to create a digital business card in HTML, CSS & Javascript.
 
+- [Link to live application](https://ninadepina-wafs-card.vercel.app/)
+
 ---
 
 ## ✍🏼HTML/CSS/JS breakdown sketch:
