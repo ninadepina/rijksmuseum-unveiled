@@ -128,3 +128,16 @@ const updateUser = (user) => {
 ---
 
 ## Week 2: 'Hello API'🐒
+**User story:** As an art lover, I want to be able to search and view art from the Rijksmuseum at home, so that I can still enjoy art from home. [Rijksmuseum - RijksData API](https://github.com/cmda-minor-web/web-app-from-scratch-2223/blob/main/course/rijksmuseum.md)
+
+<details>
+<summary>✍🏼Lo-Fi wireflow sketch:</summary>
+
+
+</details>
+
+<details>
+<summary>✍🏼HTML/CSS/JS breakdown sketch:</summary>
+
+
+</details>
