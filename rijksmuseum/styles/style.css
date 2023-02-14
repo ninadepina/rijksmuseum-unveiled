@@ -52,10 +52,6 @@ input {
 	font-family: var(--font-normal);
 	font-weight: normal;
 }
-h2 {
-	text-transform: uppercase;
-}
-
 /* h1 only for semantic value and screenreaders */
 h1 {
 	position: absolute;
@@ -63,6 +59,17 @@ h1 {
 	top: auto;
 	width: 1px;
 	height: 1px;
+}
+h2 {
+	text-transform: uppercase;
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-dark);
+}
+li {
+    list-style: none;
 }
 
 main > section:nth-of-type(2),
@@ -74,52 +81,51 @@ main > section:first-of-type section > div:first-of-type {
 }
 
 main > section:first-of-type,
-main > section:first-of-type > section {
+main > section:first-of-type > section:first-of-type {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
 }
 
-main > section:first-of-type section header {
+main > section:first-of-type > section:first-of-type header {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4em;
 	max-width: 420px;
 }
-main > section:first-of-type section header div {
+main > section:first-of-type > section:first-of-type header div {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 0.4em;
 	padding: 0 var(--text-inset);
 }
-main > section:first-of-type section header p,
+main > section:first-of-type > section:first-of-type header p,
 main h2 {
 	font-size: 1.16em;
 }
 
-main > section:first-of-type section header img {
+main > section:first-of-type > section:first-of-type header img {
 	width: 100%;
 }
 
-main > section:first-of-type section section {
+main > section:first-of-type > section:first-of-type section {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
 	border-bottom: 1px solid var(--color-dark);
 }
-main > section:first-of-type section section img {
+main > section:first-of-type > section:first-of-type section img {
 	width: 100%;
 	max-height: 320px;
 	aspect-ratio: 4 / 3;
 	object-fit: cover;
-	object-position: center -40px;
 	border-radius: var(--border-radius);
 }
 
-main > section:first-of-type section section :is(p, h2) {
+main > section:first-of-type > section:first-of-type section :is(p, h2) {
 	padding: 0 var(--text-inset);
 }
-main > section:first-of-type section section div:last-of-type {
+main > section:first-of-type > section:first-of-type section div:last-of-type {
 	padding-bottom: 1em;
 }
 
@@ -158,6 +164,26 @@ main > section:first-of-type form button svg {
 	stroke-linejoin: round;
 }
 
+main > section:first-of-type > section:last-of-type ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+main > section:first-of-type > section:last-of-type img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+main > section:first-of-type > section:last-of-type div {
+    padding: 1em 0;
+    border-bottom: 1px solid var(--color-dark);
+}
+main > section:first-of-type > section:last-of-type p {
+    font-family: var(--font-normalItalic);
+}
+
+
+
+
 @media only screen and (min-width: 1000px) {
 	body {
 		background-color: var(--color-dark);
@@ -182,35 +208,35 @@ main > section:first-of-type form button svg {
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 2em;
+		overflow: auto;
 	}
-    main > section:first-of-type section header {
+    main > section:first-of-type section:first-of-type header {
 		max-width: none;
 	}
-	main > section:first-of-type section header img {
+	main > section:first-of-type section:first-of-type header img {
 		width: 21em;
 	}
-	main > section:first-of-type section header div {
+	main > section:first-of-type section:first-of-type header div {
 		display: none;
 	}
-	main > section:first-of-type section section {
+	main > section:first-of-type section:first-of-type section {
 		border: none;
 	}
-	main > section:first-of-type section section img {
+	main > section:first-of-type section:first-of-type section img {
         max-height: none;
 		aspect-ratio: 5 / 1;
-		object-position: center -420px;
 	}
-	main > section:first-of-type section section div {
+	main > section:first-of-type section:first-of-type section div {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		white-space: nowrap;
 	}
-	main > section:first-of-type section section div:first-of-type {
+	main > section:first-of-type section:first-of-type section div:first-of-type {
 		display: flex;
 		gap: 2em;
 	}
-	main > section:first-of-type section section div:first-of-type span {
+	main > section:first-of-type section:first-of-type section div:first-of-type span {
 		width: 100%;
 		height: 1px;
 		background-color: var(--color-dark);
