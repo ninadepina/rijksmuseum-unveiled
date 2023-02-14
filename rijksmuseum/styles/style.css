@@ -90,10 +90,12 @@ main > section:nth-of-type(2),
 main > section:nth-of-type(3),
 main > section:nth-of-type(4),
 main > section:nth-of-type(5),
-main > section:first-of-type section > div:first-of-type {
+main > section:first-of-type section section > div:first-of-type {
 	display: none;
 }
-
+main > section:first-of-type {
+	position: relative;
+}
 main > section:first-of-type,
 main > section:first-of-type > section:first-of-type {
 	display: flex;
@@ -175,6 +177,19 @@ main > section:first-of-type form button svg {
 	stroke-width: 2px;
 	stroke-linecap: round;
 	stroke-linejoin: round;
+}
+main > section:first-of-type > section:nth-of-type(2) div {
+	display: none;
+	position: absolute;
+	bottom: -2em;
+	width: 100%;
+	padding: 0.2em 0.6em;
+	border-radius: calc(var(--border-radius) - 4px);
+	background-color: var(--color-dark);
+	color: var(--color-light);
+}
+main > section:first-of-type > section:nth-of-type(2) div.show {
+	display: block;
 }
 
 main > section:first-of-type > section:last-of-type ul {
@@ -275,6 +290,11 @@ main > section:first-of-type > section:last-of-type p {
 	}
 	main > section:first-of-type form button svg {
 		width: 2em;
+	}
+	main > section:first-of-type > section:nth-of-type(2) div {
+		bottom: 0;
+		width: calc(100% - 4em);
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
 	main > section:first-of-type > section:last-of-type ul {
 		grid-template-columns: repeat(2, 1fr);
