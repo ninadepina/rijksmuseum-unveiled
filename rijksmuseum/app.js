@@ -44,8 +44,6 @@ const fetchData = async () => {
 };
 
 const getData = (artObjects) => {
-	console.log(artObjects);
-
 	let artInfo = artObjects.map((art) => {
 		const artImg = art.webImage;
 		const artLongtitle = art.longTitle;
@@ -53,7 +51,6 @@ const getData = (artObjects) => {
 		const artArtist = art.principalOrFirstMaker;
 		// const artDate = art.longTitle.match(/(\d+)/)[0];
 		// const artId = art.id;
-
 		return {
 			artImg,
 			artLongtitle,
@@ -82,7 +79,6 @@ const displayData = (artInfo) => {
 		const li = document.createElement('li');
 		li.innerHTML = liArt;
 		ul.appendChild(li);
-		console.log(li);
 	});
 };
 
