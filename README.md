@@ -138,7 +138,7 @@ const updateUser = (user) => {
 <details>
 <summary>✍🏼Lo-Fi wireflow sketch:</summary>
 
-![wireflowRijks](https://user-images.githubusercontent.com/89778503/218432660-d8a4ab2f-897a-468f-96ee-e478a831a7a8.png)
+![wireflowRijks](https://user-images.githubusercontent.com/89778503/218692637-11dba7af-3b01-4c2c-8bbc-35894c3e36fa.png)
 </details>
 
 <details>
