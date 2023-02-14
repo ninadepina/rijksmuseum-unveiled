@@ -16,5 +16,6 @@ export const getData = (artObjects) => {
 			artArtist
 		};
 	});
+	artInfo = artInfo.filter((art) => art.artImg !== null);
 	displayData(artInfo);
 };
