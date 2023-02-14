@@ -253,6 +253,14 @@ main > section:first-of-type > section:last-of-type p {
 		height: 1px;
 		background-color: var(--color-dark);
 	}
+	main > section:first-of-type section:nth-of-type(2) {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2em;
+	}
+	main > section:first-of-type section:nth-of-type(2) > p {
+		padding: var(--text-inset);
+	}
 	main > section:first-of-type form input {
 		height: calc(5em - 1.2em);
 	}
@@ -270,6 +278,12 @@ main > section:first-of-type > section:last-of-type p {
 	}
 	main > section:first-of-type > section:last-of-type ul {
 		grid-template-columns: repeat(2, 1fr);
+	}
+	main > section:first-of-type > section:last-of-type ul li:nth-child(2n) {
+		transform: translate(0, 100px);
+	}
+	main > section:first-of-type > section:last-of-type ul li:last-of-type {
+		padding-bottom: 2em;
 	}
 
 	/* (2)[desktop: generate random art section] */
