@@ -7,7 +7,6 @@
 const searchForm = document.querySelector('form');
 const searchResultsContainer = document.querySelector('main > section:first-of-type > section:last-of-type');
 
-
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 // Visual things
@@ -23,22 +22,22 @@ if (searchResultsContainer.children.length == 0) searchResultsContainer.classLis
 // }
 
 const fetchData = async () => {
-	const allArtObjects = document.querySelectorAll("section ul");
-	allArtObjects.forEach(artObject => artObject.remove());
+	const allArtObjects = document.querySelectorAll('section ul');
+	allArtObjects.forEach((artObject) => artObject.remove());
 
-    let data;
-    const userInput = document.querySelector('input[name="search"]').value;
+	let data;
+	const userInput = document.querySelector('input[name="search"]').value;
 	if (userInput.length == 0) return;
 	let url = `https://www.rijksmuseum.nl/api/nl/collection?key=RdKQCPfy&q=${userInput}`;
-    
-    // if (search.length !== 0) url = `https://www.rijksmuseum.nl/api/nl/collection?key=RdKQCPfy&q=${search || defaultSearch}`;
+
+	// if (search.length !== 0) url = `https://www.rijksmuseum.nl/api/nl/collection?key=RdKQCPfy&q=${search || defaultSearch}`;
 
 	try {
 		data = await (await fetch(url)).json();
 		if (data.artObjects.length == 0) throw new Error();
 		// console.log(data.artObjects[0].longTitle.match(/(\d+)/)[0])
 	} catch {
-        // window.history.replaceState('search', 'search', `?search=${defaultSearch}`);
+		// window.history.replaceState('search', 'search', `?search=${defaultSearch}`);
 		console.log('error');
 	}
 	getData(data.artObjects);
@@ -47,7 +46,7 @@ const fetchData = async () => {
 const getData = (artObjects) => {
 	console.log(artObjects);
 
-	let artInfo = artObjects.map(art => {
+	let artInfo = artObjects.map((art) => {
 		const artImg = art.webImage;
 		const artLongtitle = art.longTitle;
 		const artTitle = art.title;
@@ -56,18 +55,21 @@ const getData = (artObjects) => {
 		// const artId = art.id;
 
 		return {
-			artImg, artLongtitle, artTitle, artArtist
-		}
+			artImg,
+			artLongtitle,
+			artTitle,
+			artArtist
+		};
 	});
 	displayData(artInfo);
-}
+};
 
 const displayData = (artInfo) => {
 	searchResultsContainer.classList.remove('hidden');
-	const ul = document.createElement("ul");
-    searchResultsContainer.appendChild(ul);
+	const ul = document.createElement('ul');
+	searchResultsContainer.appendChild(ul);
 
-	artInfo.map (art => {
+	artInfo.map((art) => {
 		const liArt = `
 			<a href="">
 				<img src=${art.artImg.url + 1500} alt="${art.artLongtitle}" />
@@ -78,15 +80,15 @@ const displayData = (artInfo) => {
 			</a>
 		`;
 		const li = document.createElement('li');
-        li.innerHTML = liArt;
-        ul.appendChild(li);
+		li.innerHTML = liArt;
+		ul.appendChild(li);
 		console.log(li);
-	})
-}
+	});
+};
 
 searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    fetchData();
+	e.preventDefault();
+	fetchData();
 });
 
 // fetchData();
