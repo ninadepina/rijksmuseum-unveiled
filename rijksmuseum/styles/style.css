@@ -34,6 +34,11 @@
 
 	--border-radius: 10px;
 }
+
+::-webkit-scrollbar {
+	display: none;
+}
+
 body {
 	height: 100%;
 	min-height: 100vh;
@@ -86,51 +91,62 @@ li {
 	list-style: none;
 }
 
-main > section:nth-of-type(2),
-main > section:nth-of-type(3),
-main > section:nth-of-type(4),
-main > section:nth-of-type(5),
-main > section:first-of-type section section > div:first-of-type {
+.hidden {
 	display: none;
 }
-main > section:first-of-type {
+
+.generateRandomArt,
+.info,
+.socials,
+.sponsors,
+.mainContent div:has(span) {
+	display: none;
+}
+
+/* ------------------------------------- */
+/* (1)[desktop: search section] */
+/* ------------------------------------- */
+.mainContent {
 	position: relative;
 }
-main > section:first-of-type,
-main > section:first-of-type > section:first-of-type {
+.mainContent,
+.mainContent > section:first-of-type {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
 }
 
-main > section:first-of-type > section:first-of-type header {
+.mainContent > section:first-of-type header {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4em;
 	max-width: 420px;
 }
-main > section:first-of-type > section:first-of-type header div {
+.mainContent > section:first-of-type header div {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 0.4em;
 	padding: 0 var(--text-inset);
 }
-main > section:first-of-type > section:first-of-type header p,
+.mainContent > section:first-of-type header p,
 main h2 {
 	font-size: 1.16em;
 }
 
-main > section:first-of-type > section:first-of-type header img {
+.mainContent > section:first-of-type header img {
 	width: 100%;
 }
 
-main > section:first-of-type > section:first-of-type section {
+.mainContent > section:first-of-type section {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
 	border-bottom: 1px solid var(--color-dark);
 }
-main > section:first-of-type > section:first-of-type section img {
+.mainContent > section:first-of-type section.hidden {
+	display: none;
+}
+.mainContent > section:first-of-type section img {
 	width: 100%;
 	max-height: 320px;
 	aspect-ratio: 4 / 3;
@@ -138,30 +154,30 @@ main > section:first-of-type > section:first-of-type section img {
 	border-radius: var(--border-radius);
 }
 
-main > section:first-of-type > section:first-of-type section :is(p, h2) {
+.mainContent > section:first-of-type section :is(p, h2) {
 	padding: 0 var(--text-inset);
 }
-main > section:first-of-type > section:first-of-type section div:last-of-type {
+.mainContent > section:first-of-type section div:last-of-type {
 	padding-bottom: 1em;
 }
 
-main > section:first-of-type form {
+.mainContent form {
 	position: relative;
 	width: 100%;
 	border: 1px solid var(--color-dark);
 	border-radius: var(--border-radius);
 }
-main > section:first-of-type form input {
+.mainContent form input {
 	width: calc(100% - 3em);
 	height: 3em;
 	padding: 0 1em;
 	background-color: transparent;
 	border: none;
 }
-main > section:first-of-type form input::placeholder {
+.mainContent form input::placeholder {
 	color: var(--color-vague);
 }
-main > section:first-of-type form button {
+.mainContent form button {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -171,14 +187,14 @@ main > section:first-of-type form button {
 	border: none;
 	border-radius: calc(var(--border-radius) - 1px);
 }
-main > section:first-of-type form button svg {
+.mainContent form button svg {
 	width: 1.4em;
 	stroke: var(--color-light);
 	stroke-width: 2px;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 }
-main > section:first-of-type > section:nth-of-type(2) div {
+.mainContent > section:nth-of-type(2) div {
 	display: none;
 	position: absolute;
 	bottom: -2em;
@@ -188,26 +204,29 @@ main > section:first-of-type > section:nth-of-type(2) div {
 	background-color: var(--color-dark);
 	color: var(--color-light);
 }
-main > section:first-of-type > section:nth-of-type(2) div.show {
+.mainContent > section:nth-of-type(2) div.show {
 	display: block;
 }
 
-main > section:first-of-type > section:last-of-type ul {
+.mainContent > section:last-of-type ul {
 	display: grid;
 	gap: 3em;
 }
-main > section:first-of-type > section:last-of-type img {
+.mainContent > section:last-of-type img {
 	width: 100%;
 	border-radius: var(--border-radius);
 }
-main > section:first-of-type > section:last-of-type div {
+.mainContent > section:last-of-type div {
 	padding: 1em 0;
 	border-bottom: 1px solid var(--color-dark);
 }
-main > section:first-of-type > section:last-of-type p {
+.mainContent > section:last-of-type p {
 	font-family: var(--font-normalItalic);
 }
 
+/* ------------------------------------- */
+/* MEDIA QUERY min-width: 1000px; */
+/* ------------------------------------- */
 @media only screen and (min-width: 1000px) {
 	body {
 		background-color: var(--color-dark);
@@ -227,8 +246,10 @@ main > section:first-of-type > section:last-of-type p {
 		border-radius: var(--border-radius);
 	}
 
+	/* ------------------------------------- */
 	/* (1)[desktop: search section] */
-	main > section:first-of-type {
+	/* ------------------------------------- */
+	.mainContent {
 		grid-column-start: 1;
 		grid-column-end: 3;
 		display: flex;
@@ -237,100 +258,102 @@ main > section:first-of-type > section:last-of-type p {
 		padding: 2em;
 		overflow: auto;
 	}
-	main > section:first-of-type section:first-of-type header {
+	.mainContent section:first-of-type header {
 		max-width: none;
 	}
-	main > section:first-of-type section:first-of-type header img {
+	.mainContent section:first-of-type header img {
 		width: 21em;
 	}
-	main > section:first-of-type section:first-of-type header div {
+	.mainContent section:first-of-type header div {
 		display: none;
 	}
-	main > section:first-of-type section:first-of-type section {
+	.mainContent section:first-of-type section {
 		border: none;
 	}
-	main > section:first-of-type section:first-of-type section img {
+	.mainContent section:first-of-type section img {
 		max-height: none;
 		aspect-ratio: 5 / 1;
 	}
-	main > section:first-of-type section:first-of-type section div {
+	.mainContent section:first-of-type section div {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		white-space: nowrap;
 	}
-	main > section:first-of-type section:first-of-type section div:first-of-type {
+	.mainContent section:first-of-type section div:first-of-type {
 		display: flex;
 		gap: 2em;
 	}
-	main > section:first-of-type section:first-of-type section div:first-of-type span {
+	.mainContent section:first-of-type section div:first-of-type span {
 		width: 100%;
 		height: 1px;
 		background-color: var(--color-dark);
 	}
-	main > section:first-of-type section:nth-of-type(2) {
+	.mainContent section:nth-of-type(2) {
 		display: flex;
 		flex-direction: column;
 		gap: 0.2em;
 	}
-	main > section:first-of-type section:nth-of-type(2) > p {
+	.mainContent section:nth-of-type(2) > p {
 		padding: var(--text-inset);
 	}
-	main > section:first-of-type form input {
+	.mainContent form input {
 		height: calc(5em - 1.2em);
 	}
-	main > section:first-of-type form input,
-	main > section:first-of-type form input::placeholder {
+	.mainContent form input,
+	.mainContent form input::placeholder {
 		font-size: 1.1em;
 	}
-	main > section:first-of-type form button {
+	.mainContent form button {
 		width: auto;
 		height: 100%;
 		aspect-ratio: 1 / 1;
 	}
-	main > section:first-of-type form button svg {
+	.mainContent form button svg {
 		width: 2em;
 	}
-	main > section:first-of-type > section:nth-of-type(2) div {
+	.mainContent > section:nth-of-type(2) div {
 		bottom: 0;
 		width: calc(100% - 4em);
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
-	main > section:first-of-type > section:last-of-type ul {
+	.mainContent > section:last-of-type ul {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	main > section:first-of-type > section:last-of-type ul li:nth-child(2n) {
+	.mainContent > section:last-of-type ul li:nth-child(2n) {
 		transform: translate(0, 100px);
 	}
-	main > section:first-of-type > section:last-of-type ul li:last-of-type {
+	.mainContent > section:last-of-type ul li:last-of-type {
 		padding-bottom: 2em;
 	}
 
+	/* ------------------------------------- */
 	/* (2)[desktop: generate random art section] */
-	main > section:nth-of-type(2) {
+	/* ------------------------------------- */
+	.generateRandomArt {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 2em;
 	}
-	main > section:nth-of-type(2) div img {
+	.generateRandomArt div img {
 		width: 100%;
 		border-radius: var(--border-radius);
 	}
-	main > section:nth-of-type(2) section > div {
+	.generateRandomArt section > div {
 		padding: var(--text-inset);
 	}
-	main > section:nth-of-type(2) section > div:last-of-type p {
+	.generateRandomArt section > div:last-of-type p {
 		font-family: var(--font-normalItalic);
 		padding-bottom: 1em;
 		border-bottom: 1px solid var(--color-dark);
 	}
-	main > section:nth-of-type(2) section > div div {
+	.generateRandomArt section > div div {
 		display: flex;
 		justify-content: space-between;
 		padding: var(--text-inset);
 	}
-	main > section:nth-of-type(2) button {
+	.generateRandomArt button {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -345,28 +368,37 @@ main > section:first-of-type > section:last-of-type p {
 		border: none;
 		border-radius: var(--border-radius);
 	}
-	main > section:nth-of-type(2) button img {
+	.generateRandomArt button img {
 		height: 1.1em;
 	}
 }
 
+/* ------------------------------------- */
+/* MEDIA QUERY min-width: 1200px; */
+/* ------------------------------------- */
 @media only screen and (min-width: 1200px) {
 	main {
 		grid-template-rows: auto 12fr;
 	}
 
+	/* ------------------------------------- */
 	/* (1)[desktop: search section] */
-	main > section:first-of-type {
+	/* ------------------------------------- */
+	.mainContent {
 		order: 4;
 	}
 
+	/* ------------------------------------- */
 	/* (2)[desktop: generate random art section] */
-	main > section:nth-of-type(2) {
+	/* ------------------------------------- */
+	.generateRandomArt {
 		order: 5;
 	}
 
+	/* ------------------------------------- */
 	/* (3)[desktop: info section] */
-	main > section:nth-of-type(3) {
+	/* ------------------------------------- */
+	.info {
 		order: 1;
 		display: flex;
 		justify-content: space-between;
@@ -374,24 +406,26 @@ main > section:first-of-type > section:last-of-type p {
 		padding: 1em 2em;
 		font-size: 1.1em;
 	}
+
+	/* ------------------------------------- */
 	/* (4)[desktop: socials section] */
-	main > section:nth-of-type(4) {
+	/* ------------------------------------- */
+	.socials {
 		order: 2;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1em 2em;
 	}
+
+	/* ------------------------------------- */
 	/* (5)[desktop: sponsors section] */
-	main > section:nth-of-type(5) {
+	/* ------------------------------------- */
+	.sponsors {
 		order: 3;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1em 2em;
 	}
-}
-
-.hidden {
-	display: none;
 }

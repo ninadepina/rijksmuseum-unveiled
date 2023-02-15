@@ -10,13 +10,13 @@ export const fetchData = async () => {
 
 	let data;
 	const userInput = document.querySelector('input[name="search"]').value;
-	if (userInput.length == 0) return;
-	let url = `https://www.rijksmuseum.nl/api/nl/collection?key=RdKQCPfy&q=${userInput}`;
+	if (userInput.length === 0) return;
+	const url = `https://www.rijksmuseum.nl/api/nl/collection?key=RdKQCPfy&q=${userInput}`;
 
 	try {
 		data = await (await fetch(url)).json();
 		stopLoading();
-		if (data.artObjects.length == 0) throw new Error();
+		if (data.artObjects.length === 0) throw new Error();
 	} catch {
 		searchErrorText.textContent = `Unfortunately we couldn't find any results for "${userInput}"`;
 		searchResultsContainer.classList.add('hidden');

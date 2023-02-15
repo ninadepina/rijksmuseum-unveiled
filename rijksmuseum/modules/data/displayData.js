@@ -1,6 +1,9 @@
 import { searchResultsContainer } from '../../app.js';
 
 export const displayData = (artInfo) => {
+	const currentExpoInfo = document.querySelector('.mainContent > section:first-of-type > section');
+
+	currentExpoInfo.classList.add('hidden');
 	searchResultsContainer.classList.remove('hidden');
 	const ul = document.createElement('ul');
 	searchResultsContainer.appendChild(ul);
