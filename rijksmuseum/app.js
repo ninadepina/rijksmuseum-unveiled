@@ -1,6 +1,6 @@
 import { fetchData } from './scripts/data/fetchData.js';
 import { fetchRandomArt } from './scripts/randomArtData/fetchRandomArt.js';
-import { defaultArt } from "./scripts/randomArtData/defaultArt.js";
+import { defaultArt } from './scripts/randomArtData/defaultArt.js';
 
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
