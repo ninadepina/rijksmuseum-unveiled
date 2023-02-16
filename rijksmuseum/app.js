@@ -5,7 +5,7 @@ import { defaultArt } from "./scripts/randomArtData/defaultArt.js";
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 // DOM elements
-const searchForm = document.querySelector('form');
+const searchForm = document.querySelector('.mainContent > section:nth-of-type(2) > form');
 export const searchResultsContainer = document.querySelector('.mainContent > section:last-of-type');
 const generateRandomArtButton = document.querySelector('.generateRandomArt button');
 
