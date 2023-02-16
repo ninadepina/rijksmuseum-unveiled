@@ -1,10 +1,13 @@
-import { fetchData } from './modules/data/fetchData.js';
+import { fetchData } from './scripts/data/fetchData.js';
+import { fetchRandomArt } from './scripts/randomArtData/fetchRandomArt.js';
+import { defaultArt } from "./scripts/randomArtData/defaultArt.js";
 
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 // DOM elements
 const searchForm = document.querySelector('form');
-export const searchResultsContainer = document.querySelector('main > section:first-of-type > section:last-of-type');
+export const searchResultsContainer = document.querySelector('.mainContent > section:last-of-type');
+const generateRandomArtButton = document.querySelector('.generateRandomArt button');
 
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
@@ -20,3 +23,9 @@ searchForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	fetchData();
 });
+
+generateRandomArtButton.addEventListener('click', () => {
+	fetchRandomArt();
+});
+
+defaultArt();
