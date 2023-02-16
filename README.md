@@ -18,7 +18,7 @@ $ git clone https://github.com/ninadepina/web-app-from-scratch-2223.git
 2. Create your API key
 - Go to [Rijksstudio](https://www.rijksmuseum.nl/nl/rijksstudio) and sign up
 - Go to advanced settings and request your own personal API key
-- Add your API key to the `app.js` file
+- Add your API key to the `fetchData.js` file
 ```javascript
 const url = `https://www.rijksmuseum.nl/api/nl/collection?key=[YOUR-API-KEY-HERE]&q=${userInput}`;
 ```
