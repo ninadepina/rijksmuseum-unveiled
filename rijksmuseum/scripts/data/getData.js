@@ -9,6 +9,7 @@ export const getData = (artObjects) => {
 			artTitle: title,
 			artArtist: principalOrFirstMaker
 		}))
-		.filter((art) => art.artImg !== null);
+		// filtering is not necessary if the url contains '&imgonly=true'
+		// .filter((art) => art.artImg !== null);
 	displayData(artInfo);
 };

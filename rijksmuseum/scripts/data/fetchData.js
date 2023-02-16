@@ -21,12 +21,13 @@ export const fetchData = async () => {
 	});
 
 	let data;
-	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}`;
+	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
 
 	try {
 		data = await (await fetch(url)).json();
 		stopLoading();
 		if (data.artObjects.length === 0) throw new Error();
+		data.artObjects.length < radioValue ? searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]` : searchErrorText.textContent = `[${radioValue} pieces of art are being shown]`
 	} catch {
 		userInput.length > 11
 			? (searchErrorText.textContent =
