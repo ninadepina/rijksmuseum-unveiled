@@ -20,7 +20,7 @@ $ git clone https://github.com/ninadepina/web-app-from-scratch-2223.git
 - Go to advanced settings and request your own personal API key
 - Add your API key to the `app.js` file
 ```javascript
-let url = `https://www.rijksmuseum.nl/api/nl/collection?key=[YOUR-API-KEY-HERE]&q=${userInput}`;
+const url = `https://www.rijksmuseum.nl/api/nl/collection?key=[YOUR-API-KEY-HERE]&q=${userInput}`;
 ```
 
 3. Open the `index.html` file in your browser or use localhost
