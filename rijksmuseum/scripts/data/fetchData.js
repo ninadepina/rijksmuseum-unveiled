@@ -2,6 +2,8 @@ import { startLoading, stopLoading } from '../loading.js';
 import { getData } from './getData.js';
 
 export const fetchData = async () => {
+	const userInput = document.querySelector('input[name="search"]').value;
+	if (userInput.length === 0) return;
 	startLoading();
 	const allArtObjects = document.querySelectorAll('section ul');
 	allArtObjects.forEach((artObject) => artObject.remove());
@@ -9,9 +11,7 @@ export const fetchData = async () => {
 	searchErrorText.textContent = '';
 
 	let data;
-	const userInput = document.querySelector('input[name="search"]').value;
-	if (userInput.length === 0) return;
-	const url = `https://www.rijksmuseum.nl/api/nl/collection?key=RdKQCPfy&q=${userInput}`;
+	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}`;
 
 	try {
 		data = await (await fetch(url)).json();

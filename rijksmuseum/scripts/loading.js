@@ -1,4 +1,4 @@
-const loadingMessage = document.querySelector('main > section:first-of-type > section:nth-of-type(2) div');
+const loadingMessage = document.querySelector('.mainContent > section:nth-of-type(2) div');
 
 export const startLoading = () => {
     loadingMessage.classList.add('show');
