@@ -103,7 +103,7 @@ button {
 .info,
 .socials,
 .sponsors,
-.mainContent section:first-of-type :has(span) {
+.mainContent .staticInfo div:has(span) {
 	display: none;
 }
 
@@ -114,43 +114,43 @@ button {
 	position: relative;
 }
 .mainContent,
-.mainContent > section:first-of-type {
+.mainContent .staticInfo {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
 }
 
-.mainContent > section:first-of-type header {
+.mainContent .staticInfo header {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4em;
 	max-width: 420px;
 }
-.mainContent > section:first-of-type header div {
+.mainContent .staticInfo header div {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 0.4em;
 	padding: 0 var(--text-inset);
 }
-.mainContent > section:first-of-type header p,
+.mainContent .staticInfo header p,
 main h2 {
 	font-size: 1.16em;
 }
 
-.mainContent > section:first-of-type header img {
+.mainContent .staticInfo header img {
 	width: 100%;
 }
 
-.mainContent > section:first-of-type section {
+.mainContent .staticInfo section {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
 	border-bottom: 1px solid var(--color-dark);
 }
-.mainContent > section:first-of-type section.hidden {
+.mainContent .staticInfo section.hidden {
 	display: none;
 }
-.mainContent > section:first-of-type section img {
+.mainContent .staticInfo section img {
 	width: 100%;
 	max-height: 320px;
 	aspect-ratio: 4 / 3;
@@ -158,33 +158,33 @@ main h2 {
 	border-radius: var(--border-radius);
 }
 
-.mainContent > section:first-of-type section :is(p, h2) {
+.mainContent .staticInfo section :is(p, h2) {
 	padding: 0 var(--text-inset);
 }
-.mainContent > section:first-of-type section div:last-of-type {
+.mainContent .staticInfo section div:last-of-type {
 	padding-bottom: 1em;
 }
 
-.mainContent section:nth-of-type(2) div > form {
+.mainContent .searchArea div > form {
 	display: none;
 }
-.mainContent section:nth-of-type(2) > form {
+.mainContent .searchArea > form {
 	position: relative;
 	width: 100%;
 	border: 1px solid var(--color-dark);
 	border-radius: var(--border-radius);
 }
-.mainContent section:nth-of-type(2) > form input {
+.mainContent .searchArea > form input {
 	width: calc(100% - 3em);
 	height: 3em;
 	padding: 0 1em;
 	background-color: transparent;
 	border: none;
 }
-.mainContent section:nth-of-type(2) > form input::placeholder {
+.mainContent .searchArea > form input::placeholder {
 	color: var(--color-vague);
 }
-.mainContent section:nth-of-type(2) > form button {
+.mainContent .searchArea > form button {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -194,14 +194,14 @@ main h2 {
 	border: none;
 	border-radius: calc(var(--border-radius) - 1px);
 }
-.mainContent section:nth-of-type(2) > form button svg {
+.mainContent .searchArea > form button svg {
 	width: 1.4em;
 	stroke: var(--color-light);
 	stroke-width: 2px;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 }
-.mainContent > section:nth-of-type(2) > div:last-of-type {
+.mainContent .searchArea > div:last-of-type {
 	display: none;
 	position: absolute;
 	bottom: -2em;
@@ -211,23 +211,23 @@ main h2 {
 	background-color: var(--color-dark);
 	color: var(--color-light);
 }
-.mainContent > section:nth-of-type(2) div:last-of-type.show {
+.mainContent .searchArea div:last-of-type.show {
 	display: block;
 }
 
-.mainContent > section:last-of-type ul {
+.mainContent .loadingData ul {
 	display: grid;
 	gap: 3em;
 }
-.mainContent > section:last-of-type img {
+.mainContent .loadingData img {
 	width: 100%;
 	border-radius: var(--border-radius);
 }
-.mainContent > section:last-of-type div {
+.mainContent .loadingData div {
 	padding: 1em 0;
 	border-bottom: 1px solid var(--color-dark);
 }
-.mainContent > section:last-of-type p {
+.mainContent .loadingData p {
 	font-family: var(--font-normalItalic);
 }
 
@@ -265,49 +265,49 @@ main h2 {
 		padding: 2em;
 		overflow: auto;
 	}
-	.mainContent section:first-of-type header {
+	.mainContent .staticInfo header {
 		max-width: none;
 	}
-	.mainContent section:first-of-type header img {
+	.mainContent .staticInfo header img {
 		width: 21em;
 	}
-	.mainContent section:first-of-type header div {
+	.mainContent .staticInfo header div {
 		display: none;
 	}
-	.mainContent section:first-of-type section {
+	.mainContent .staticInfo section {
 		border: none;
 	}
-	.mainContent section:first-of-type section img {
+	.mainContent .staticInfo section img {
 		max-height: none;
 		aspect-ratio: 5 / 1;
 	}
-	.mainContent section:first-of-type section div {
+	.mainContent .staticInfo section div {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		white-space: nowrap;
 	}
-	.mainContent section:first-of-type section div:first-of-type {
+	.mainContent .staticInfo section div:first-of-type {
 		display: flex;
 		gap: 2em;
 	}
-	.mainContent section:first-of-type section div:first-of-type span {
+	.mainContent .staticInfo section div:first-of-type span {
 		width: 100%;
 		height: 1px;
 		background-color: var(--color-dark);
 	}
-	.mainContent section:nth-of-type(2) {
+	.mainContent .searchArea {
 		display: flex;
 		flex-direction: column;
 		gap: 0.2em;
 	}
-	.mainContent section:nth-of-type(2) > div:first-of-type {
+	.mainContent .searchArea > div:first-of-type {
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
 		padding: var(--text-inset);
 	}
-	.mainContent section:nth-of-type(2) div > form {
+	.mainContent .searchArea div > form {
 		display: flex;
 		gap: 1em;
 		align-items: center;
@@ -373,36 +373,36 @@ main h2 {
 	#option-3:checked:checked ~ label[for='option-3'] span {
 		color: var(--color-dark);
 	}
-	.mainContent section:nth-of-type(2) div:last-of-type p {
+	.mainContent .searchArea div:last-of-type p {
 		padding: var(--text-inset);
 	}
-	.mainContent section:nth-of-type(2) > form input {
+	.mainContent .searchArea > form input {
 		height: calc(5em - 1.2em);
 	}
-	.mainContent section:nth-of-type(2) > form input,
-	.mainContent section:nth-of-type(2) > form input::placeholder {
+	.mainContent .searchArea > form input,
+	.mainContent .searchArea > form input::placeholder {
 		font-size: 1.1em;
 	}
-	.mainContent section:nth-of-type(2) > form button {
+	.mainContent .searchArea > form button {
 		width: auto;
 		height: 100%;
 		aspect-ratio: 1 / 1;
 	}
-	.mainContent section:nth-of-type(2) > form button svg {
+	.mainContent .searchArea > form button svg {
 		width: 2em;
 	}
-	.mainContent > section:nth-of-type(2) > div:last-of-type {
+	.mainContent .searchArea > div:last-of-type {
 		bottom: 0;
 		width: calc(100% - 4em);
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
-	.mainContent > section:last-of-type ul {
+	.mainContent .loadingData ul {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	.mainContent > section:last-of-type ul li:nth-child(2n) {
+	.mainContent .loadingData ul li:nth-child(2n) {
 		transform: translate(0, 100px);
 	}
-	.mainContent > section:last-of-type ul li:last-of-type {
+	.mainContent .loadingData ul li:last-of-type {
 		padding-bottom: 2em;
 	}
 
@@ -427,7 +427,7 @@ main h2 {
 	.generateRandomArt section > img {
 		width: fit-content;
 		max-width: 100%;
-		max-height: 53.5vh;
+		max-height: 53vh;
 		object-fit: contain;
 		border-radius: var(--border-radius);
 	}

@@ -4,7 +4,7 @@ import { searchResultsContainer } from '../../app.js';
 
 export const fetchData = async () => {
 	const userInput = document.querySelector('input[name="search"]').value;
-	const searchErrorText = document.querySelector('.mainContent > section:nth-of-type(2) > div:first-of-type > p');
+	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
 
 	if (userInput.length === 0) return;
 
@@ -21,7 +21,7 @@ export const fetchData = async () => {
 	for (const radioButton of radioButtons) {
 		if (radioButton.checked) {
 			radioValue = radioButton.value;
-		  	break;
+			break;
 		}
 	}
 
@@ -37,7 +37,6 @@ export const fetchData = async () => {
 		data.artObjects.length < radioValue
 			? (searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]`)
 			: (searchErrorText.textContent = `[${radioValue} pieces of art are being shown]`);
-			
 	} catch {
 		userInput.length > 11
 			? (searchErrorText.textContent =
