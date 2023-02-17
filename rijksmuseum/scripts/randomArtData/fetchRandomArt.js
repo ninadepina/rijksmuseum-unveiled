@@ -1,7 +1,7 @@
 import { getRandomArt } from './getRandomArt.js';
 import { defaultArt } from './defaultArt.js';
 import { addSkeletonLoader } from '../loading.js';
-import { randomArtImg, randomArtTitle, randomArtArtist } from "../../app.js";
+import { randomArtImg, randomArtTitle, randomArtArtist } from '../../app.js';
 
 export const fetchRandomArt = async () => {
 	const randomNumber = Math.floor(Math.random() * (100 - 0)) + 0;

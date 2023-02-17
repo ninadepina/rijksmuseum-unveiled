@@ -15,7 +15,7 @@ const skeletonLoader = document.querySelectorAll('.skeletonLoader');
 
 export const removeSkeletonLoader = () => {
 	for (const loader of skeletonLoader) loader.classList.remove('skeletonLoader');
-}
+};
 export const addSkeletonLoader = () => {
 	for (const loader of skeletonLoader) loader.classList.add('skeletonLoader');
-}
+};

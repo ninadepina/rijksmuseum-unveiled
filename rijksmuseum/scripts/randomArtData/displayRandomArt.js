@@ -1,5 +1,5 @@
 import { removeSkeletonLoader } from '../loading.js';
-import { randomArtImg, randomArtTitle, randomArtArtist } from "../../app.js";
+import { randomArtImg, randomArtTitle, randomArtArtist } from '../../app.js';
 
 export const displayRandomArt = (randomArtInfo) => {
 	removeSkeletonLoader();

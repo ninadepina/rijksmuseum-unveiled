@@ -5,18 +5,19 @@ import { searchResultsContainer } from '../../app.js';
 export const fetchData = async () => {
 	const userInput = document.querySelector('input[name="search"]').value;
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
+	const allArtObjects = document.querySelectorAll('section ul');
+	const radioButtons = document.querySelectorAll('input[type="radio"]');
+	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
+	let data;
+	let radioValue;
 
 	if (userInput.length === 0) return;
 
 	startLoading();
 
-	const allArtObjects = document.querySelectorAll('section ul');
 	for (const artObject of allArtObjects) artObject.remove();
 
 	searchErrorText.textContent = '';
-
-	const radioButtons = document.querySelectorAll('input[type="radio"]');
-	let radioValue;
 
 	for (const radioButton of radioButtons) {
 		if (radioButton.checked) {
@@ -24,9 +25,6 @@ export const fetchData = async () => {
 			break;
 		}
 	}
-
-	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
-	let data;
 
 	try {
 		data = await (await fetch(url)).json();
