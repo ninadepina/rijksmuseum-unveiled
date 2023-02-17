@@ -1,12 +1,21 @@
 import { getRandomArt } from './getRandomArt.js';
 import { defaultArt } from './defaultArt.js';
+import { addSkeletonLoader } from '../loading.js';
+import { randomArtImg, randomArtTitle, randomArtArtist } from "../../app.js";
 
 export const fetchRandomArt = async () => {
 	const randomNumber = Math.floor(Math.random() * (100 - 0)) + 0;
-
+	const url = 'https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&imgonly&ps=100';
 	let data;
 	let randomArt;
-	const url = 'https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&imgonly&ps=100';
+
+	randomArtImg.src = '';
+	randomArtImg.alt = '';
+	randomArtTitle.textContent = '';
+	randomArtArtist.textContent = '';
+
+	addSkeletonLoader();
+
 	try {
 		data = await (await fetch(url)).json();
 		randomArt = data.artObjects[randomNumber];

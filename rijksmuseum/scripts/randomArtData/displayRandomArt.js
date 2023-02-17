@@ -1,8 +1,8 @@
-const randomArtImg = document.querySelector('.generateRandomArt > section:first-of-type img');
-const randomArtTitle = document.querySelector('.generateRandomArt > section:first-of-type h2');
-const randomArtArtist = document.querySelector('.generateRandomArt > section:first-of-type > div:last-of-type > p');
+import { removeSkeletonLoader } from '../loading.js';
+import { randomArtImg, randomArtTitle, randomArtArtist } from "../../app.js";
 
 export const displayRandomArt = (randomArtInfo) => {
+	removeSkeletonLoader();
 	randomArtImg.src = randomArtInfo.artImg;
 	randomArtImg.alt = randomArtInfo.artLongtitle;
 	randomArtTitle.textContent = randomArtInfo.artTitle;
