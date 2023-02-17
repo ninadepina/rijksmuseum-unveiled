@@ -31,6 +31,8 @@
 	--font-normalItalic: 'Rijks-normalItalic', sans-serif;
 
 	--text-inset: 0.24em;
+	--text-decoration-focus: 1px dashed underline var(--color-dark);
+	--text-underline-offset-focus: 3px;
 
 	--border-radius: 10px;
 }
@@ -117,7 +119,7 @@ button {
 .mainContent .staticInfo {
 	display: flex;
 	flex-direction: column;
-	gap: 3em;
+	gap: 2.8em;
 }
 
 .mainContent .staticInfo header {
@@ -184,6 +186,11 @@ main h2 {
 .mainContent .searchArea > form input::placeholder {
 	color: var(--color-vague);
 }
+.mainContent .searchArea > form input:focus-visible::placeholder {
+	color: var(--color-dark);
+	text-decoration: var(--text-decoration-focus);
+	text-underline-offset: var(--text-underline-offset-focus);
+}
 .mainContent .searchArea > form button {
 	position: absolute;
 	top: 0;
@@ -193,6 +200,7 @@ main h2 {
 	background-color: var(--color-dark);
 	border: none;
 	border-radius: calc(var(--border-radius) - 1px);
+	transition: 0.5s;
 }
 .mainContent .searchArea > form button svg {
 	width: 1.4em;
@@ -200,6 +208,15 @@ main h2 {
 	stroke-width: 2px;
 	stroke-linecap: round;
 	stroke-linejoin: round;
+}
+.mainContent .searchArea > form button:is(:hover, :focus-visible, :active) {
+	background-color: var(--color-light);
+	outline: 1px solid var(--color-dark);
+	transition: 0.5s;
+}
+.mainContent .searchArea > form button:is(:hover, :focus-visible, :active) svg {
+	stroke: var(--color-dark);
+	transition: 0.5s;
 }
 .mainContent .searchArea > div:last-of-type {
 	display: none;
@@ -464,13 +481,13 @@ main h2 {
 	.generateRandomArt section > div h2.skeletonLoader {
 		height: 3vh;
 		width: 26vw;
-		margin-bottom: .4em;
+		margin-bottom: 0.4em;
 	}
 	@keyframes shine {
 		to {
 			background-position-x: -300%;
-	   }
-    }
+		}
+	}
 
 	.generateRandomArt button {
 		display: flex;
@@ -484,11 +501,22 @@ main h2 {
 		font-size: 1.1em;
 		color: var(--color-light);
 		background-color: var(--color-dark);
+		outline: 1px solid var(--color-dark);
 		border: none;
 		border-radius: var(--border-radius);
+		transition: 0.5s;
 	}
 	.generateRandomArt button img {
 		height: 1.1em;
+	}
+	.generateRandomArt button:is(:hover, :focus-visible, :active) {
+		color: var(--color-dark);
+		background-color: var(--color-light);
+		transition: 0.5s;
+	}
+	.generateRandomArt button:is(:hover, :focus-visible, :active) img {
+		filter: brightness(0);
+		transition: 0.5s;
 	}
 }
 
@@ -539,6 +567,9 @@ main h2 {
 		justify-content: space-between;
 		align-items: center;
 		padding: 1em 2em;
+	}
+	.socials a:is(:hover, :focus-visible, :active) {
+		border-bottom: 1px solid var(--color-dark);
 	}
 
 	/* ------------------------------------- */
