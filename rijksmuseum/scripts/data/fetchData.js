@@ -7,7 +7,6 @@ export const fetchData = async () => {
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
 	const allArtObjects = document.querySelectorAll('section ul');
 	const radioButtons = document.querySelectorAll('input[type="radio"]');
-	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
 	let data;
 	let radioValue;
 
@@ -25,6 +24,8 @@ export const fetchData = async () => {
 			break;
 		}
 	}
+	
+	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
 
 	try {
 		data = await (await fetch(url)).json();

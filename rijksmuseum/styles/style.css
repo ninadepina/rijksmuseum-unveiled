@@ -186,11 +186,6 @@ main h2 {
 .mainContent .searchArea > form input::placeholder {
 	color: var(--color-vague);
 }
-.mainContent .searchArea > form input:focus-visible::placeholder {
-	color: var(--color-dark);
-	text-decoration: var(--text-decoration-focus);
-	text-underline-offset: var(--text-underline-offset-focus);
-}
 .mainContent .searchArea > form button {
 	position: absolute;
 	top: 0;
