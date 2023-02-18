@@ -10,7 +10,7 @@ export const displayData = (artInfo) => {
 	artInfo.map((art) => {
 		const liArt = `
 			<a href="#art/${art.artId}">
-				<img src=${art.artImg.url + 1500} alt="${art.artLongtitle}" />
+				<img src=${art.artImg} alt="${art.artLongtitle}" />
 				<div>
 					<h2>${art.artTitle}</h2>
 					<p>${art.artArtist}</p>
@@ -18,7 +18,7 @@ export const displayData = (artInfo) => {
 			</a>
 		`;
 		const li = document.createElement('li');
-		li.innerHTML = liArt;
-		ul.appendChild(li);
+		li.insertAdjacentHTML('beforeend', liArt);
+		ul.insertAdjacentElement('beforeend', li);
 	});
 };
