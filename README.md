@@ -3,13 +3,17 @@
 # 👋🏼 'Dutch Delights: Rijksmuseum Unveiled'
 'Dutch Delights: Rijksmuseum Unveiled' is a Single Page Application that let's you explore the Rijksmuseum's collection. You can search for artworks, artists and get more information about them.
 
-<br/>
+---
 
-This application is made with [RijksData](https://data.rijksmuseum.nl/object-metadata/api/), an API from the Rijksmuseum.
+## 🛠️ Technologies used
+- HTML5
+- CSS3
+- JavaScript
+- [Rijksmuseum API (RijksData)](https://data.rijksmuseum.nl/object-metadata/api/)
 
 ---
 
-## ⚡Installation
+## 👩🏼‍💻 How to use
 1. Clone this repository
 ```
 $ git clone https://github.com/ninadepina/web-app-from-scratch-2223.git
@@ -27,3 +31,13 @@ const url = `https://www.rijksmuseum.nl/api/nl/collection?key=[YOUR-API-KEY-HERE
 ```
 http://localhost:3000/
 ```
+
+---
+
+## 👁️ Demo
+To see a live demo of this project, visit [Dutch Delights: Rijksmuseum Unveiled](https://ninadepina-wafs-rijks.vercel.app/)
+
+---
+
+## 📄 License
+This project is licensed under the MIT License - see the `LICENSE` file for more details
