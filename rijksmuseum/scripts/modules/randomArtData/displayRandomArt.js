@@ -5,6 +5,8 @@ export const displayRandomArt = (randomArtInfo) => {
 	removeSkeletonLoader();
 	randomArtImg.src = randomArtInfo.artImg;
 	randomArtImg.alt = randomArtInfo.artLongtitle;
-	randomArtTitle.textContent = randomArtInfo.artTitle;
+	randomArtInfo.artTitle.length > 60
+		? (randomArtTitle.textContent = randomArtInfo.artTitle.slice(0, 58).trim() + '...')
+		: (randomArtTitle.textContent = randomArtInfo.artTitle);
 	randomArtArtist.textContent = randomArtInfo.artArtist;
 };

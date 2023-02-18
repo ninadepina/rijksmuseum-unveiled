@@ -1,7 +1,7 @@
-import { fetchData } from './scripts/data/fetchData.js';
-import { fetchRandomArt } from './scripts/randomArtData/fetchRandomArt.js';
-import { defaultArt } from './scripts/randomArtData/defaultArt.js';
-import { removeSkeletonLoader } from './scripts/loading.js';
+import { fetchData } from './modules/data/fetchData.js';
+import { fetchRandomArt } from './modules/randomArtData/fetchRandomArt.js';
+import { defaultArt } from './modules/randomArtData/defaultArt.js';
+import { removeSkeletonLoader } from './modules/loading.js';
 
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////

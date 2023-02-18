@@ -1,4 +1,4 @@
-import { searchResultsContainer } from '../../app.js';
+import { searchResultsContainer } from '../../app';
 
 export const displayData = (artInfo) => {
 	const currentExpoInfo = document.querySelector('.mainContent > section:first-of-type > section');
@@ -9,7 +9,7 @@ export const displayData = (artInfo) => {
 
 	artInfo.map((art) => {
 		const liArt = `
-			<a href="">
+			<a href="#art/${art.artId}">
 				<img src=${art.artImg.url + 1500} alt="${art.artLongtitle}" />
 				<div>
 					<h2>${art.artTitle}</h2>

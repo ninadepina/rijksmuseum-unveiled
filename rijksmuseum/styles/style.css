@@ -242,7 +242,39 @@ main h2 {
 .mainContent .loadingData p {
 	font-family: var(--font-normalItalic);
 }
-
+.mainContent .artItemContainer {
+	height: 100%;
+}
+.mainContent .artItemContainer .artItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+.mainContent .artItemContainer img {
+	width: fit-content;
+	max-width: 100%;
+	max-height: 61vh;
+	object-fit: contain;
+	border-radius: var(--border-radius);
+}
+.mainContent .artItemContainer p {
+	font-family: var(--font-normalItalic);
+	padding-bottom: 1em;
+	border-bottom: 1px solid var(--color-dark);
+}
+.mainContent .artItemContainer .artItem > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 2em;
+}
+.mainContent .artItemContainer .artItem > div > div {
+	width: max-content;
+	text-align: center;
+	padding: var(--text-inset);
+}
 /* ------------------------------------- */
 /* MEDIA QUERY min-width: 1000px; */
 /* ------------------------------------- */
@@ -339,7 +371,6 @@ main h2 {
 		align-items: center;
 		justify-content: space-evenly;
 		padding: var(--text-inset);
-		border-radius: var(--border-radius);
 		cursor: pointer;
 		transition: all 0.3s ease;
 	}
