@@ -9,7 +9,7 @@
 - HTML5
 - CSS3
 - JavaScript
-- [Rijksmuseum API (RijksData)](https://data.rijksmuseum.nl/object-metadata/api/)
+- Rijksmuseum API [(RijksData)](https://data.rijksmuseum.nl/object-metadata/api/)
 
 ---
 
