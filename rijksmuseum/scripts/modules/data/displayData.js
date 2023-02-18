@@ -1,4 +1,4 @@
-import { searchResultsContainer } from '../../app';
+import { searchResultsContainer } from '../../app.js';
 
 export const displayData = (artInfo) => {
 	const currentExpoInfo = document.querySelector('.mainContent > section:first-of-type > section');
