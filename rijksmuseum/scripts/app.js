@@ -31,9 +31,7 @@ searchForm.addEventListener('submit', (e) => {
 	fetchData();
 });
 
-generateRandomArtButton.addEventListener('click', () => {
-	fetchRandomArt();
-});
+generateRandomArtButton.addEventListener('click', fetchRandomArt);
 
 defaultArt();
 removeSkeletonLoader();
