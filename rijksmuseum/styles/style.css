@@ -243,7 +243,14 @@ main h2 {
 	font-family: var(--font-normalItalic);
 }
 .mainContent .artItemContainer {
-	height: 100%;
+	display: none;
+	position: absolute;
+	width: calc(100% - 4em);
+	height: calc(100% - 4em);
+	background-color: var(--color-light);
+}
+.mainContent .artItemContainer.visible {
+	display: block;
 }
 .mainContent .artItemContainer .artItem {
 	display: flex;
@@ -610,4 +617,8 @@ main h2 {
 		align-items: center;
 		padding: 1em 2em;
 	}
+}
+
+view.hidden {
+	display: none;
 }
