@@ -8,8 +8,8 @@ export const fetchData = async () => {
 	// retrieve user input and relevant DOM elements
 	const userInput = document.querySelector('input[name="search"]').value;
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
-	const allArtObjects = document.querySelectorAll('section ul');
-	const radioButtons = document.querySelectorAll('input[type="radio"]');
+	const allArtObjects = document.querySelector('section ul');
+	const radioButton = document.querySelector('input[type="radio"]:checked');
 	// define variables for later use
 	let data;
 	let radioValue;
@@ -21,19 +21,14 @@ export const fetchData = async () => {
 	startLoading();
 
 	// remove any previously displayed search results from the DOM
-	for (const artObject of allArtObjects) artObject.remove();
+	if (allArtObjects) allArtObjects.remove();
 
 	// reset the search error text
 	searchErrorText.textContent = '';
 
-	// loop through all radio buttons and check which one is currently selected
-	for (const radioButton of radioButtons) {
-		if (radioButton.checked) {
-			radioValue = radioButton.value;
-			break;
-		}
-	}
-	
+	// assign the value of the radio button to a variable
+	radioValue = radioButton.value;
+
 	// construct the URL based on user input and radio button selection
 	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
 
@@ -41,7 +36,7 @@ export const fetchData = async () => {
 		// fetch the data from the API and parse it as JSON
 		data = await (await fetch(url)).json();
 
-		// stop displaying the loading text 
+		// stop displaying the loading text
 		stopLoading();
 
 		// if no art objects were returned by the API, throw an error
