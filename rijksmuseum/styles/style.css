@@ -440,13 +440,15 @@ main h2 {
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
 	.mainContent .loadingData ul {
-		grid-template-columns: repeat(2, 1fr);
+		columns: 2;
+		display: block;
 	}
-	.mainContent .loadingData ul li:nth-child(2n) {
-		transform: translate(0, 100px);
+	.mainContent .loadingData ul li {
+		padding-bottom: 2em;
+		break-inside: avoid-column;
 	}
 	.mainContent .loadingData ul li:last-of-type {
-		padding-bottom: 2em;
+		padding-bottom: 0;
 	}
 
 	/* ------------------------------------- */
