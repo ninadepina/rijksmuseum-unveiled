@@ -12,19 +12,25 @@ export const displayData = (artInfo) => {
 	const ul = document.createElement('ul');
 	searchResultsContainer.appendChild(ul);
 
-	// loop through each art object and create <li> elements with their information
-	artInfo.map((art) => {
+	// create a new document fragment to hold the new <li> elements
+	const fragment = document.createDocumentFragment();
+
+	// iterate over each art object and create <li> elements with their information
+	artInfo.forEach((art) => {
 		const liArt = `
-			<a href="#art/${art.artId}">
-				<img src=${art.artImg} alt="${art.artLongtitle}" />
-				<div>
-					<h2>${art.artTitle}</h2>
-					<p>${art.artArtist}</p>
-				</div>
-			</a>
+			<li>
+				<a href="#art/${art.artId}">
+					<img src=${art.artImg} alt="${art.artLongtitle}" />
+					<div>
+						<h2>${art.artTitle}</h2>
+						<p>${art.artArtist}</p>
+					</div>
+				</a>
+			</li>
 		`;
 		const li = document.createElement('li');
 		li.insertAdjacentHTML('beforeend', liArt);
-		ul.insertAdjacentElement('beforeend', li);
+		fragment.appendChild(li);
 	});
+	ul.appendChild(fragment);
 };
