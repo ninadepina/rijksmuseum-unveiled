@@ -496,6 +496,7 @@ main h2 {
 		max-height: 53vh;
 		object-fit: contain;
 		border-radius: var(--border-radius);
+		display: block;
 	}
 	.generateRandomArt section > div:first-of-type {
 		display: none;
@@ -633,6 +634,7 @@ main h2 {
 	}
 }
 
+.generateRandomArt section > img.hidden,
 view.hidden {
 	display: none;
 }

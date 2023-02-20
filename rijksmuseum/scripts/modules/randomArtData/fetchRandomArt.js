@@ -11,6 +11,7 @@ export const fetchRandomArt = async () => {
 	let data;
 	let randomArt;
 
+	randomArtImg.classList.add('hidden');
 	randomArtImg.src = '';
 	randomArtImg.alt = '';
 	randomArtTitle.textContent = '';

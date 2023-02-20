@@ -5,6 +5,7 @@ import { randomArtImg, randomArtTitle, randomArtArtist } from '../../app.js';
 export const displayRandomArt = (randomArtInfo) => {
 	removeSkeletonLoader();
 
+	randomArtImg.classList.remove('hidden');
 	randomArtImg.src = randomArtInfo.artImg;
 	randomArtImg.alt = randomArtInfo.artLongtitle;
 	randomArtInfo.artTitle.length > 60
