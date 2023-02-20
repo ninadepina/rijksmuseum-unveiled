@@ -12,7 +12,7 @@ export const router = () => {
 		const params = [];
 		// check each segment of the route
 		for (let i = 0; i < routeSegments.length; i++) {
-			// ff the segment starts with a colon(:), it is a parameter
+			// if the segment starts with a colon(:), it is a parameter
 			if (routeSegments[i].startsWith(':')) {
 				// store the parameter value
 				params.push(urlPathSegments[i]);
