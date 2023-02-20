@@ -41,3 +41,18 @@ To see a live demo of this project, visit [Dutch Delights: Rijksmuseum Unveiled]
 
 ## 📄 License
 This project is licensed under the MIT License - see the `LICENSE` file for more details
+
+---
+
+## ✅ Checklist/wishlist
+- [x] Fetching and displaying data from API
+- [x] Search functionality
+- [x] Filter functionality
+- [x] Loading state
+- [x] Error state
+- [x] Generate random artwork
+- [x] Skeleton loader
+- [x] Detail page (with routing)
+- [ ] Pagination
+- [ ] Search suggestions
+- [ ] Zoom function on img in detail page
