@@ -2,7 +2,7 @@ import { artInfo } from '../data/getData.js';
 import { fetchData } from '../data/fetchData.js';
 
 const NormalView = () => {
-	const mainContent = document.querySelector('.mainContent > div');
+	const mainContent = document.querySelector('.mainContent');
 	mainContent.innerHTML = `
 		<section class="staticInfo">
 			<header>
@@ -87,7 +87,7 @@ const NormalView = () => {
 };
 
 const detailView = async (artId) => {
-	const mainContent = document.querySelector('.mainContent > div');
+	const mainContent = document.querySelector('.mainContent');
 	window.location.hash = `#/art/${artId}`;
 	const art = artInfo.find((art) => art.artId === artId);
 

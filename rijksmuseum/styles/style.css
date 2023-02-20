@@ -246,7 +246,6 @@ main h2 {
 	font-family: var(--font-normalItalic);
 }
 .mainContent .artItemContainer {
-	
 	position: absolute;
 	height: calc(100% - 4em);
 	background-color: var(--color-light);
@@ -312,11 +311,11 @@ main h2 {
 		padding: 2em;
 		overflow: auto;
 	}
-	.mainContent > div {
+	.mainContent {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 3em;
+		gap: 2.9em;
 	}
 	.mainContent .staticInfo header {
 		max-width: none;

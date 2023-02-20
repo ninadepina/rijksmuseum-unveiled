@@ -13,19 +13,15 @@ export const randomArtArtist = document.querySelector(
 );
 const generateRandomArtButton = document.querySelector('.generateRandomArt button');
 
-
 ////////////////////////////////////////////////////////////
 // events
 
-if (generateRandomArtButton) {
-	generateRandomArtButton.addEventListener('click', fetchRandomArt);
-}
+generateRandomArtButton.addEventListener('click', fetchRandomArt);
 
 defaultArt();
 removeSkeletonLoader();
+router();
 
 window.onhashchange = () => {
 	router();
 };
-
-router();
