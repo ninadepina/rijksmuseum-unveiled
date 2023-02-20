@@ -1,5 +1,5 @@
-import { artInfo } from './data/getData.js';
-import { fetchData } from './data/fetchData.js';
+import { artInfo } from '../data/getData.js';
+import { fetchData } from '../data/fetchData.js';
 
 const NormalView = () => {
 	const div = document.querySelector('.mainContent > div');
@@ -83,7 +83,7 @@ const NormalView = () => {
 	});
 };
 
-const ArtView = async (artId) => {
+const detailView = async (artId) => {
 	const div = document.querySelector('.mainContent > div');
 
 	window.location.hash = `#/art/${artId}`;
@@ -122,36 +122,8 @@ const ArtView = async (artId) => {
 		`;
 	}
 };
-export const router = () => {
-	const path = window.location.hash.substring(1) || '/';
-	console.log(path);
-	const route = routes.find((_route) => {
-		const urlPathSegments = path.split('/').slice(1);
-		const routeSegments = _route.path.split('/').slice(1);
-		console.log(urlPathSegments, routeSegments);
-		if (urlPathSegments.length !== routeSegments.length) return false;
 
-		const params = [];
-		for (let i = 0; i < routeSegments.length; i++) {
-			if (routeSegments[i].startsWith(':')) {
-				params.push(urlPathSegments[i]);
-			} else if (routeSegments[i] !== urlPathSegments[i]) {
-				return false;
-			}
-		}
-		if (params.length > 0) {
-			_route.view(params[0]);
-		} else {
-			_route.view();
-		}
-		return true;
-	});
-	if (!route) {
-		console.log('No route found for path: ', path);
-	}
-};
-
-const routes = [
+export const routes = [
 	{ path: '/', view: NormalView },
-	{ path: '/art/:id', view: ArtView }
+	{ path: '/art/:id', view: detailView }
 ];

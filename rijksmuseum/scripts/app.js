@@ -1,7 +1,7 @@
 import { fetchRandomArt } from './modules/randomArtData/fetchRandomArt.js';
 import { defaultArt } from './modules/randomArtData/defaultArt.js';
 import { removeSkeletonLoader } from './modules/loading.js';
-import { router } from './modules/routing.js';
+import { router } from './modules/routing/routing.js';
 
 ////////////////////////////////////////////////////////////
 // DOM elements
