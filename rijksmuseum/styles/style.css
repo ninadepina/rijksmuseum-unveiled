@@ -639,7 +639,6 @@ main h2 {
 	}
 }
 
-.generateRandomArt section > img.hidden,
-view.hidden {
+.generateRandomArt section > img.hidden {
 	display: none;
 }

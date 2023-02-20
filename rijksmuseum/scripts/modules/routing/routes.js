@@ -31,7 +31,7 @@ const NormalView = () => {
 			</section>
 		</section>
 
-		<section class="searchArea view">
+		<section class="searchArea">
 			<div>
 				<p></p>
 				<form>
@@ -73,7 +73,7 @@ const NormalView = () => {
 			<div><p>Images are being loaded.. this could take a few seconds</p></div>
 		</section>
 
-		<section class="loadingData view"></section>
+		<section class="loadingData"></section>
 	`;
 
 	const searchForm = document.querySelector('.mainContent .searchArea > form');
