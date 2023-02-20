@@ -48,7 +48,9 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 }
-
+main {
+	min-height: 100vh;
+}
 main,
 footer {
 	padding: 2em;
@@ -245,12 +247,13 @@ main h2 {
 .mainContent .artItemContainer {
 	display: none;
 	position: absolute;
-	width: calc(100% - 4em);
 	height: calc(100% - 4em);
 	background-color: var(--color-light);
 }
 .mainContent .artItemContainer.visible {
 	display: block;
+	min-height: calc(100vh - 4em);
+	min-width: calc(100vw - 4em);
 }
 .mainContent .artItemContainer .artItem {
 	display: flex;
@@ -261,7 +264,7 @@ main h2 {
 .mainContent .artItemContainer img {
 	width: fit-content;
 	max-width: 100%;
-	max-height: 61vh;
+	max-height: 76vh;
 	object-fit: contain;
 	border-radius: var(--border-radius);
 }
@@ -456,6 +459,12 @@ main h2 {
 	}
 	.mainContent .loadingData ul li:last-of-type {
 		padding-bottom: 0;
+	}
+	.mainContent .artItemContainer {
+		width: calc(100% - 4em);
+	}
+	.mainContent .artItemContainer img {
+		max-height: 61vh;
 	}
 
 	/* ------------------------------------- */
