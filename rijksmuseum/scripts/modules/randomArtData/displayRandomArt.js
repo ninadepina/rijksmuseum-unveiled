@@ -3,7 +3,6 @@ import { randomArtImg, randomArtTitle, randomArtArtist } from '../../app.js';
 
 // displaying the fetched data
 export const displayRandomArt = (randomArtInfo) => {
-
 	removeSkeletonLoader();
 
 	randomArtImg.src = randomArtInfo.artImg;

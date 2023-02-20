@@ -4,7 +4,6 @@ let artInfo = [];
 
 // rewriting the fetched data
 export const getData = (artObjects) => {
-	
 	if (artObjects.length === 0) return;
 
 	artInfo = artObjects.map(({ webImage, longTitle, title, principalOrFirstMaker, id }) => ({

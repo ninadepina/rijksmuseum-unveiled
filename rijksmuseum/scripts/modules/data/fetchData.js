@@ -35,7 +35,6 @@ export const fetchData = async () => {
 			? (searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]`)
 			: (searchErrorText.textContent = `[${radioValue} pieces of art are being shown]`);
 	} catch {
-
 		userInput.length > 11
 			? (searchErrorText.textContent =
 					`Unfortunately we couldn't find any results for "${userInput}"`.slice(0, 58).trim() + '..."')

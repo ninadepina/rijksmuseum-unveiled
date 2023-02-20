@@ -33,7 +33,6 @@ export const routing = (hash) => {
 		const backToAllResults = artItemContainer.querySelector('.artItem a');
 
 		backToAllResults.addEventListener('click', () => {
-
 			artItemContainer.classList.toggle('visible');
 			notArtItemContainers.forEach((notArtItemContainer) => {
 				notArtItemContainer.classList.toggle('hidden');
