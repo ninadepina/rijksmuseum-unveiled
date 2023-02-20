@@ -6,7 +6,7 @@
 | [🛠️ Technologies used](https://github.com/ninadepina/web-app-from-scratch-2223#%EF%B8%8F-technologies-used) | [👩🏼‍💻 How to use](https://github.com/ninadepina/web-app-from-scratch-2223#-how-to-use) | [👁️ Demo](https://github.com/ninadepina/web-app-from-scratch-2223#%EF%B8%8F-demo) | [📄 License](https://github.com/ninadepina/web-app-from-scratch-2223#-license) | [✅ Checklist/wishlist](https://github.com/ninadepina/web-app-from-scratch-2223#-checklistwishlist) |
 |---|---|---|---|---|
 
-![Banner Rijksmuseum Unveiled](https://user-images.githubusercontent.com/89778503/220186409-e19af030-8bfa-4d06-a885-8e75cea6f723.png)
+![bannerRijksUnveiled](https://user-images.githubusercontent.com/89778503/220186555-1a8edc48-35d1-4e9d-ae70-03c9e75730eb.png)
 
 ---
 
