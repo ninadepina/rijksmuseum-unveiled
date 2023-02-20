@@ -89,6 +89,7 @@ h2 {
 }
 a {
 	display: block;
+	width: fit-content;
 	text-decoration: none;
 	color: var(--color-dark);
 }
@@ -465,6 +466,10 @@ main h2 {
 	}
 	.mainContent .artItemContainer img {
 		max-height: 61vh;
+	}
+	.mainContent .artItemContainer.visible {
+		min-width: 100%;
+		min-height: min-content;
 	}
 
 	/* ------------------------------------- */
