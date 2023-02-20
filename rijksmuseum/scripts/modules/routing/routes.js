@@ -2,8 +2,8 @@ import { artInfo } from '../data/getData.js';
 import { fetchData } from '../data/fetchData.js';
 
 const NormalView = () => {
-	const div = document.querySelector('.mainContent > div');
-	div.innerHTML = `
+	const mainContent = document.querySelector('.mainContent > div');
+	mainContent.innerHTML = `
 		<section class="staticInfo">
 			<header>
 				<img src="./assets/images/logoRijks.svg" alt="'Rijks', part of the Rijksmuseum logo" />
@@ -76,6 +76,9 @@ const NormalView = () => {
 		<section class="loadingData"></section>
 	`;
 
+	const loadingData = document.querySelector('.mainContent .loadingData');
+	if (loadingData.childNodes.length === 0) loadingData.classList.add('hidden');
+
 	const searchForm = document.querySelector('.mainContent .searchArea > form');
 	searchForm.addEventListener('submit', (e) => {
 		e.preventDefault();
@@ -84,31 +87,33 @@ const NormalView = () => {
 };
 
 const detailView = async (artId) => {
-	const div = document.querySelector('.mainContent > div');
-
+	const mainContent = document.querySelector('.mainContent > div');
 	window.location.hash = `#/art/${artId}`;
 	const art = artInfo.find((art) => art.artId === artId);
 
 	if (!art) {
-		const modifiedArtId = artId.slice(3);
-		const url = `https://www.rijksmuseum.nl/api/en/collection/${modifiedArtId}?key=RdKQCPfy`;
-		const data = await (await fetch(url)).json();
-		div.innerHTML = `
-			<article class="artItemContainer">
-				<a href="#">< back to all results</a>  
-				<div>
-					<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longTitle}" />
+		try {
+			const modifiedArtId = artId.slice(3);
+			const url = `https://www.rijksmuseum.nl/api/en/collection/${modifiedArtId}?key=RdKQCPfy`;
+			const data = await (await fetch(url)).json();
+			mainContent.innerHTML = `
+				<article class="artItemContainer">
+					<a href="#">< back to all results</a>  
 					<div>
-						<h2>${data.artObject.title}</h2>
-						<p>${data.artObject.principalOrFirstMaker}</p>
+						<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longTitle}" />
+						<div>
+							<h2>${data.artObject.title}</h2>
+							<p>${data.artObject.principalOrFirstMaker}</p>
+						</div>
 					</div>
-				</div>
-			</article>
-		`;
-	}
-
-	if (art) {
-		div.innerHTML = `
+				</article>
+			`;
+			if (data.artObject.length === 0) throw new Error();
+		} catch {
+			console.log('error');
+		}
+	} else {
+		mainContent.innerHTML = `
 			<article class="artItemContainer">
 				<a href="#">< back to all results</a>  
 				<div>
