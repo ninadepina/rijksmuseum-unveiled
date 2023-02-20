@@ -17,12 +17,10 @@ const generateRandomArtButton = document.querySelector('.generateRandomArt butto
 
 ////////////////////////////////////////////////////////////
 // visual things
-
 if (searchResultsContainer.children.length == 0) searchResultsContainer.classList.add('hidden');
 
 ////////////////////////////////////////////////////////////
 // events
-
 window.location.hash = '';
 
 searchForm.addEventListener('submit', (e) => {
