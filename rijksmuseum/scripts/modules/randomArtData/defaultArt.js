@@ -1,4 +1,3 @@
-// import a function from another module
 import { displayRandomArt } from './displayRandomArt.js';
 
 // set default art info
@@ -10,6 +9,5 @@ export const defaultArt = () => {
 		artArtist: 'Rembrandt van Rijn'
 	};
 
-	// call the displayRandomArt function and pass data through
 	displayRandomArt(randomArtInfo);
 };

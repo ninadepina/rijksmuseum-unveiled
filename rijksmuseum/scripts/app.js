@@ -1,5 +1,3 @@
-////////////////////////////////////////////////////////////
-// import functions and DOM elements from other modules
 import { fetchData } from './modules/data/fetchData.js';
 import { fetchRandomArt } from './modules/randomArtData/fetchRandomArt.js';
 import { defaultArt } from './modules/randomArtData/defaultArt.js';
@@ -22,7 +20,6 @@ const generateRandomArtButton = document.querySelector('.generateRandomArt butto
 
 if (searchResultsContainer.children.length == 0) searchResultsContainer.classList.add('hidden');
 
-////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 // events
 

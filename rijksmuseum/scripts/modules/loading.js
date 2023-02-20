@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////
-// Loading message
+// loading message
 const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
 
 export const startLoading = () => {
@@ -10,7 +10,7 @@ export const stopLoading = () => {
 };
 
 ////////////////////////////////////////////////////////////
-// Skeleton loader
+// skeleton loader
 const skeletonLoader = document.querySelectorAll('.skeletonLoader');
 
 export const removeSkeletonLoader = () => {
