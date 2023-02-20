@@ -3,6 +3,9 @@
 # 👋🏼 'Dutch Delights: Rijksmuseum Unveiled'
 'Dutch Delights: Rijksmuseum Unveiled' is a Single Page Application that let's you explore the Rijksmuseum's collection. You can search for artworks, artists and get more information about them.
 
+| [🛠️ Technologies used](https://github.com/ninadepina/web-app-from-scratch-2223#%EF%B8%8F-technologies-used) | [👩🏼‍💻 How to use](https://github.com/ninadepina/web-app-from-scratch-2223#-how-to-use) | [👁️ Demo](https://github.com/ninadepina/web-app-from-scratch-2223#%EF%B8%8F-demo) | [📄 License](https://github.com/ninadepina/web-app-from-scratch-2223#-license) | [✅ Checklist/wishlist](https://github.com/ninadepina/web-app-from-scratch-2223#-checklistwishlist) |
+|---|---|---|---|---|
+
 ---
 
 ## 🛠️ Technologies used
