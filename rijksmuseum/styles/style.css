@@ -93,6 +93,9 @@ a {
 	text-decoration: none;
 	color: var(--color-dark);
 }
+a:has(img) {
+	width: 100%;
+}
 li {
 	list-style: none;
 }
@@ -247,14 +250,16 @@ main h2 {
 }
 .mainContent .artItemContainer {
 	position: absolute;
-	height: calc(100% - 4em);
+	height: calc(100vh - 4em);
 	background-color: var(--color-light);
-}
-.mainContent .artItemContainer .artItem {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
+	gap: 2em;
+}
+.mainContent .artItemContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
 }
 .mainContent .artItemContainer img {
 	width: fit-content;
@@ -268,18 +273,7 @@ main h2 {
 	padding-bottom: 1em;
 	border-bottom: 1px solid var(--color-dark);
 }
-.mainContent .artItemContainer .artItem > div {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	gap: 2em;
-}
-.mainContent .artItemContainer .artItem > div > div {
-	width: max-content;
-	text-align: center;
-	padding: var(--text-inset);
-}
+
 /* ------------------------------------- */
 /* MEDIA QUERY min-width: 1000px; */
 /* ------------------------------------- */
@@ -461,6 +455,7 @@ main h2 {
 	.mainContent .artItemContainer {
 		width: calc(100% - 4em);
 		min-height: min-content;
+		height: auto;
 	}
 	.mainContent .artItemContainer > div {
 		display: flex;
