@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////////////
 // loading message
-const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
-
 export const startLoading = () => {
+	const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
 	loadingMessage.classList.add('show');
 };
 export const stopLoading = () => {
+	const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
 	loadingMessage.classList.remove('show');
 };
 

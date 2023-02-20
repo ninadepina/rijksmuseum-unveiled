@@ -246,15 +246,10 @@ main h2 {
 	font-family: var(--font-normalItalic);
 }
 .mainContent .artItemContainer {
-	display: none;
+	
 	position: absolute;
 	height: calc(100% - 4em);
 	background-color: var(--color-light);
-}
-.mainContent .artItemContainer.visible {
-	display: block;
-	min-height: calc(100vh - 4em);
-	min-width: calc(100vw - 4em);
 }
 .mainContent .artItemContainer .artItem {
 	display: flex;
@@ -314,11 +309,14 @@ main h2 {
 	.mainContent {
 		grid-column-start: 1;
 		grid-column-end: 3;
+		padding: 2em;
+		overflow: auto;
+	}
+	.mainContent > div {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 2em;
-		overflow: auto;
+		gap: 3em;
 	}
 	.mainContent .staticInfo header {
 		max-width: none;
@@ -463,13 +461,20 @@ main h2 {
 	}
 	.mainContent .artItemContainer {
 		width: calc(100% - 4em);
+		min-height: min-content;
+	}
+	.mainContent .artItemContainer > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+		height: 100%;
+		margin: auto 0;
+		text-align: center;
 	}
 	.mainContent .artItemContainer img {
 		max-height: 61vh;
-	}
-	.mainContent .artItemContainer.visible {
-		min-width: 100%;
-		min-height: min-content;
 	}
 
 	/* ------------------------------------- */

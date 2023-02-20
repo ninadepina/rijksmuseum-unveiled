@@ -1,9 +1,8 @@
-import { searchResultsContainer } from '../../app.js';
-
 // displaying the fetched data
 export const displayData = (artInfo) => {
-	const currentExpoInfo = document.querySelector('.mainContent > section:first-of-type > section');
+	const currentExpoInfo = document.querySelector('.mainContent .staticInfo > section');
 	currentExpoInfo.classList.add('hidden');
+	const searchResultsContainer = document.querySelector('.mainContent .loadingData');
 	searchResultsContainer.classList.remove('hidden');
 
 	const ul = document.createElement('ul');
@@ -14,7 +13,7 @@ export const displayData = (artInfo) => {
 	artInfo.forEach((art) => {
 		const liArt = `
 			<li>
-				<a href="#art/${art.artId}">
+				<a href="#/art/${art.artId}">
 					<img src=${art.artImg} alt="${art.artLongtitle}" />
 					<div>
 						<h2>${art.artTitle}</h2>
