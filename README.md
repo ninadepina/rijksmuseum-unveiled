@@ -58,6 +58,5 @@ This project is licensed under the MIT License - see the `LICENSE` file for more
 - [x] Generate random artwork
 - [x] Skeleton loader
 - [x] Detail page (with routing)
-- [ ] Pagination
-- [ ] Search suggestions
+- [x] Search suggestions
 - [ ] Zoom function on img in detail page
