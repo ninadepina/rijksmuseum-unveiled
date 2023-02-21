@@ -60,6 +60,7 @@ export const autocomplete = (input, array) => {
 			if (currentFocus > -1) {
 				if (x) x[currentFocus].click();
 			}
+			closeAllLists();
 		}
 	});
 
