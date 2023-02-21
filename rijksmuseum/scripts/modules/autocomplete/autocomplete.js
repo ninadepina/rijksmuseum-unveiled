@@ -46,8 +46,8 @@ export const autocomplete = (input, array) => {
 	});
 
 	input.addEventListener('keydown', function (e) {
-        // autocomplete container (for readability: 'x')
-		let x = document.querySelector('#autocompleteList'); 
+		// autocomplete container (for readability: 'x')
+		let x = document.querySelector('#autocompleteList');
 		if (x) x = x.getElementsByTagName('div');
 
 		if (e.key === 'ArrowDown') {
@@ -70,12 +70,16 @@ export const autocomplete = (input, array) => {
 		if (currentFocus >= x.length) currentFocus = x.length - 1;
 		if (currentFocus < 0) currentFocus = 0;
 		x[currentFocus].classList.add('autocompleteActive');
-        // makes sure the active suggestion is always visible
-        if (x[currentFocus].offsetTop + x[currentFocus].offsetHeight > x[0].parentNode.scrollTop + x[0].parentNode.offsetHeight) {
-            x[0].parentNode.scrollTop = x[currentFocus].offsetTop + x[currentFocus].offsetHeight - x[0].parentNode.offsetHeight;
-        } else if (x[currentFocus].offsetTop < x[0].parentNode.scrollTop) {
-            x[0].parentNode.scrollTop = x[currentFocus].offsetTop;
-        }
+		// makes sure the active suggestion is always visible
+		if (
+			x[currentFocus].offsetTop + x[currentFocus].offsetHeight >
+			x[0].parentNode.scrollTop + x[0].parentNode.offsetHeight
+		) {
+			x[0].parentNode.scrollTop =
+				x[currentFocus].offsetTop + x[currentFocus].offsetHeight - x[0].parentNode.offsetHeight;
+		} else if (x[currentFocus].offsetTop < x[0].parentNode.scrollTop) {
+			x[0].parentNode.scrollTop = x[currentFocus].offsetTop;
+		}
 	};
 
 	const removeActive = (x) => {
