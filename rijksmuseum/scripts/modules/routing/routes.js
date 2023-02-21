@@ -1,13 +1,13 @@
 import { artInfo } from '../data/getData.js';
 import { fetchData } from '../data/fetchData.js';
+import { suggestions } from '../suggestions.js';
 
 const NormalView = () => {
 	const mainContent = document.querySelector('.mainContent');
 	mainContent.innerHTML = `
 		<section class="staticInfo">
 			<header>
-				<img src="./assets/images/logoRijks.svg" alt="'Rijks', part of the Rijksmuseum logo" />
-				<img src="./assets/images/logoMuseum.svg" alt="'Museum', part of the Rijksmuseum logo" />
+				<img src="./assets/images/logoRijksmuseum.svg" alt="Rijksmuseum logo" />
 				<div>
 					<p>Open daily 9 to 17h</p>
 					<p>|</p>
@@ -56,12 +56,14 @@ const NormalView = () => {
 					</fieldset>
 				</form>
 			</div>
-			<form>
-				<input
-					type="text"
-					placeholder="Search for artists, art pieces and more..."
-					name="search"
-					autocomplete="off" />
+			<form autocomplete="off">
+				<div>
+					<input
+						type="text"
+						placeholder="Search for artists, art pieces and more..."
+						name="search"
+						autocomplete="off" />
+				</div>
 				<button type="submit">
 					<svg fill="none" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -75,7 +77,6 @@ const NormalView = () => {
 
 		<section class="loadingData"></section>
 	`;
-
 	const loadingData = document.querySelector('.mainContent .loadingData');
 	if (loadingData.childNodes.length === 0) loadingData.classList.add('hidden');
 
@@ -84,6 +85,83 @@ const NormalView = () => {
 		e.preventDefault();
 		fetchData();
 	});
+
+	function autocomplete(input, array) {
+		let currentFocus;
+
+		input.addEventListener('input', function (e) {
+			input.value.length > 0 ? mainContent.classList.add('spacing') : mainContent.classList.remove('spacing');
+
+			let autocompleteList,
+				autocompleteItem,
+				i,
+				val = this.value;
+
+			closeAllLists();
+			if (!val) return false;
+			currentFocus = -1;
+
+			autocompleteList = document.createElement('div');
+			autocompleteList.setAttribute('id', this.id + 'autocomplete-list');
+			autocompleteList.setAttribute('class', 'autocomplete-items');
+
+			this.parentNode.appendChild(autocompleteList);
+
+			for (i = 0; i < array.length; i++) {
+				if (array[i].toUpperCase().indexOf(val.toUpperCase()) > -1) {
+					autocompleteItem = document.createElement('div');
+
+					let suggestion = array[i].replace(new RegExp(val, 'gi'), '<strong>$&</strong>');
+    				autocompleteItem.innerHTML = suggestion;
+    				autocompleteItem.innerHTML += "<input type='hidden' value='" + array[i] + "'>";
+
+					autocompleteItem.addEventListener('click', function (e) {
+						input.value = this.getElementsByTagName('input')[0].value;
+						closeAllLists();
+					});
+					autocompleteList.appendChild(autocompleteItem);
+				}
+			}
+		});
+
+		input.addEventListener('keydown', function (e) {
+			let x = document.getElementById(this.id + 'autocomplete-list');
+			if (x) x = x.getElementsByTagName('div');
+
+			if (e.keyCode == 40) { //down
+				currentFocus++;
+				addActive(x);
+			} else if (e.keyCode == 38) { // up
+				currentFocus--;
+				addActive(x);
+			} else if (e.keyCode == 13) { // enter
+				if (currentFocus > -1) {
+					if (x) x[currentFocus].click();
+				}
+			}
+		});
+		function addActive(x) {
+			if (!x) return false;
+			removeActive(x);
+			if (currentFocus >= x.length) currentFocus = 0;
+			if (currentFocus < 0) currentFocus = x.length - 1;
+			x[currentFocus].classList.add('autocomplete-active');
+		}
+		function removeActive(x) {
+			for (let i = 0; i < x.length; i++) {
+				x[i].classList.remove('autocomplete-active');
+			}
+		}
+		function closeAllLists(elmnt) {
+			const x = document.getElementsByClassName('autocomplete-items');
+			for (let i = 0; i < x.length; i++) {
+				if (elmnt != x[i] && elmnt != input) {
+					x[i].parentNode.removeChild(x[i]);
+				}
+			}
+		}
+	}
+	autocomplete(searchForm.querySelector('input'), suggestions);
 };
 
 const detailView = async (artId) => {

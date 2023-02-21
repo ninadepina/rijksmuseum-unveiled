@@ -6,6 +6,10 @@
 	font-family: 'Rijks-normalItalic';
 	src: url('../assets/font/PannoText-NormalItalic.ttf') format('truetype');
 }
+@font-face {
+	font-family: 'Rijks-semibold';
+	src: url('../assets/font/PannoText-SemiBold.ttf') format('truetype');
+}
 
 *,
 *::after,
@@ -70,6 +74,7 @@ h5,
 h6,
 p,
 a,
+div,
 span,
 button,
 input {
@@ -102,7 +107,9 @@ li {
 button {
 	cursor: pointer;
 }
-
+strong {
+	font-family: 'Rijks-semibold', sans-serif;
+}
 .hidden {
 	display: none;
 }
@@ -219,6 +226,44 @@ main h2 {
 	stroke: var(--color-dark);
 	transition: 0.5s;
 }
+
+#autocomplete-list {
+	margin-top: 1em;
+	padding-bottom: 2em;
+	border: none;
+}
+
+.autocomplete-items {
+	position: absolute;
+	border: 1px solid var(--color-dark);
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+.autocomplete-items div {
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid var(--color-dark);
+	border-top: none;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+	background-color: #e9e9e9;
+}
+
+
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+	background-color: var(--color-dark) !important;
+	color: #ffffff;
+}
+
 .mainContent .searchArea > div:last-of-type {
 	display: none;
 	position: absolute;
@@ -309,13 +354,16 @@ main h2 {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 2.9em;
+		gap: 2.6em;
+	}
+	.mainContent.spacing {
+		justify-content: unset;
 	}
 	.mainContent .staticInfo header {
 		max-width: none;
 	}
 	.mainContent .staticInfo header img {
-		width: 21em;
+		width: 40em;
 	}
 	.mainContent .staticInfo header div {
 		display: none;
@@ -325,7 +373,7 @@ main h2 {
 	}
 	.mainContent .staticInfo section img {
 		max-height: none;
-		aspect-ratio: 5 / 1;
+		aspect-ratio: 6 / 1;
 	}
 	.mainContent .staticInfo section div {
 		display: flex;
