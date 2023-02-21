@@ -46,7 +46,8 @@ export const autocomplete = (input, array) => {
 	});
 
 	input.addEventListener('keydown', function (e) {
-		let x = document.querySelector('#autocomplete-list');
+        // autocomplete container (for readability: 'x')
+		let x = document.querySelector('#autocomplete-list'); 
 		if (x) x = x.getElementsByTagName('div');
 
 		if (e.key === 'ArrowDown') {
@@ -68,6 +69,12 @@ export const autocomplete = (input, array) => {
 		if (currentFocus >= x.length) currentFocus = 0;
 		if (currentFocus < 0) currentFocus = x.length - 1;
 		x[currentFocus].classList.add('autocomplete-active');
+        // makes sure the active suggestion is always visible
+        if (x[currentFocus].offsetTop + x[currentFocus].offsetHeight > x[0].parentNode.scrollTop + x[0].parentNode.offsetHeight) {
+            x[0].parentNode.scrollTop = x[currentFocus].offsetTop + x[currentFocus].offsetHeight - x[0].parentNode.offsetHeight;
+        } else if (x[currentFocus].offsetTop < x[0].parentNode.scrollTop) {
+            x[0].parentNode.scrollTop = x[currentFocus].offsetTop;
+        }
 	};
 
 	const removeActive = (x) => {
