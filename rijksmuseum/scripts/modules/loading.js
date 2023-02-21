@@ -19,3 +19,13 @@ export const removeSkeletonLoader = () => {
 export const addSkeletonLoader = () => {
 	for (const loader of skeletonLoader) loader.classList.add('skeletonLoader');
 };
+
+////////////////////////////////////////////////////////////
+// first load
+export const welcomeLoader = () => {
+	const welcomeLoader = document.querySelector('.loadingBanner');
+	welcomeLoader.classList.add('visible');
+	setTimeout(() => {
+		welcomeLoader.classList.remove('visible');
+	}, 3000);
+};

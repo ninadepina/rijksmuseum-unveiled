@@ -313,10 +313,53 @@ main h2 {
 	border-bottom: 1px solid var(--color-dark);
 }
 
+.loadingBanner {
+	background-color: var(--color-dark);
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+.loadingBanner.visible {
+	display: block;
+}
+.loadingBanner img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 24%;
+	opacity: 0;
+}
+.loadingBanner.visible img {
+	animation: loader 3s ease-in-out;
+}
+@keyframes loader {
+	0% {
+		width: calc(100% - 4em);
+		opacity: 1;
+	}
+	60% {
+		width: 24%;
+		opacity: 1;
+	}
+	100% {
+		width: 24%;
+		opacity: 1;
+	}
+}
+
 /* ------------------------------------- */
 /* MEDIA QUERY min-width: 1000px; */
 /* ------------------------------------- */
 @media only screen and (min-width: 1000px) {
+	.loadingBanner {
+		width: calc(100vw - 0.8em);
+		height: calc(100vh - 0.8em);
+	}
 	body {
 		background-color: var(--color-dark);
 	}
