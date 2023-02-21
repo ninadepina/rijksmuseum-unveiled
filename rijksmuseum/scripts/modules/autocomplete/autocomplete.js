@@ -67,8 +67,8 @@ export const autocomplete = (input, array) => {
 	const addActive = (x) => {
 		if (!x) return false;
 		removeActive(x);
-		if (currentFocus >= x.length) currentFocus = 0;
-		if (currentFocus < 0) currentFocus = x.length - 1;
+		if (currentFocus >= x.length) currentFocus = x.length - 1;
+		if (currentFocus < 0) currentFocus = 0;
 		x[currentFocus].classList.add('autocompleteActive');
         // makes sure the active suggestion is always visible
         if (x[currentFocus].offsetTop + x[currentFocus].offsetHeight > x[0].parentNode.scrollTop + x[0].parentNode.offsetHeight) {
