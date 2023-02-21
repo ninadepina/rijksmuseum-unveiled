@@ -1,6 +1,6 @@
 import { fetchRandomArt } from './modules/randomArtData/fetchRandomArt.js';
 import { defaultArt } from './modules/randomArtData/defaultArt.js';
-import { removeSkeletonLoader, welcomeLoader } from './modules/loading.js';
+import { removeSkeletonLoader, firstLoad } from './modules/loading.js';
 import { router } from './modules/routing/routing.js';
 
 ////////////////////////////////////////////////////////////
@@ -18,7 +18,7 @@ const generateRandomArtButton = document.querySelector('.generateRandomArt butto
 
 generateRandomArtButton.addEventListener('click', fetchRandomArt);
 
-welcomeLoader();
+firstLoad();
 defaultArt();
 removeSkeletonLoader();
 router();

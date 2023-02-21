@@ -22,10 +22,17 @@ export const addSkeletonLoader = () => {
 
 ////////////////////////////////////////////////////////////
 // first load
-export const welcomeLoader = () => {
+const welcomeLoader = () => {
 	const welcomeLoader = document.querySelector('.loadingBanner');
 	welcomeLoader.classList.add('visible');
 	setTimeout(() => {
 		welcomeLoader.classList.remove('visible');
 	}, 3000);
+};
+
+export const firstLoad = () => {
+	if (!sessionStorage.getItem('notFirstLoad')) {
+		welcomeLoader();
+		sessionStorage.setItem('notFirstLoad', 'true');
+	}
 };
