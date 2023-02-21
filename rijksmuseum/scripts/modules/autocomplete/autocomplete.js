@@ -16,8 +16,8 @@ export const autocomplete = (input, array) => {
 		currentFocus = -1;
 
 		autocompleteList = document.createElement('div');
-		autocompleteList.setAttribute('id', this.id + 'autocomplete-list');
-		autocompleteList.setAttribute('class', 'autocomplete-items');
+		autocompleteList.setAttribute('id', this.id + 'autocompleteList');
+		autocompleteList.setAttribute('class', 'autocompleteItems');
 
 		this.parentNode.appendChild(autocompleteList);
 
@@ -47,7 +47,7 @@ export const autocomplete = (input, array) => {
 
 	input.addEventListener('keydown', function (e) {
         // autocomplete container (for readability: 'x')
-		let x = document.querySelector('#autocomplete-list'); 
+		let x = document.querySelector('#autocompleteList'); 
 		if (x) x = x.getElementsByTagName('div');
 
 		if (e.key === 'ArrowDown') {
@@ -68,7 +68,7 @@ export const autocomplete = (input, array) => {
 		removeActive(x);
 		if (currentFocus >= x.length) currentFocus = 0;
 		if (currentFocus < 0) currentFocus = x.length - 1;
-		x[currentFocus].classList.add('autocomplete-active');
+		x[currentFocus].classList.add('autocompleteActive');
         // makes sure the active suggestion is always visible
         if (x[currentFocus].offsetTop + x[currentFocus].offsetHeight > x[0].parentNode.scrollTop + x[0].parentNode.offsetHeight) {
             x[0].parentNode.scrollTop = x[currentFocus].offsetTop + x[currentFocus].offsetHeight - x[0].parentNode.offsetHeight;
@@ -79,12 +79,12 @@ export const autocomplete = (input, array) => {
 
 	const removeActive = (x) => {
 		for (let i = 0; i < x.length; i++) {
-			x[i].classList.remove('autocomplete-active');
+			x[i].classList.remove('autocompleteActive');
 		}
 	};
 
 	const closeAllLists = (elmnt) => {
-		const x = document.getElementsByClassName('autocomplete-items');
+		const x = document.getElementsByClassName('autocompleteItems');
 		for (let i = 0; i < x.length; i++) {
 			if (elmnt != x[i] && elmnt != input) {
 				x[i].parentNode.removeChild(x[i]);
