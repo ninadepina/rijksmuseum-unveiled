@@ -7,8 +7,8 @@
 	src: url('../assets/font/PannoText-NormalItalic.ttf') format('truetype');
 }
 @font-face {
-	font-family: 'Rijks-semibold';
-	src: url('../assets/font/PannoText-SemiBold.ttf') format('truetype');
+	font-family: 'Rijks-bold';
+	src: url('../assets/font/PannoText-Bold.ttf') format('truetype');
 }
 
 *,
@@ -108,7 +108,7 @@ button {
 	cursor: pointer;
 }
 strong {
-	font-family: 'Rijks-semibold', sans-serif;
+	font-family: 'Rijks-bold', sans-serif;
 }
 .hidden {
 	display: none;
@@ -231,8 +231,10 @@ main h2 {
 	margin-top: 1em;
 	padding-bottom: 2em;
 	border: none;
+	background-color: red;
+	max-height: 7.2em;
+	overflow-y: auto;
 }
-
 .autocomplete-items {
 	position: absolute;
 	border: 1px solid var(--color-dark);
@@ -250,15 +252,9 @@ main h2 {
 	border: 1px solid var(--color-dark);
 	border-top: none;
 }
-
-/*when hovering an item:*/
 .autocomplete-items div:hover {
 	background-color: #e9e9e9;
 }
-
-
-
-/*when navigating through the items using the arrow keys:*/
 .autocomplete-active {
 	background-color: var(--color-dark) !important;
 	color: #ffffff;
