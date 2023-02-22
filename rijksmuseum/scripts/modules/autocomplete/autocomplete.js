@@ -15,7 +15,7 @@ export const autocomplete = (input, array) => {
 		if (!value) return false;
 		currentFocus = -1;
 
-		autocompleteList = document.createElement('div');
+		autocompleteList = document.createElement('ul');
 		autocompleteList.setAttribute('id', this.id + 'autocompleteList');
 		autocompleteList.setAttribute('class', 'autocompleteItems');
 
@@ -23,7 +23,7 @@ export const autocomplete = (input, array) => {
 
 		for (i = 0; i < array.length; i++) {
 			if (array[i].toUpperCase().indexOf(value.toUpperCase()) > -1) {
-				autocompleteItem = document.createElement('div');
+				autocompleteItem = document.createElement('li');
 
 				// checks if the input value is in the array item (if yes, highlights it)
 				let suggestion = array[i].replace(new RegExp(value, 'gi'), '<strong>$&</strong>');
@@ -48,7 +48,7 @@ export const autocomplete = (input, array) => {
 	input.addEventListener('keydown', function (e) {
 		// autocomplete container (for readability: 'x')
 		let x = document.querySelector('#autocompleteList');
-		if (x) x = x.getElementsByTagName('div');
+		if (x) x = x.getElementsByTagName('li');
 
 		if (e.key === 'ArrowDown') {
 			currentFocus++;
