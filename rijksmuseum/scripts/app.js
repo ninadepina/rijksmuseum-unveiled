@@ -15,7 +15,6 @@ const generateRandomArtButton = document.querySelector('.generateRandomArt butto
 
 ////////////////////////////////////////////////////////////
 // events
-
 generateRandomArtButton.addEventListener('click', fetchRandomArt);
 
 firstLoad();

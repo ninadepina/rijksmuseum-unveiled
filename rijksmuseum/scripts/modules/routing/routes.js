@@ -91,7 +91,7 @@ const NormalView = () => {
 	autocomplete(searchForm.querySelector('input'), suggestions);
 };
 
-const detailView = async (artId) => {
+const DetailView = async (artId) => {
 	const mainContent = document.querySelector('.mainContent');
 	window.location.hash = `#/art/${artId}`;
 	const art = artInfo.find((art) => art.artId === artId);
@@ -103,7 +103,7 @@ const detailView = async (artId) => {
 			const data = await (await fetch(url)).json();
 			mainContent.innerHTML = `
 				<article class="artItemContainer">
-					<a href="#">< back to all results</a>  
+					<a href="">< back to all results</a>  
 					<div>
 						<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longTitle}" />
 						<div>
@@ -120,7 +120,7 @@ const detailView = async (artId) => {
 	} else {
 		mainContent.innerHTML = `
 			<article class="artItemContainer">
-				<a href="#">< back to all results</a>  
+				<a href="">< back to all results</a>  
 				<div>
 					<img src="${art.artImg}" alt="${art.artLongtitle}" />
 					<div>
@@ -135,5 +135,5 @@ const detailView = async (artId) => {
 
 export const routes = [
 	{ path: '/', view: NormalView },
-	{ path: '/art/:id', view: detailView }
+	{ path: '/art/:id', view: DetailView }
 ];

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////
-// loading message
+// loading fetched data message
 export const startLoading = () => {
 	const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
 	loadingMessage.classList.add('show');
@@ -21,7 +21,7 @@ export const addSkeletonLoader = () => {
 };
 
 ////////////////////////////////////////////////////////////
-// first load
+// first load loader
 const welcomeLoader = () => {
 	const welcomeLoader = document.querySelector('.loadingBanner');
 	welcomeLoader.classList.add('visible');

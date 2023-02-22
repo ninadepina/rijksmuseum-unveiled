@@ -356,10 +356,6 @@ main h2 {
 /* MEDIA QUERY min-width: 1000px; */
 /* ------------------------------------- */
 @media only screen and (min-width: 1000px) {
-	.loadingBanner {
-		width: calc(100vw - 0.8em);
-		height: calc(100vh - 0.8em);
-	}
 	body {
 		background-color: var(--color-dark);
 	}
