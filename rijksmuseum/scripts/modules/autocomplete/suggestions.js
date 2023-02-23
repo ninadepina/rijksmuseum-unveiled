@@ -1,4 +1,4 @@
-export const suggestions = [
+const suggestions = [
 	'Rembrandt van Rijn',
 	'Johannes Vermeer',
 	'Frans Hals',
@@ -244,3 +244,5 @@ export const suggestions = [
 	'De Hollandse Maagd',
 	'Aanbidding door de koningen'
 ];
+
+export { suggestions };

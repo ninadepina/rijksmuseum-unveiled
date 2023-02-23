@@ -1,6 +1,6 @@
 const mainContent = document.querySelector('.mainContent');
 
-export const autocomplete = (input, array) => {
+const autocomplete = (input, array) => {
 	let currentFocus;
 
 	input.addEventListener('input', function (e) {
@@ -97,3 +97,5 @@ export const autocomplete = (input, array) => {
 		}
 	};
 };
+
+export { autocomplete };

@@ -3,7 +3,7 @@ import { displayData } from './displayData.js';
 let artInfo = [];
 
 // rewriting the fetched data
-export const getData = (artObjects) => {
+const getData = (artObjects) => {
 	if (artObjects.length === 0) return;
 
 	artInfo = artObjects.map(({ webImage, longTitle, title, principalOrFirstMaker, id }) => ({
@@ -19,4 +19,4 @@ export const getData = (artObjects) => {
 	displayData(artInfo);
 };
 
-export { artInfo };
+export { getData, artInfo };

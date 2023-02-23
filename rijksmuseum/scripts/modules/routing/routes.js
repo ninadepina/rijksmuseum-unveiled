@@ -133,7 +133,9 @@ const DetailView = async (artId) => {
 	}
 };
 
-export const routes = [
+const routes = [
 	{ path: '/', view: NormalView },
 	{ path: '/art/:id', view: DetailView }
 ];
+
+export { routes };

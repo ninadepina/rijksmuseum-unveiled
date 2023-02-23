@@ -1,5 +1,5 @@
 // displaying the fetched data
-export const displayData = (artInfo) => {
+const displayData = (artInfo) => {
 	const currentExpoInfo = document.querySelector('.mainContent .staticInfo > section');
 	currentExpoInfo.classList.add('hidden');
 	const searchResultsContainer = document.querySelector('.mainContent .loadingData');
@@ -28,3 +28,5 @@ export const displayData = (artInfo) => {
 	});
 	ul.appendChild(fragment);
 };
+
+export { displayData };

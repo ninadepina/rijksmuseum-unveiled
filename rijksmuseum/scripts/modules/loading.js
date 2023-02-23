@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////
 // loading fetched data message
-export const startLoading = () => {
+const startLoading = () => {
 	const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
 	loadingMessage.classList.add('show');
 };
-export const stopLoading = () => {
+const stopLoading = () => {
 	const loadingMessage = document.querySelector('.mainContent .searchArea > div:last-of-type');
 	loadingMessage.classList.remove('show');
 };
@@ -13,10 +13,10 @@ export const stopLoading = () => {
 // skeleton loader
 const skeletonLoader = document.querySelectorAll('.skeletonLoader');
 
-export const removeSkeletonLoader = () => {
+const removeSkeletonLoader = () => {
 	for (const loader of skeletonLoader) loader.classList.remove('skeletonLoader');
 };
-export const addSkeletonLoader = () => {
+const addSkeletonLoader = () => {
 	for (const loader of skeletonLoader) loader.classList.add('skeletonLoader');
 };
 
@@ -30,9 +30,11 @@ const welcomeLoader = () => {
 	}, 3000);
 };
 
-export const firstLoad = () => {
+const firstLoad = () => {
 	if (!sessionStorage.getItem('notFirstLoad')) {
 		welcomeLoader();
 		sessionStorage.setItem('notFirstLoad', 'true');
 	}
 };
+
+export { startLoading, stopLoading, removeSkeletonLoader, addSkeletonLoader, firstLoad };

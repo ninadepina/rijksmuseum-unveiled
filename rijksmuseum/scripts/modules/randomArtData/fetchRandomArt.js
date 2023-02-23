@@ -4,7 +4,7 @@ import { addSkeletonLoader } from '../loading.js';
 import { randomArtImg, randomArtTitle, randomArtArtist } from '../../app.js';
 
 // fetching data from the Rijkmuseum API and getting a random art object
-export const fetchRandomArt = async () => {
+const fetchRandomArt = async () => {
 	const randomNumber = Math.floor(Math.random() * (100 - 0)) + 0;
 	const url = 'https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&imgonly&ps=100';
 
@@ -32,3 +32,5 @@ export const fetchRandomArt = async () => {
 		console.log('error');
 	}
 };
+
+export { fetchRandomArt };

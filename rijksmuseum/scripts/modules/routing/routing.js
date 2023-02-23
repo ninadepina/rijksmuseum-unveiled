@@ -1,6 +1,6 @@
 import { routes } from './routes.js';
 
-export const router = () => {
+const router = () => {
 	const path = window.location.hash.substring(1) || '/';
 	const route = routes.find((_route) => {
 		// split the current path and route path into segments
@@ -32,3 +32,5 @@ export const router = () => {
 		console.log('No route found for path: ', path);
 	}
 };
+
+export { router };

@@ -2,7 +2,7 @@ import { removeSkeletonLoader } from '../loading.js';
 import { randomArtImg, randomArtTitle, randomArtArtist } from '../../app.js';
 
 // displaying the fetched data
-export const displayRandomArt = (randomArtInfo) => {
+const displayRandomArt = (randomArtInfo) => {
 	removeSkeletonLoader();
 
 	randomArtImg.classList.remove('hidden');
@@ -13,3 +13,5 @@ export const displayRandomArt = (randomArtInfo) => {
 		: (randomArtTitle.textContent = randomArtInfo.artTitle);
 	randomArtArtist.textContent = randomArtInfo.artArtist;
 };
+
+export { displayRandomArt };

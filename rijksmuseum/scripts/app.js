@@ -5,12 +5,10 @@ import { router } from './modules/routing/routing.js';
 
 ////////////////////////////////////////////////////////////
 // DOM elements
-export const searchResultsContainer = document.querySelector('.mainContent .loadingData');
-export const randomArtImg = document.querySelector('.generateRandomArt > section:first-of-type img');
-export const randomArtTitle = document.querySelector('.generateRandomArt > section:first-of-type h2');
-export const randomArtArtist = document.querySelector(
-	'.generateRandomArt > section:first-of-type > div:last-of-type > p'
-);
+const searchResultsContainer = document.querySelector('.mainContent .loadingData');
+const randomArtImg = document.querySelector('.generateRandomArt > section:first-of-type img');
+const randomArtTitle = document.querySelector('.generateRandomArt > section:first-of-type h2');
+const randomArtArtist = document.querySelector('.generateRandomArt > section:first-of-type > div:last-of-type > p');
 const generateRandomArtButton = document.querySelector('.generateRandomArt button');
 
 ////////////////////////////////////////////////////////////
@@ -25,3 +23,6 @@ router();
 window.onhashchange = () => {
 	router();
 };
+
+////////////////////////////////////////////////////////////
+export { searchResultsContainer, randomArtImg, randomArtTitle, randomArtArtist };

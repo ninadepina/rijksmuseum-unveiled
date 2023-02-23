@@ -3,7 +3,7 @@ import { getData } from './getData.js';
 import { searchResultsContainer } from '../../app.js';
 
 // fetching data from the Rijkmuseum API based on user input
-export const fetchData = async () => {
+const fetchData = async () => {
 	const userInput = document.querySelector('input[name="search"]').value;
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
 	const allArtObjects = document.querySelector('section ul');
@@ -47,3 +47,5 @@ export const fetchData = async () => {
 
 	getData(data.artObjects);
 };
+
+export { fetchData };
