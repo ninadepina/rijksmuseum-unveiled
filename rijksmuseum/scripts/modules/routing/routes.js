@@ -9,7 +9,7 @@ const NormalView = () => {
 	mainContent.innerHTML = `
 		<section class="staticInfo">
 			<header>
-				<img src="./assets/images/logoRijksmuseum.svg" alt="Rijksmuseum logo" />
+				<img draggable="false" src="./assets/images/logoRijksmuseum.svg" alt="Rijksmuseum logo" />
 				<div>
 					<p>Open daily 9 to 17h</p>
 					<p>|</p>
@@ -23,7 +23,7 @@ const NormalView = () => {
 					<span></span>
 					<p>12 / 1675</p>
 				</div>
-				<img
+				<img draggable="false"
 					src="./assets/images/collageVermeer.jpeg"
 					alt="Image displaying multiple artworks by Johannes Vermeer" />
 				<div>
