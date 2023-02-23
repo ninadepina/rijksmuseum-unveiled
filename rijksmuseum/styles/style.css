@@ -21,6 +21,9 @@
 	margin: 0;
 	padding: 0;
 }
+*::selection {
+	background-color: #e8c4e4;
+}
 
 :root {
 	--color-dark: #0f0f0f;
