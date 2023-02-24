@@ -79,6 +79,24 @@ const NormalView = () => {
 
 		<section class="loadingData"></section>
 	`;
+	const expoImg = document.querySelector('.staticInfo section img');
+	const expoHeading = document.querySelector('.staticInfo section h2');
+	const expoText = document.querySelector('.staticInfo section h2 + p');
+	const radioButtonsText = document.querySelector('.searchArea div form p');
+	const searchPlaceholder = document.querySelector('.searchArea > form input');
+	const loadingText = document.querySelector('.searchArea > div:last-of-type p');
+
+	if (localStorage.getItem('language') === 'nl') {
+		if (window.matchMedia('screen and (min-width: 1000px)').matches)
+			radioButtonsText.textContent = 'Hoeveelheid resultaten:';
+
+		expoImg.alt = 'Afbeelding die meerdere werken van Johannes Vermeer toont';
+		expoHeading.textContent = 'Johannes Vermeer expositie';
+		expoText.textContent = 'Op dit moment zijn er geen tickets meer beschikbaar..';
+		searchPlaceholder.placeholder = 'Zoek op kunstenaars, kunstwerken en meer...';
+		loadingText.textContent = 'Afbeeldingen worden geladen.. dit kan een aantal seconden duren';
+	}
+
 	const loadingData = document.querySelector('.mainContent .loadingData');
 	if (loadingData.childNodes.length === 0) loadingData.classList.add('hidden');
 
@@ -95,15 +113,22 @@ const DetailView = async (artId) => {
 	const mainContent = document.querySelector('.mainContent');
 	window.location.hash = `#/art/${artId}`;
 	const art = artInfo.find((art) => art.artId === artId);
+	const radioValueLanguage = localStorage.getItem('language');
+	let backButtonText
+	if (radioValueLanguage === 'nl') {
+		backButtonText = '< terug naar alle resultaten';
+	} else {
+		backButtonText = '< back to all results';
+	}
 
 	if (!art) {
 		try {
 			const modifiedArtId = artId.slice(3);
-			const url = `https://www.rijksmuseum.nl/api/en/collection/${modifiedArtId}?key=RdKQCPfy`;
+			const url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection/${modifiedArtId}?key=RdKQCPfy`;
 			const data = await (await fetch(url)).json();
 			mainContent.innerHTML = `
 				<article class="artItemContainer">
-					<a href="">< back to all results</a>  
+					<a href="">${backButtonText}</a>  
 					<div>
 						<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longTitle}" />
 						<div>
@@ -120,7 +145,7 @@ const DetailView = async (artId) => {
 	} else {
 		mainContent.innerHTML = `
 			<article class="artItemContainer">
-				<a href="">< back to all results</a>  
+				<a href="">${backButtonText}</a>  
 				<div>
 					<img src="${art.artImg}" alt="${art.artLongtitle}" />
 					<div>

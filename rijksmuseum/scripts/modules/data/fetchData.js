@@ -7,10 +7,11 @@ const fetchData = async () => {
 	const userInput = document.querySelector('input[name="search"]').value;
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
 	const allArtObjects = document.querySelector('section ul');
-	const radioButton = document.querySelector('input[type="radio"]:checked');
+	const radioSearchAmount = document.querySelector('.searchArea input[type="radio"]:checked');
+	const radioValueSearchAmount = radioSearchAmount.value;
+	const radioValueLanguage = localStorage.getItem('language');
 
 	let data;
-	let radioValue;
 
 	if (userInput.length === 0) return;
 
@@ -20,9 +21,7 @@ const fetchData = async () => {
 
 	searchErrorText.textContent = '';
 
-	radioValue = radioButton.value;
-
-	const url = `https://www.rijksmuseum.nl/api/en/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValue}&imgonly=true`;
+	const url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValueSearchAmount}&imgonly=true`;
 
 	try {
 		data = await (await fetch(url)).json();
@@ -31,14 +30,35 @@ const fetchData = async () => {
 
 		if (data.artObjects.length === 0) throw new Error();
 
-		data.artObjects.length < radioValue
-			? (searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]`)
-			: (searchErrorText.textContent = `[${radioValue} pieces of art are being shown]`);
+		if (data.artObjects.length < radioValueSearchAmount) {
+			if (localStorage.getItem('language') === 'nl') {
+				searchErrorText.textContent = `[${data.artObjects.length} kunstwerken worden getoond]`;
+			} else {
+				searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]`;
+			}
+		} else {
+			if (localStorage.getItem('language') === 'nl') {
+				searchErrorText.textContent = `[${radioValueSearchAmount} kunstwerken worden getoond]`;
+			} else {
+				searchErrorText.textContent = `[${radioValueSearchAmount} pieces of art are being shown]`;
+			}
+		}
 	} catch {
-		userInput.length > 11
-			? (searchErrorText.textContent =
-					`Unfortunately we couldn't find any results for "${userInput}"`.slice(0, 58).trim() + '..."')
-			: (searchErrorText.textContent = `Unfortunately we couldn't find any results for "${userInput}"`);
+		if (userInput.length > 11) {
+			if (localStorage.getItem('language') === 'nl') {
+				searchErrorText.textContent =
+					`We konden helaas geen resultaten vinden voor "${userInput}"`.slice(0, 58).trim() + '..."';
+			} else {
+				searchErrorText.textContent =
+					`Unfortunately we couldn't find any results for "${userInput}"`.slice(0, 58).trim() + '..."';
+			}
+		} else {
+			if (localStorage.getItem('language') === 'nl') {
+				searchErrorText.textContent = `We konden helaas geen resultaten vinden voor "${userInput}"`;
+			} else {
+				searchErrorText.textContent = `Unfortunately we couldn't find any results for "${userInput}"`;
+			}
+		}
 
 		searchResultsContainer.classList.add('hidden');
 

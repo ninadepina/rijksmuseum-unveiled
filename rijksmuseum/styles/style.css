@@ -115,7 +115,7 @@ strong {
 .generateRandomArt,
 .info,
 .socials,
-.sponsors,
+.language,
 .mainContent .staticInfo div:has(span) {
 	display: none;
 }
@@ -711,14 +711,33 @@ main h2 {
 	}
 
 	/* ------------------------------------- */
-	/* (5)[desktop: sponsors section] */
+	/* (5)[desktop: language section] */
 	/* ------------------------------------- */
-	.sponsors {
+	.language {
 		order: 3;
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
 		padding: 1em 2em;
+	}
+	.language fieldset {
+		display: flex;
+		gap: 1.6em;
+	}
+	.language label {
+		margin: 0;
+		padding: 0;
+	}
+	.language img {
+		height: 2em;
+		aspect-ratio: 1 / 1;
+		padding: 4px 0;
+		border-bottom: 1px solid var(--color-dark);
+		transition: .4s;
+	}
+	.language label:not(:has(:checked)) img {
+		opacity: 30%;
+		filter: grayscale(0.4);
+		border-bottom: 1px solid transparent;
+		transition: .4s;
 	}
 }
 
