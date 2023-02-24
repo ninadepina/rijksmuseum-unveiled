@@ -60,4 +60,5 @@ This project is licensed under the MIT License - see the `LICENSE` file for more
 - [x] Detail page (with routing)
 - [x] Search suggestions
 - [x] Loader on first load
+- [x] Switch between languages
 - [ ] Responsive design
