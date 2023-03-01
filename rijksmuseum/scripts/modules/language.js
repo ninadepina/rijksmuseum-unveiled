@@ -13,11 +13,9 @@ const currentLanguage = () => {
 		localStorage.setItem('language', language);
 	}
 
-	if (language === 'nl') {
-		document.querySelector('.language input[value="nl"]').checked = true;
-	} else {
-		document.querySelector('.language input[value="en"]').checked = true;
-	}
+	language === 'nl'
+		? (document.querySelector('.language input[value="nl"]').checked = true)
+		: (document.querySelector('.language input[value="en"]').checked = true);
 };
 
 const staticInfo = () => {
