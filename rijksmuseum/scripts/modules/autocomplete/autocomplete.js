@@ -50,17 +50,21 @@ const autocomplete = (input, array) => {
 		let x = document.querySelector('#autocompleteList');
 		if (x) x = x.getElementsByTagName('li');
 
-		if (e.key === 'ArrowDown') {
-			currentFocus++;
-			addActive(x);
-		} else if (e.key === 'ArrowUp') {
-			currentFocus--;
-			addActive(x);
-		} else if (e.key === 'Enter') {
-			if (currentFocus > -1) {
-				if (x) x[currentFocus].click();
-			}
-			closeAllLists();
+		switch (e.key) {
+			case 'ArrowDown':
+				currentFocus++;
+				addActive(x);
+				break;
+			case 'ArrowUp':
+				currentFocus--;
+				addActive(x);
+				break;
+			case 'Enter':
+				if (currentFocus > -1 && x) {
+					x[currentFocus].click();
+				}
+				closeAllLists();
+				break;
 		}
 	});
 
