@@ -1,4 +1,3 @@
-import { artInfo } from '../data/getData.js';
 import { fetchData } from '../data/fetchData.js';
 import { autocomplete } from '../autocomplete/autocomplete.js';
 import { suggestions } from '../autocomplete/suggestions.js';
@@ -111,50 +110,35 @@ const NormalView = () => {
 
 const DetailView = async (artId) => {
 	const mainContent = document.querySelector('.mainContent');
-	window.location.hash = `#/art/${artId}`;
-	const art = artInfo.find((art) => art.artId === artId);
 	const radioValueLanguage = localStorage.getItem('language');
-	let backButtonText
-	if (radioValueLanguage === 'nl') {
-		backButtonText = '< terug naar alle resultaten';
-	} else {
-		backButtonText = '< back to all results';
-	}
+	const url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection/${artId}?key=RdKQCPfy`;
+	const data = await (await fetch(url)).json();
 
-	if (!art) {
-		try {
-			const modifiedArtId = artId.slice(3);
-			const url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection/${modifiedArtId}?key=RdKQCPfy`;
-			const data = await (await fetch(url)).json();
-			mainContent.innerHTML = `
-				<article class="artItemContainer">
-					<a href="">${backButtonText}</a>  
-					<div>
-						<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longTitle}" />
-						<div>
-							<h2>${data.artObject.title}</h2>
-							<p>${data.artObject.principalOrFirstMaker}</p>
-						</div>
-					</div>
-				</article>
-			`;
-			if (data.artObject.length === 0) throw new Error();
-		} catch {
-			console.log('error');
-		}
-	} else {
+	let backButtonText;
+
+	radioValueLanguage === 'nl'
+		? (backButtonText = '< terug naar alle resultaten')
+		: (backButtonText = '< back to all results');
+
+	window.location.hash = `#/art/${artId}`;
+
+	try {
 		mainContent.innerHTML = `
 			<article class="artItemContainer">
 				<a href="">${backButtonText}</a>  
 				<div>
-					<img src="${art.artImg}" alt="${art.artLongtitle}" />
+					<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longtitle}" />
 					<div>
-						<h2>${art.artTitle}</h2>
-						<p>${art.artArtist}</p>
+						<h2>${data.artObject.title}</h2>
+						<p>${data.artObject.principalOrFirstMaker}</p>
+						<p>${data.artObject.description}</p>
 					</div>
 				</div>
 			</article>
 		`;
+		if (data.artObject.length === 0) throw new Error();
+	} catch {
+		console.log('error');
 	}
 };
 
