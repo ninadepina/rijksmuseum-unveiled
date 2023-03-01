@@ -1,6 +1,7 @@
 let suggestions = [
 	'Rembrandt van Rijn',
 	'Johannes Vermeer',
+	'Vincent van Gogh',
 	'Frans Hals',
 	'Jan Steen',
 	'Gerard Dou',
@@ -179,6 +180,7 @@ if (localStorage.getItem('language') === 'nl') {
 	suggestions = [
 		'Rembrandt van Rijn',
 		'Johannes Vermeer',
+		'Vincent van Gogh',
 		'Frans Hals',
 		'Jan Steen',
 		'Gerard Dou',
