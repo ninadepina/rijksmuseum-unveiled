@@ -12,15 +12,13 @@ const displayData = (artInfo) => {
 
 	artInfo.forEach((art) => {
 		const liArt = `
-			<li>
-				<a href="#/art/${art.artId}">
-					<img src=${art.artImg} alt="${art.artLongtitle}" />
-					<div>
-						<h2>${art.artTitle}</h2>
-						<p>${art.artArtist}</p>
-					</div>
-				</a>
-			</li>
+			<a href="#/art/${art.artId}">
+				<img src=${art.artImg} alt="${art.artLongtitle}" />
+				<div>
+					<h2>${art.artTitle}</h2>
+					<p>${art.artArtist}</p>
+				</div>
+			</a>
 		`;
 		const li = document.createElement('li');
 		li.insertAdjacentHTML('beforeend', liArt);
