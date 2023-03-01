@@ -4,14 +4,24 @@ import { searchResultsContainer } from '../../app.js';
 
 // fetching data from the Rijkmuseum API based on user input
 const fetchData = async () => {
-	const userInput = document.querySelector('input[name="search"]').value;
+	const input = document.querySelector('input[name="search"]');
+	let userInput = document.querySelector('input[name="search"]').value;
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
 	const allArtObjects = document.querySelector('section ul');
 	const radioSearchAmount = document.querySelector('.searchArea input[type="radio"]:checked');
-	const radioValueSearchAmount = radioSearchAmount.value;
+	let radioValueSearchAmount = radioSearchAmount.value;
 	const radioValueLanguage = localStorage.getItem('language');
 
 	let data;
+
+	if (sessionStorage.getItem('back')) {
+		userInput = sessionStorage.getItem('userInput');
+		radioValueSearchAmount = sessionStorage.getItem('radioValueSearchAmount');
+		input.value = userInput;
+	}
+
+	sessionStorage.setItem('userInput', userInput);
+	sessionStorage.setItem('radioValueSearchAmount', radioValueSearchAmount);
 
 	if (userInput.length === 0) return;
 

@@ -105,6 +105,11 @@ const NormalView = () => {
 		fetchData();
 	});
 
+	if (sessionStorage.getItem('back')) {
+		fetchData();
+		sessionStorage.removeItem('back');
+	}
+
 	autocomplete(searchForm.querySelector('input'), suggestions);
 };
 
@@ -136,7 +141,14 @@ const DetailView = async (artId) => {
 				</div>
 			</article>
 		`;
+		
+		const a = document.querySelector('.artItemContainer a');
+		a.addEventListener('click', () => {
+			sessionStorage.setItem('back', true);
+		});
+
 		if (data.artObject.length === 0) throw new Error();
+
 	} catch {
 		console.log('error');
 	}
