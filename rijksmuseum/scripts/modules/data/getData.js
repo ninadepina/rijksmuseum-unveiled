@@ -11,7 +11,7 @@ const getData = (artObjects) => {
 		artLongtitle: longTitle,
 		artTitle: title,
 		artArtist: principalOrFirstMaker,
-		artId: id
+		artId: id.slice(3)
 	}));
 	// filtering is not necessary if the url contains '&imgonly=true'
 	// .filter((art) => art.artImg !== null);
