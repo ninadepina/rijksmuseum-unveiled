@@ -31,33 +31,25 @@ const fetchData = async () => {
 		if (data.artObjects.length === 0) throw new Error();
 
 		if (data.artObjects.length < radioValueSearchAmount) {
-			if (localStorage.getItem('language') === 'nl') {
-				searchErrorText.textContent = `[${data.artObjects.length} kunstwerken worden getoond]`;
-			} else {
-				searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]`;
-			}
+			localStorage.getItem('language') === 'nl'
+				? (searchErrorText.textContent = `[${data.artObjects.length} kunstwerken worden getoond]`)
+				: (searchErrorText.textContent = `[${data.artObjects.length} pieces of art are being shown]`);
 		} else {
-			if (localStorage.getItem('language') === 'nl') {
-				searchErrorText.textContent = `[${radioValueSearchAmount} kunstwerken worden getoond]`;
-			} else {
-				searchErrorText.textContent = `[${radioValueSearchAmount} pieces of art are being shown]`;
-			}
+			localStorage.getItem('language') === 'nl'
+				? (searchErrorText.textContent = `[${radioValueSearchAmount} kunstwerken worden getoond]`)
+				: (searchErrorText.textContent = `[${radioValueSearchAmount} pieces of art are being shown]`);
 		}
 	} catch {
 		if (userInput.length > 11) {
-			if (localStorage.getItem('language') === 'nl') {
-				searchErrorText.textContent =
-					`We konden helaas geen resultaten vinden voor "${userInput}"`.slice(0, 58).trim() + '..."';
-			} else {
-				searchErrorText.textContent =
-					`Unfortunately we couldn't find any results for "${userInput}"`.slice(0, 58).trim() + '..."';
-			}
+			localStorage.getItem('language') === 'nl'
+				? (searchErrorText.textContent =
+						`We konden helaas geen resultaten vinden voor "${userInput}"`.slice(0, 58).trim() + '..."')
+				: (searchErrorText.textContent =
+						`Unfortunately we couldn't find any results for "${userInput}"`.slice(0, 58).trim() + '..."');
 		} else {
-			if (localStorage.getItem('language') === 'nl') {
-				searchErrorText.textContent = `We konden helaas geen resultaten vinden voor "${userInput}"`;
-			} else {
-				searchErrorText.textContent = `Unfortunately we couldn't find any results for "${userInput}"`;
-			}
+			localStorage.getItem('language') === 'nl'
+				? (searchErrorText.textContent = `We konden helaas geen resultaten vinden voor "${userInput}"`)
+				: (searchErrorText.textContent = `Unfortunately we couldn't find any results for "${userInput}"`);
 		}
 
 		searchResultsContainer.classList.add('hidden');
