@@ -126,7 +126,13 @@ const DetailView = async (artId) => {
 
 	window.location.hash = `#/art/${artId}`;
 
-	if (data.artObject.description === null) data.artObject.description = '';
+	if (radioValueLanguage === 'en') data.artObject.description = data.artObject.titles[0];
+	if (
+		data.artObject.description === null ||
+		data.artObject.description === undefined ||
+		data.artObject.description === data.artObject.title
+	)
+		data.artObject.description = '';
 
 	try {
 		mainContent.innerHTML = `
@@ -137,12 +143,13 @@ const DetailView = async (artId) => {
 					<div>
 						<h2>${data.artObject.title}</h2>
 						<p>${data.artObject.principalOrFirstMaker}</p>
+						<p>${data.artObject.subTitle}</p>
 						<p>${data.artObject.description}</p>
 					</div>
 				</div>
 			</article>
 		`;
-		
+
 		const a = document.querySelector('.artItemContainer a');
 		a.addEventListener('click', () => {
 			sessionStorage.setItem('back', true);
@@ -150,7 +157,6 @@ const DetailView = async (artId) => {
 		});
 
 		if (data.artObject.length === 0) throw new Error();
-
 	} catch {
 		console.log('error');
 	}
