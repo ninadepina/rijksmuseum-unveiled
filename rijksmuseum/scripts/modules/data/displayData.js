@@ -13,7 +13,9 @@ const displayData = (artInfo) => {
 	artInfo.forEach((art) => {
 		const liArt = `
 			<a href="#/art/${art.artId}">
-				<img src=${art.artImg} alt="${art.artLongtitle}" />
+				<figure>
+					<img src=${art.artImg} alt="${art.artLongtitle}" />
+				</figure>
 				<div>
 					<h2>${art.artTitle}</h2>
 					<p>${art.artArtist}</p>
