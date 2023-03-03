@@ -25,6 +25,13 @@ const displayData = (artInfo) => {
 		fragment.appendChild(li);
 	});
 	ul.appendChild(fragment);
+
+	if (sessionStorage.getItem('back')) {
+		const visitedArtHash = sessionStorage.getItem('visitedArt');
+		const visitedArt = document.querySelector(`li:has(a[href="${visitedArtHash}"])`);
+		visitedArt.scrollIntoView();
+		sessionStorage.removeItem('back');
+	}
 };
 
 export { displayData };

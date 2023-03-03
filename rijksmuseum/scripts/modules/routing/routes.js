@@ -107,7 +107,6 @@ const NormalView = () => {
 
 	if (sessionStorage.getItem('back')) {
 		fetchData();
-		sessionStorage.removeItem('back');
 	}
 
 	autocomplete(searchForm.querySelector('input'), suggestions);
@@ -145,6 +144,7 @@ const DetailView = async (artId) => {
 		const a = document.querySelector('.artItemContainer a');
 		a.addEventListener('click', () => {
 			sessionStorage.setItem('back', true);
+			sessionStorage.setItem('visitedArt', window.location.hash);
 		});
 
 		if (data.artObject.length === 0) throw new Error();
