@@ -126,6 +126,8 @@ const DetailView = async (artId) => {
 
 	window.location.hash = `#/art/${artId}`;
 
+	if (data.artObject.description === null) data.artObject.description = '';
+
 	try {
 		mainContent.innerHTML = `
 			<article class="artItemContainer">
