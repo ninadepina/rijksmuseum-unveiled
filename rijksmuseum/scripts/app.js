@@ -5,7 +5,6 @@ import { router } from './modules/routing/routing.js';
 import { currentLanguage, staticInfo } from './modules/language.js';
 
 ////////////////////////////////////////////////////////////
-// DOM elements
 const searchResultsContainer = document.querySelector('.mainContent .loadingData');
 const randomArtImg = document.querySelector('.generateRandomArt > section:first-of-type img');
 const randomArtTitle = document.querySelector('.generateRandomArt > section:first-of-type h2');
@@ -14,7 +13,6 @@ const generateRandomArtButton = document.querySelector('.generateRandomArt butto
 const radioLanguages = document.querySelectorAll('.language input[type="radio"]');
 
 ////////////////////////////////////////////////////////////
-// events
 for (let i = 0; i < radioLanguages.length; i++) {
 	radioLanguages[i].addEventListener('click', function () {
 		localStorage.setItem('language', radioLanguages[i].value);

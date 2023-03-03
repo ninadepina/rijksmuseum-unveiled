@@ -54,7 +54,7 @@ const fetchData = async () => {
 		if (userInput.length > 11) {
 			localStorage.getItem('language') === 'nl'
 				? (searchErrorText.textContent =
-						`We konden helaas geen resultaten vinden voor "${userInput}"`.slice(0, 58).trim() + '..."')
+						`We konden helaas geen resultaten vinden voor "${userInput}"`.slice(0, 60).trim() + '..."')
 				: (searchErrorText.textContent =
 						`Unfortunately we couldn't find any results for "${userInput}"`.slice(0, 58).trim() + '..."');
 		} else {
@@ -62,8 +62,6 @@ const fetchData = async () => {
 				? (searchErrorText.textContent = `We konden helaas geen resultaten vinden voor "${userInput}"`)
 				: (searchErrorText.textContent = `Unfortunately we couldn't find any results for "${userInput}"`);
 		}
-
-		searchResultsContainer.classList.add('hidden');
 
 		console.log('error');
 	}
