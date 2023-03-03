@@ -54,30 +54,24 @@ body {
 }
 main {
 	min-height: 100vh;
+	margin-bottom: 3em;
 }
 main,
 footer {
 	padding: 2em;
 }
 footer {
+	position: fixed;
+	bottom: 0;
 	display: flex;
 	justify-content: space-between;
-	background-color: var(--color-dark);
+	width: 100%;
 	padding: 1em 2em;
+	background-color: var(--color-dark);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-div,
-span,
-button,
-input {
+/* prettier-ignore */
+h1, h2, h3, h4, h5, h6, p, a, div, span, button, input {
 	font-family: var(--font-normal);
 	font-weight: normal;
 }
@@ -98,7 +92,7 @@ a {
 	text-decoration: none;
 	color: var(--color-dark);
 }
-a:has(img):not(.socials a:has(img)) {
+li a {
 	width: 100%;
 }
 li {
@@ -178,9 +172,87 @@ main h2 {
 	padding-bottom: 1em;
 }
 
+/* amount of results form */
+.mainContent .searchArea > div:first-of-type {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: var(--text-inset);
+}
+.mainContent .searchArea > div:first-of-type > p {
+	max-width: 59%;
+}
 .mainContent .searchArea div > form {
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	margin-top: auto;
+}
+.mainContent .searchArea div > form > p {
 	display: none;
 }
+fieldset {
+	display: flex;
+	gap: 0.2em;
+	border: none;
+}
+
+fieldset label {
+	display: flex;
+	gap: 0.4em;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: var(--text-inset);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+fieldset label div {
+	height: 10px;
+	width: 10px;
+	background: var(--color-vague);
+	border-radius: 50%;
+	position: relative;
+}
+fieldset label div::before {
+	position: absolute;
+	content: '';
+	top: 2px;
+	left: 2px;
+	width: 6px;
+	height: 6px;
+	background-color: var(--color-light);
+	border-radius: 50%;
+	opacity: 0;
+	transform: scale(1.5);
+	transition: all 0.3s ease;
+}
+input[type='radio'] {
+	display: none;
+}
+#option-1:checked:checked ~ label[for='option-1'] div,
+#option-2:checked:checked ~ label[for='option-2'] div,
+#option-3:checked:checked ~ label[for='option-3'] div {
+	background-color: var(--color-dark);
+}
+#option-1:checked:checked ~ label[for='option-1'] div::before,
+#option-2:checked:checked ~ label[for='option-2'] div::before,
+#option-3:checked:checked ~ label[for='option-3'] div::before {
+	opacity: 1;
+	transform: scale(1);
+}
+fieldset label span {
+	color: var(--color-vague);
+}
+#option-1:checked:checked ~ label[for='option-1'] span,
+#option-2:checked:checked ~ label[for='option-2'] span,
+#option-3:checked:checked ~ label[for='option-3'] span {
+	color: var(--color-dark);
+}
+
+/* search form */
 .mainContent .searchArea > form {
 	position: relative;
 	width: 100%;
@@ -275,9 +347,18 @@ main h2 {
 	display: grid;
 	gap: 3em;
 }
+.mainContent .loadingData figure {
+	overflow: hidden;
+	border-radius: var(--border-radius);
+}
 .mainContent .loadingData img {
 	width: 100%;
 	border-radius: var(--border-radius);
+	transform: scale(1);
+	transition: .3s ease-in-out;
+}
+.mainContent .loadingData img:hover {
+	transform: scale(1.1);
 }
 .mainContent .loadingData div {
 	padding: 1em 0;
@@ -301,14 +382,14 @@ main h2 {
 	justify-content: center;
 	align-items: center;
 	gap: 2em;
-	height: 100%;
+	height: 88%;
 	margin: auto 0;
 	text-align: center;
 }
 .mainContent .artItemContainer img {
 	width: fit-content;
 	max-width: 100%;
-	max-height: 7vh;
+	max-height: 56vh;
 	object-fit: contain;
 	border-radius: var(--border-radius);
 }
@@ -374,15 +455,22 @@ main h2 {
 		display: none;
 	}
 	main {
-		padding: 0.4em;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1.18fr;
 		gap: 0.2em;
 		height: 100vh;
+		margin-bottom: 0;
+		padding: 0.4em;
 	}
 	main > section {
 		background-color: var(--color-light);
 		border-radius: var(--border-radius);
+	}
+	a:has(img):not(.socials a:has(img)) {
+		width: 100%;
+	}
+	li a {
+		width: fit-content;
 	}
 
 	/* ------------------------------------- */
@@ -439,76 +527,11 @@ main h2 {
 		flex-direction: column;
 		gap: 0.2em;
 	}
-	.mainContent .searchArea > div:first-of-type {
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		padding: var(--text-inset);
+	.mainContent .searchArea > div:first-of-type > p {
+		max-width: none;
 	}
-	.mainContent .searchArea div > form {
-		display: flex;
-		gap: 1em;
-		align-items: center;
-	}
-	fieldset {
-		display: flex;
-		gap: 0.2em;
-		border: none;
-	}
-
-	fieldset label {
-		display: flex;
-		gap: 0.4em;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		padding: var(--text-inset);
-		cursor: pointer;
-		transition: all 0.3s ease;
-	}
-	fieldset label div {
-		height: 10px;
-		width: 10px;
-		background: var(--color-vague);
-		border-radius: 50%;
-		position: relative;
-	}
-	fieldset label div::before {
-		position: absolute;
-		content: '';
-		top: 2px;
-		left: 2px;
-		width: 6px;
-		height: 6px;
-		background-color: var(--color-light);
-		border-radius: 50%;
-		opacity: 0;
-		transform: scale(1.5);
-		transition: all 0.3s ease;
-	}
-	input[type='radio'] {
-		display: none;
-	}
-	#option-1:checked:checked ~ label[for='option-1'] div,
-	#option-2:checked:checked ~ label[for='option-2'] div,
-	#option-3:checked:checked ~ label[for='option-3'] div {
-		background-color: var(--color-dark);
-	}
-	#option-1:checked:checked ~ label[for='option-1'] div::before,
-	#option-2:checked:checked ~ label[for='option-2'] div::before,
-	#option-3:checked:checked ~ label[for='option-3'] div::before {
-		opacity: 1;
-		transform: scale(1);
-	}
-	fieldset label span {
-		color: var(--color-vague);
-	}
-	#option-1:checked:checked ~ label[for='option-1'] span,
-	#option-2:checked:checked ~ label[for='option-2'] span,
-	#option-3:checked:checked ~ label[for='option-3'] span {
-		color: var(--color-dark);
+	.mainContent .searchArea div > form > p {
+		display: inline-block;
 	}
 	.mainContent .searchArea div:last-of-type p {
 		padding: var(--text-inset);
@@ -552,6 +575,7 @@ main h2 {
 	.mainContent .artItemContainer > div {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		height: 100%;
 	}
 	.mainContent .artItemContainer > div > div {
 		padding: 0 2em;
