@@ -8,7 +8,7 @@ const NormalView = () => {
 	mainContent.innerHTML = `
 		<section class="staticInfo">
 			<header>
-				<img draggable="false" src="./assets/images/logoRijksmuseum.svg" alt="Rijksmuseum logo" />
+				<a href=""><img draggable="false" src="./assets/images/logoRijksmuseum.svg" alt="Rijksmuseum logo" /></a>
 				<div>
 					<p>Open daily 9 to 17h</p>
 					<p>|</p>

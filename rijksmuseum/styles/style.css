@@ -355,7 +355,7 @@ fieldset label span {
 	width: 100%;
 	border-radius: var(--border-radius);
 	transform: scale(1);
-	transition: .3s ease-in-out;
+	transition: 0.3s ease-in-out;
 }
 .mainContent .loadingData img:hover {
 	transform: scale(1.1);
