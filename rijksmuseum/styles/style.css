@@ -35,8 +35,6 @@
 	--font-bold: 'Rijks-bold', sans-serif;
 
 	--text-inset: 0.24em;
-	--text-decoration-focus: 1px dashed underline var(--color-dark);
-	--text-underline-offset-focus: 3px;
 
 	--border-radius: 10px;
 }
@@ -448,19 +446,15 @@ fieldset label span {
 }
 .loadingBanner.visible img {
 	animation: loader 3s ease-in-out;
+	opacity: 1;
 }
 @keyframes loader {
 	0% {
 		width: calc(100% - 4em);
-		opacity: 1;
 	}
-	60% {
-		width: 24%;
-		opacity: 1;
-	}
+	60%,
 	100% {
 		width: 24%;
-		opacity: 1;
 	}
 }
 
