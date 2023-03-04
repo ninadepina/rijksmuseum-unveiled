@@ -1,6 +1,5 @@
 import { startLoading, stopLoading } from '../loading.js';
 import { getData } from './getData.js';
-import { searchResultsContainer } from '../../app.js';
 
 // fetching data from the Rijkmuseum API based on user input
 const fetchData = async () => {
