@@ -30,9 +30,12 @@ const autocomplete = (input, array) => {
 				autocompleteItem.innerHTML = suggestion;
 				autocompleteItem.innerHTML += "<input type='hidden' value='" + array[i] + "'>";
 
+				// adds clicked autocomplete item to input and submits the form
 				autocompleteItem.addEventListener('click', function (e) {
 					input.value = this.getElementsByTagName('input')[0].value;
 					closeAllLists();
+
+					input.form && input.form.dispatchEvent(new Event('submit'));
 				});
 
 				// sorts items in the list based on if they start with the input value
