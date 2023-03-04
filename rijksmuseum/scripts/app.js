@@ -14,7 +14,7 @@ const radioLanguages = document.querySelectorAll('.language input[type="radio"]'
 
 ////////////////////////////////////////////////////////////
 for (let i = 0; i < radioLanguages.length; i++) {
-	radioLanguages[i].addEventListener('click', function () {
+	radioLanguages[i].addEventListener('click', () => {
 		localStorage.setItem('language', radioLanguages[i].value);
 		radioLanguages[i].checked = true;
 		window.location.reload(false);

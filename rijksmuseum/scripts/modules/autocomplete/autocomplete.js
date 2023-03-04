@@ -36,11 +36,9 @@ const autocomplete = (input, array) => {
 				});
 
 				// sorts items in the list based on if they start with the input value
-				if (array[i].toUpperCase().startsWith(value.toUpperCase())) {
-					autocompleteList.insertBefore(autocompleteItem, autocompleteList.childNodes[0]);
-				} else {
-					autocompleteList.appendChild(autocompleteItem);
-				}
+				array[i].toUpperCase().startsWith(value.toUpperCase())
+					? autocompleteList.insertBefore(autocompleteItem, autocompleteList.childNodes[0])
+					: autocompleteList.appendChild(autocompleteItem);
 			}
 		}
 	});
@@ -60,9 +58,7 @@ const autocomplete = (input, array) => {
 				addActive(x);
 				break;
 			case 'Enter':
-				if (currentFocus > -1 && x) {
-					x[currentFocus].click();
-				}
+				if (currentFocus > -1 && x) x[currentFocus].click();
 				closeAllLists();
 				break;
 		}
@@ -92,12 +88,10 @@ const autocomplete = (input, array) => {
 		}
 	};
 
-	const closeAllLists = (elmnt) => {
+	const closeAllLists = (e) => {
 		const x = document.getElementsByClassName('autocompleteItems');
 		for (let i = 0; i < x.length; i++) {
-			if (elmnt != x[i] && elmnt != input) {
-				x[i].parentNode.removeChild(x[i]);
-			}
+			if (e != x[i] && e != input) x[i].parentNode.removeChild(x[i]);
 		}
 	};
 };
