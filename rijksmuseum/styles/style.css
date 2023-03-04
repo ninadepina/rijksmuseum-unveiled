@@ -358,7 +358,7 @@ fieldset label span {
 	transition: 0.3s ease-in-out;
 }
 .mainContent .loadingData img:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 .mainContent .loadingData div {
 	padding: 1em 0;
