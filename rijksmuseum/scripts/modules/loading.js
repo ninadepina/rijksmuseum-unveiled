@@ -37,4 +37,16 @@ const firstLoad = () => {
 	}
 };
 
-export { startLoading, stopLoading, removeSkeletonLoader, addSkeletonLoader, firstLoad };
+////////////////////////////////////////////////////////////
+// color filter loader
+const addColorFilterLoader = () => {
+	const colorFilter = document.querySelector('.colorFilter');
+	colorFilter.classList.add('show');
+};
+
+const removeColorFilterLoader = () => {
+	const colorFilter = document.querySelector('.colorFilter');
+	colorFilter.classList.remove('show');
+};
+
+export { startLoading, stopLoading, removeSkeletonLoader, addSkeletonLoader, firstLoad, addColorFilterLoader, removeColorFilterLoader };
