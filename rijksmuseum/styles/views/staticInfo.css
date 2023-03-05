@@ -1,0 +1,61 @@
+.info,
+.socials,
+.language {
+	display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* (3)[desktop: info section] */
+	.info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em 2em;
+		font-size: 1.1em;
+	}
+
+	/* (4)[desktop: socials section] */
+	.socials {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em 2em;
+	}
+	.socials a {
+		padding-top: 4px;
+	}
+	.socials a:is(:hover, :focus-visible, :active) {
+		border-bottom: 1px solid var(--color-dark);
+	}
+
+	/* (5)[desktop: language section] */
+	.language {
+		display: flex;
+		padding: 1em 2em;
+	}
+	.language fieldset {
+		display: flex;
+		gap: 1.6em;
+	}
+	.language label {
+		margin: 0;
+		padding: 0;
+	}
+	.language img {
+		height: 2em;
+		aspect-ratio: 1 / 1;
+		padding: 4px 0;
+		border-bottom: 1px solid var(--color-dark);
+		transition: 0.4s;
+	}
+	.language label:not(:has(:checked)) img {
+		opacity: 30%;
+		filter: grayscale(0.4);
+		border-bottom: 1px solid transparent;
+		transition: 0.4s;
+	}
+	.language label:not(:has(:checked)) img:hover {
+		opacity: 70%;
+		filter: none;
+	}
+}
