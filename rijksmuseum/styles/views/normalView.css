@@ -90,43 +90,6 @@ main h2 {
 	margin-right: 0.3em;
 	border: none;
 }
-.mainContent .searchArea > div form:first-of-type label div {
-	height: 20px;
-	width: 20px;
-	background: var(--color-value);
-	opacity: 0.7;
-	cursor: pointer;
-	transition: all 0.15s ease;
-}
-.mainContent .searchArea > div form:first-of-type label:nth-of-type(1) div {
-	--color-value: url(../../assets/images/banIcon.png);
-	background-size: 20px;
-}
-.mainContent .searchArea > div form:first-of-type label:nth-of-type(2) {
-	--color-value: #f49b7a;
-}
-.mainContent .searchArea > div form:first-of-type label:nth-of-type(3) {
-	--color-value: #981313;
-}
-.mainContent .searchArea > div form:first-of-type label:nth-of-type(4) {
-	--color-value: #4279db;
-}
-.mainContent .searchArea > div form:first-of-type label:nth-of-type(5) {
-	--color-value: #ffeb00;
-}
-#color-1:checked:checked ~ label[for='color-1'] div {
-	--color-value: url(../../assets/images/banIconDark.png);
-	opacity: 1;
-	transition: all 0.15s ease;
-}
-#color-2:checked:checked ~ label[for='color-2'] div,
-#color-3:checked:checked ~ label[for='color-3'] div,
-#color-4:checked:checked ~ label[for='color-4'] div,
-#color-5:checked:checked ~ label[for='color-5'] div {
-	border: 2px solid var(--color-dark);
-	opacity: 1;
-	transition: all 0.15s ease;
-}
 
 /* amount of results form */
 .mainContent .searchArea > div form:last-of-type > p {
