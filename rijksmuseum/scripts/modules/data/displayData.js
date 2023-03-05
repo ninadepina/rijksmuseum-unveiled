@@ -1,7 +1,7 @@
 // displaying the fetched data
 const displayData = (artInfo) => {
 	const currentExpoInfo = document.querySelector('.mainContent .staticInfo > section');
-	currentExpoInfo.classList.add('hidden');
+	if (currentExpoInfo) currentExpoInfo.classList.add('hidden');
 	const searchResultsContainer = document.querySelector('.mainContent .loadingData');
 	searchResultsContainer.classList.remove('hidden');
 
