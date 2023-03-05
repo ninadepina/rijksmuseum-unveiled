@@ -61,8 +61,10 @@ const autocomplete = (input, array) => {
 				addActive(x);
 				break;
 			case 'Enter':
-				if (currentFocus > -1 && x) x[currentFocus].click();
-				e.preventDefault();
+				if (currentFocus > -1 && x) {
+					e.preventDefault();
+					x[currentFocus].click();
+				}
 				closeAllLists();
 				break;
 		}

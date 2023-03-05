@@ -36,6 +36,10 @@
 	.language fieldset {
 		display: flex;
 		gap: 1.6em;
+		border: none;
+	}
+	.language input[type='radio'] {
+		display: none;
 	}
 	.language label {
 		margin: 0;

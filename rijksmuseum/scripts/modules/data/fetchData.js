@@ -7,7 +7,7 @@ const fetchData = async () => {
 	let userInput = document.querySelector('input[name="search"]').value;
 	const searchErrorText = document.querySelector('.mainContent .searchArea > div:first-of-type > p');
 	const allArtObjects = document.querySelector('section ul');
-	const radioSearchAmount = document.querySelector('.searchArea input[type="radio"]:checked');
+	const radioSearchAmount = document.querySelector('.searchArea > div form:last-of-type input[type="radio"]:checked');
 	let radioValueSearchAmount = radioSearchAmount.value;
 	const radioValueLanguage = localStorage.getItem('language');
 
