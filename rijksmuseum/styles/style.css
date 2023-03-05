@@ -5,6 +5,7 @@
 
 @import url(./partials/footer.css);
 
+@import url(./utils/prefers-reduced-motion.css);
 @import url(./utils/loadingAnimations.css);
 
 @font-face {
