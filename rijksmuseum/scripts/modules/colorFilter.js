@@ -3,7 +3,6 @@ import { addColorFilterLoader, removeColorFilterLoader } from './loading.js';
 
 const fetchColorData = async (radioColorFilter) => {
 	const radioValueColorFilter = document.querySelector(`#${radioColorFilter.htmlFor}`).value.toUpperCase();
-	console.log(radioValueColorFilter);
 	const allArtObjects = document.querySelector('section ul');
 	const radioValueLanguage = localStorage.getItem('language');
 
