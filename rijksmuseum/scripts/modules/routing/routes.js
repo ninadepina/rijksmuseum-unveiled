@@ -35,27 +35,44 @@ const NormalView = () => {
 		<section class="searchArea">
 			<div>
 				<p></p>
-				<form>
-					<p>Amount of results:</p>
-					<fieldset>
-						<input type="radio" name="select" id="option-1" value="10" checked />
-						<input type="radio" name="select" id="option-2" value="20" />
-						<input type="radio" name="select" id="option-3" value="30" />
+				<div>
+					<form>
+						<p>Filter on color:</p>
+						<fieldset>
+							<input type="radio" name="color" id="color-1" value="" checked />
+							<input type="radio" name="color" id="color-2" value="f49b7a" />
+							<input type="radio" name="color" id="color-3" value="981313" />
+							<input type="radio" name="color" id="color-4" value="4279db" />
+							<input type="radio" name="color" id="color-5" value="ffeb00" />
+							<label for="color-1"><div></div></label>
+							<label for="color-2"><div></div></label>
+							<label for="color-3"><div></div></label>
+							<label for="color-4"><div></div></label>
+							<label for="color-5"><div></div></label>
+						</fieldset>
+					</form>
+					<form>
+						<p>Amount of results:</p>
+						<fieldset>
+							<input type="radio" name="select" id="option-1" value="10" checked />
+							<input type="radio" name="select" id="option-2" value="20" />
+							<input type="radio" name="select" id="option-3" value="30" />
 
-						<label for="option-1">
-							<div></div>
-							<span>10</span>
-						</label>
-						<label for="option-2">
-							<div></div>
-							<span>20</span>
-						</label>
-						<label for="option-3">
-							<div></div>
-							<span>30</span>
-						</label>
-					</fieldset>
-				</form>
+							<label for="option-1">
+								<div></div>
+								<span>10</span>
+							</label>
+							<label for="option-2">
+								<div></div>
+								<span>20</span>
+							</label>
+							<label for="option-3">
+								<div></div>
+								<span>30</span>
+							</label>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 			<form autocomplete="off">
 				<div>

@@ -58,7 +58,7 @@ main h2 {
 	padding-bottom: 1em;
 }
 
-/* amount of results form */
+/* filter area */
 .mainContent .searchArea > div:first-of-type {
 	display: flex;
 	justify-content: space-between;
@@ -68,22 +68,77 @@ main h2 {
 .mainContent .searchArea > div:first-of-type > p {
 	max-width: 59%;
 }
-.mainContent .searchArea div > form {
+.mainContent .searchArea > div form {
 	display: flex;
 	gap: 1em;
 	align-items: center;
 	margin-top: auto;
 }
-.mainContent .searchArea div > form > p {
+.mainContent .searchArea input[type='radio'] {
 	display: none;
 }
-fieldset {
+
+/* color filter */
+.mainContent .searchArea > div form:first-of-type {
+	display: flex;
+	justify-content: space-between;
+	white-space: nowrap;
+}
+.mainContent .searchArea > div form:first-of-type fieldset {
+	display: flex;
+	gap: 0.2em;
+	margin-right: 0.3em;
+	border: none;
+}
+.mainContent .searchArea > div form:first-of-type label div {
+	height: 20px;
+	width: 20px;
+	background: var(--color-value);
+	opacity: 0.7;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+.mainContent .searchArea > div form:first-of-type label:nth-of-type(1) div {
+	--color-value: url(../../assets/images/banIcon.png);
+	background-size: 20px;
+}
+.mainContent .searchArea > div form:first-of-type label:nth-of-type(2) {
+	--color-value: #f49b7a;
+}
+.mainContent .searchArea > div form:first-of-type label:nth-of-type(3) {
+	--color-value: #981313;
+}
+.mainContent .searchArea > div form:first-of-type label:nth-of-type(4) {
+	--color-value: #4279db;
+}
+.mainContent .searchArea > div form:first-of-type label:nth-of-type(5) {
+	--color-value: #ffeb00;
+}
+#color-1:checked:checked ~ label[for='color-1'] div {
+	--color-value: url(../../assets/images/banIconDark.png);
+	opacity: 1;
+	transition: all 0.15s ease;
+}
+#color-2:checked:checked ~ label[for='color-2'] div,
+#color-3:checked:checked ~ label[for='color-3'] div,
+#color-4:checked:checked ~ label[for='color-4'] div,
+#color-5:checked:checked ~ label[for='color-5'] div {
+	border: 2px solid var(--color-dark);
+	opacity: 1;
+	transition: all 0.15s ease;
+}
+
+/* amount of results form */
+.mainContent .searchArea > div form:last-of-type > p {
+	display: none;
+}
+.mainContent .searchArea > div form:last-of-type fieldset {
 	display: flex;
 	gap: 0.2em;
 	border: none;
 }
 
-fieldset label {
+.mainContent .searchArea > div form:last-of-type fieldset label {
 	display: flex;
 	gap: 0.4em;
 	height: 100%;
@@ -95,14 +150,14 @@ fieldset label {
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
-fieldset label div {
+.mainContent .searchArea > div form:last-of-type fieldset label div {
 	height: 10px;
 	width: 10px;
-	background: var(--color-vague);
+	background-color: var(--color-vague);
 	border-radius: 50%;
 	position: relative;
 }
-fieldset label div::before {
+.mainContent .searchArea > div form:last-of-type fieldset label div::before {
 	position: absolute;
 	content: '';
 	top: 2px;
@@ -115,9 +170,6 @@ fieldset label div::before {
 	transform: scale(1.5);
 	transition: all 0.3s ease;
 }
-input[type='radio'] {
-	display: none;
-}
 #option-1:checked:checked ~ label[for='option-1'] div,
 #option-2:checked:checked ~ label[for='option-2'] div,
 #option-3:checked:checked ~ label[for='option-3'] div {
@@ -129,7 +181,7 @@ input[type='radio'] {
 	opacity: 1;
 	transform: scale(1);
 }
-fieldset label span {
+.mainContent .searchArea > div form:last-of-type fieldset label span {
 	color: var(--color-vague);
 }
 #option-1:checked:checked ~ label[for='option-1'] span,
@@ -309,7 +361,7 @@ fieldset label span {
 	.mainContent .searchArea > div:first-of-type > p {
 		max-width: none;
 	}
-	.mainContent .searchArea div > form > p {
+	.mainContent .searchArea div > form:last-of-type > p {
 		display: inline-block;
 	}
 	.mainContent .searchArea div:last-of-type p {
