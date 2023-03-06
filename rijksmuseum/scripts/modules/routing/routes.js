@@ -236,7 +236,8 @@ const ColorFilterView = () => {
 		<section class="loadingData"></section>
 	`;
 	const colorFilterButton = document.querySelector('.language a');
-	if (window.location.hash === '#/colorfilter') colorFilterButton.setAttribute('data-before', "Back to 'normal' search");
+	if (window.location.hash === '#/colorfilter')
+		colorFilterButton.setAttribute('data-before', "Back to 'normal' search");
 
 	colorFilterButton.addEventListener('click', () => {
 		window.location = '';
@@ -251,6 +252,11 @@ const ColorFilterView = () => {
 			console.log('click');
 			fetchColorData(radioColorFilter);
 		});
+	});
+
+	const randomRadioColorFilter = radioColorFilters[Math.floor(Math.random() * radioColorFilters.length)];
+	window.addEventListener('load', () => {
+		randomRadioColorFilter.click();
 	});
 
 	const clearColorSelection = document.querySelector('.colorFilter p');
