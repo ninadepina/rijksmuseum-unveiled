@@ -1,9 +1,14 @@
 .colorFilter {
+	position: sticky;
+	top: calc(0em - var(--standard-padding));
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 	gap: 0.6em;
 	height: 100%;
+	padding: var(--standard-padding) 0;
+	background-color: var(--color-light);
+	z-index: 99;
 }
 .colorFilter p {
 	display: inline-block;
