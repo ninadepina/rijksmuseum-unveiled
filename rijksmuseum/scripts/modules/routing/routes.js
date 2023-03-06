@@ -249,7 +249,6 @@ const ColorFilterView = () => {
 	const radioColorFilters = document.querySelectorAll('.colorFilter label');
 	radioColorFilters.forEach((radioColorFilter) => {
 		radioColorFilter.addEventListener('click', () => {
-			console.log('click');
 			fetchColorData(radioColorFilter);
 		});
 	});
