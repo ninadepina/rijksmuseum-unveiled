@@ -16,7 +16,7 @@ const fetchData = async () => {
 	if (sessionStorage.getItem('back')) {
 		userInput = sessionStorage.getItem('userInput');
 		radioValueSearchAmount = sessionStorage.getItem('radioValueSearchAmount');
-		document.querySelector(`input[value="${radioValueSearchAmount}"]`).checked = true;
+		if (document.querySelector(`input[value="${radioValueSearchAmount}"]`)) document.querySelector(`input[value="${radioValueSearchAmount}"]`).checked = true;
 		input.value = userInput;
 	}
 
