@@ -5,8 +5,9 @@
 
 .mainContent {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 }
-.mainContent,
 .mainContent .staticInfo {
 	display: flex;
 	flex-direction: column;
@@ -59,6 +60,13 @@ main h2 {
 }
 
 /* filter area */
+.mainContent .searchArea {
+	position: sticky;
+	top: calc(0em - var(--standard-padding));
+	padding: var(--standard-padding) 0;
+	background-color: var(--color-light);
+	z-index: 99;
+}
 .mainContent .searchArea > div:first-of-type {
 	display: flex;
 	justify-content: space-between;
@@ -200,7 +208,7 @@ main h2 {
 
 #autocompleteList {
 	margin-top: 0.4em;
-	padding-bottom: 2em;
+	padding-bottom: var(--standard-padding);
 	border: none;
 	max-height: 7.2em;
 	overflow-y: auto;
@@ -273,14 +281,13 @@ main h2 {
 	.mainContent {
 		grid-column-start: 1;
 		grid-column-end: 3;
-		padding: 2em;
+		padding: var(--standard-padding);
 		overflow: auto;
 	}
 	.mainContent {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 2.6em;
 	}
 	.mainContent.spacing {
 		justify-content: unset;
@@ -355,7 +362,7 @@ main h2 {
 		display: block;
 	}
 	.mainContent .loadingData ul li {
-		padding-bottom: 2em;
+		padding-bottom: var(--standard-padding);
 		break-inside: avoid-column;
 	}
 	.mainContent .loadingData ul li:last-of-type {
