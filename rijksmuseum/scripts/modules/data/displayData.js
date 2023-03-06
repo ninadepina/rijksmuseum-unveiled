@@ -31,7 +31,7 @@ const displayData = (artInfo) => {
 	if (sessionStorage.getItem('back')) {
 		const visitedArtHash = sessionStorage.getItem('visitedArt');
 		const visitedArt = document.querySelector(`li:has(a[href="${visitedArtHash}"])`);
-		visitedArt.scrollIntoView();
+		visitedArt.scrollIntoView({ block: "end" });
 		sessionStorage.removeItem('back');
 	}
 };
