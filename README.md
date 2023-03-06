@@ -8,6 +8,11 @@
 
 ![bannerRijksUnveiled](https://user-images.githubusercontent.com/89778503/220186555-1a8edc48-35d1-4e9d-ae70-03c9e75730eb.png)
 
+<details>
+    <summary>📈Activity diagram</summary>
+    ![activityDiagram](https://user-images.githubusercontent.com/89778503/223103867-5331c8e1-a371-41d6-92e0-6b6c8f58c0ae.png)
+</details>
+
 ---
 
 ## 🛠️ Technologies used
