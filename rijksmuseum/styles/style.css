@@ -49,6 +49,8 @@
 	--text-inset: 0.24em;
 
 	--border-radius: 10px;
+
+	--standard-padding: 2em;
 }
 
 ::-webkit-scrollbar {

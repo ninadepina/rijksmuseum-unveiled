@@ -10,7 +10,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1em 2em;
+		padding: 1em var(--standard-padding);
 		font-size: 1.1em;
 	}
 
@@ -19,7 +19,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1em 2em;
+		padding: 1em var(--standard-padding);
 	}
 	.socials a {
 		padding-top: 4px;
@@ -33,7 +33,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1em 2em;
+		padding: 1em var(--standard-padding);
 	}
 	.language fieldset {
 		display: flex;

@@ -65,7 +65,7 @@
 		height: 100%;
 	}
 	.mainContent .artItemContainer > div > div {
-		padding: 0 2em;
+		padding: 0 var(--standard-padding);
 	}
 	.mainContent .artItemContainer img {
 		max-height: 70vh;
