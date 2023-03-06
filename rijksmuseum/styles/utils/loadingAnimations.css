@@ -14,7 +14,7 @@
 }
 .loadingBanner.visible {
 	display: block;
-	z-index: 99;
+	z-index: 999;
 }
 .loadingBanner img {
 	position: absolute;
