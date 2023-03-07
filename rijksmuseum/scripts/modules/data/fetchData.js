@@ -16,14 +16,17 @@ const fetchData = async () => {
 	if (sessionStorage.getItem('back')) {
 		userInput = sessionStorage.getItem('userInput');
 		radioValueSearchAmount = sessionStorage.getItem('radioValueSearchAmount');
-		if (document.querySelector(`input[value="${radioValueSearchAmount}"]`)) document.querySelector(`input[value="${radioValueSearchAmount}"]`).checked = true;
+		if (document.querySelector(`input[value="${radioValueSearchAmount}"]`))
+			document.querySelector(`input[value="${radioValueSearchAmount}"]`).checked = true;
 		input.value = userInput;
 	}
 
 	sessionStorage.setItem('userInput', userInput);
 	sessionStorage.setItem('radioValueSearchAmount', radioValueSearchAmount);
 
-	if (userInput.length === 0) return;
+	if (!sessionStorage.colorFilter) {
+		if (userInput.length === 0) return;
+	}
 
 	startLoading();
 
@@ -31,7 +34,12 @@ const fetchData = async () => {
 
 	searchErrorText.textContent = '';
 
-	const url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValueSearchAmount}&imgonly=true`;
+	let url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection?key=RdKQCPfy&q=${userInput}&ps=${radioValueSearchAmount}&imgonly=true`;
+
+	if (sessionStorage.back && sessionStorage.colorFilter) {
+		const color = sessionStorage.colorFilter;
+		url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection?key=RdKQCPfy&ps=100&imgonly=true&f.normalized32Colors.hex=%20%23${color}`;
+	}
 
 	try {
 		data = await (await fetch(url)).json();

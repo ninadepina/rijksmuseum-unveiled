@@ -88,9 +88,6 @@ const ColorFilterView = () => {
 		});
 	});
 
-	const randomRadioColorFilter = radioColorFilters[Math.floor(Math.random() * radioColorFilters.length)];
-	randomRadioColorFilter.click();
-
 	const clearColorSelection = document.querySelector('.colorFilter p');
 	clearColorSelection.addEventListener('click', () => {
 		const checkedRadio = document.querySelector('.colorFilter input[type="radio"]:checked');
@@ -99,6 +96,20 @@ const ColorFilterView = () => {
 		if (checkedRadio) checkedRadio.checked = false;
 		if (allArtObjects) allArtObjects.remove();
 	});
+
+	const randomRadioColorFilter = radioColorFilters[Math.floor(Math.random() * radioColorFilters.length)];
+	const colorFilterInput = document
+		.querySelector(`.colorFilter input[value="${sessionStorage.colorFilter.toLowerCase()}"]`)
+		.labels.item(0);
+	if (sessionStorage.colorFilter) {
+		colorFilterInput.click();
+		sessionStorage.removeItem('colorFilter');
+	} else {
+		randomRadioColorFilter.click();
+	}
+
+	const checkedRadio = document.querySelector('.colorFilter input[type="radio"]:checked');
+	sessionStorage.setItem('colorFilter', checkedRadio.value.toUpperCase());
 };
 
 export { ColorFilterView };

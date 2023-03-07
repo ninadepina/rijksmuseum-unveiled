@@ -48,6 +48,7 @@ const DetailView = async (artId) => {
 		a.addEventListener('click', () => {
 			sessionStorage.setItem('back', true);
 			sessionStorage.setItem('visitedArt', window.location.hash);
+			if (sessionStorage.colorFilter) a.href = '#/colorfilter';
 		});
 
 		if (data.artObject.length === 0) throw new Error();
