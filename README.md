@@ -27,7 +27,7 @@
 ## 👩🏼‍💻 How to use
 1. Clone this repository
 ```
-$ git clone https://github.com/ninadepina/web-app-from-scratch-2223.git
+$ git clone https://github.com/ninadepina/rijksmuseum-unveiled.git
 ```
 
 2. Create your API key
@@ -40,13 +40,13 @@ const url = `https://www.rijksmuseum.nl/api/${radioValueLanguage}/collection?key
 
 3. Open the `index.html` file in your browser or use localhost
 ```
-http://localhost:3000/
+http://localhost:5500/
 ```
 
 ---
 
 ## 👁️ Demo
-To see a live demo of this project, visit [Dutch Delights: Rijksmuseum Unveiled](https://ninadepina-wafs-rijks.vercel.app/)
+To see a live demo of this project, visit [Dutch Delights: Rijksmuseum Unveiled](https://ninadepina-wafs-rijks.vercel.app/) (preferibly using Google Chrome)
 
 ---
 
@@ -67,4 +67,4 @@ This project is licensed under the MIT License - see the `LICENSE` file for more
 - [x] Search suggestions
 - [x] Loader on first load
 - [x] Switch between languages
-- [ ] Responsive design
+- [x] Responsive design
