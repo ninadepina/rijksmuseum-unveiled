@@ -10,7 +10,8 @@
 
 <details>
     <summary>📈Activity diagram</summary>
-    <img src="https://user-images.githubusercontent.com/89778503/223103867-5331c8e1-a371-41d6-92e0-6b6c8f58c0ae.png" />
+    <img src="https://user-images.githubusercontent.com/89778503/223461113-ad562cce-200b-49d4-9542-6d1e84aeb9e3.png" alt="activity diagram mobile" />
+    <img src="https://user-images.githubusercontent.com/89778503/223461149-9a4040eb-7706-4cef-ab22-262bd73212b2.png" alt="activity diagram desktop" />
 </details>
 
 ---
