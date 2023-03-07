@@ -98,10 +98,10 @@ const ColorFilterView = () => {
 	});
 
 	const randomRadioColorFilter = radioColorFilters[Math.floor(Math.random() * radioColorFilters.length)];
-	const colorFilterInput = document
+	if (sessionStorage.colorFilter) {
+		const colorFilterInput = document
 		.querySelector(`.colorFilter input[value="${sessionStorage.colorFilter.toLowerCase()}"]`)
 		.labels.item(0);
-	if (sessionStorage.colorFilter) {
 		colorFilterInput.click();
 		sessionStorage.removeItem('colorFilter');
 	} else {
