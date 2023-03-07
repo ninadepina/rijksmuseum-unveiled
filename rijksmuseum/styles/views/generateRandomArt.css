@@ -22,7 +22,7 @@
 	.generateRandomArt section > img {
 		width: fit-content;
 		max-width: 100%;
-		max-height: 51vh;
+		max-height: 50vh;
 		object-fit: contain;
 		border-radius: var(--border-radius);
 		display: block;

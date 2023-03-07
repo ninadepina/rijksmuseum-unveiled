@@ -17,9 +17,9 @@ const templates = {
 
             <section>
                 <div>
-                    <p>10 / 1632</p>
+                    <p>10 - 1632</p>
                     <span></span>
-                    <p>12 / 1675</p>
+                    <p>12 - 1675</p>
                 </div>
                 <img draggable="false"
                     src="./assets/images/collageVermeer.jpeg"
