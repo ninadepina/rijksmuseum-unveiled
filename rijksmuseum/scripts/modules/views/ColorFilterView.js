@@ -1,4 +1,4 @@
-import { fetchColorData } from '../../colorFilter.js';
+import { fetchColorData } from '../colorFilter.js';
 
 const ColorFilterView = () => {
 	const mainContent = document.querySelector('.mainContent');

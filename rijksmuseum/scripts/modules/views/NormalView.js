@@ -1,6 +1,6 @@
-import { fetchData } from '../../data/fetchData.js';
-import { autocomplete } from '../../autocomplete/autocomplete.js';
-import { suggestions } from '../../autocomplete/suggestions.js';
+import { fetchData } from '../data/fetchData.js';
+import { autocomplete } from '../autocomplete/autocomplete.js';
+import { suggestions } from '../autocomplete/suggestions.js';
 
 const NormalView = () => {
 	const mainContent = document.querySelector('.mainContent');
@@ -109,6 +109,9 @@ const NormalView = () => {
 
 	if (sessionStorage.getItem('back')) {
 		fetchData();
+	}
+	if (sessionStorage.colorFilter) {
+		sessionStorage.removeItem('colorFilter');
 	}
 
 	autocomplete(searchForm.querySelector('input'), suggestions);
