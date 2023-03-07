@@ -33,6 +33,7 @@ const ColorFilterView = async () => {
 
 		if (checkedRadio) checkedRadio.checked = false;
 		if (allArtObjects) allArtObjects.remove();
+		if (sessionStorage.colorFilter) sessionStorage.removeItem('colorFilter');
 	});
 
 	const randomRadioColorFilter = radioColorFilters[Math.floor(Math.random() * radioColorFilters.length)];

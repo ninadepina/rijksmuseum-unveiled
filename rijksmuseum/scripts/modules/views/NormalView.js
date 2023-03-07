@@ -40,9 +40,7 @@ const NormalView = async () => {
 	if (sessionStorage.getItem('back')) {
 		fetchData();
 	}
-	if (sessionStorage.colorFilter) {
-		sessionStorage.removeItem('colorFilter');
-	}
+	if (sessionStorage.colorFilter) sessionStorage.removeItem('colorFilter');
 
 	autocomplete(searchForm.querySelector('input'), suggestions);
 };
