@@ -5,6 +5,7 @@ const DetailView = async (artId) => {
 	const data = await (await fetch(url)).json();
 
 	let backButtonText;
+	let img;
 
 	radioValueLanguage === 'nl'
 		? (backButtonText = '< terug naar alle resultaten')
@@ -16,16 +17,23 @@ const DetailView = async (artId) => {
 	if (
 		data.artObject.description === null ||
 		data.artObject.description === undefined ||
-		data.artObject.description === data.artObject.title
+		data.artObject.description == data.artObject.title
 	)
 		data.artObject.description = '';
 
 	try {
+		if (data.artObject.webImage) {
+			img = data.artObject.webImage.url.slice(0, -3) + '=s1000';
+		} else {
+			radioValueLanguage === 'nl'
+				? (img = './assets/images/noImgPlaceholderNl.png')
+				: (img = './assets/images/noImgPlaceholderEn.png');
+		}
 		mainContent.innerHTML = `
 			<article class="artItemContainer">
 				<a href="">${backButtonText}</a>  
 				<div>
-					<img src="${data.artObject.webImage.url.slice(0, -3) + '=s1000'}" alt="${data.artObject.longtitle}" />
+					<img src="${img}" alt="${data.artObject.longtitle}" />
 					<div>
 						<h2>${data.artObject.title}</h2>
 						<p>${data.artObject.principalOrFirstMaker}</p>
