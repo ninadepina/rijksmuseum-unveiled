@@ -7,6 +7,8 @@
 	gap: 2em;
 	width: 100%;
 }
+
+/* back to all results button */
 .mainContent .artItemContainer a {
 	display: inline-block;
 	line-height: 1.4em;
@@ -22,6 +24,8 @@
 .mainContent .artItemContainer a:is(:hover, :focus, :active)::after {
 	width: 100%;
 }
+
+/* container with art item details */
 .mainContent .artItemContainer > div {
 	display: flex;
 	flex-direction: column;
@@ -39,16 +43,19 @@
 	object-fit: contain;
 	border-radius: var(--border-radius);
 }
+/* principal or first maker */
 .mainContent .artItemContainer h2 + p {
 	font-family: var(--font-normalItalic);
 	padding-bottom: 1em;
 	border-bottom: 1px solid var(--color-dark);
 }
+/* subtitle */
 .mainContent .artItemContainer p:nth-of-type(2) {
 	padding: 0.4em 0;
 	text-transform: capitalize;
 	border-bottom: 1px solid var(--color-dark);
 }
+/* description */
 .mainContent .artItemContainer p:last-of-type {
 	margin-top: 1em;
 }
@@ -59,11 +66,13 @@
 		height: calc(100% - 4em);
 		min-height: min-content;
 	}
+	/* container with art item details */
 	.mainContent .artItemContainer > div {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		height: 100%;
 	}
+	/* text container */
 	.mainContent .artItemContainer > div > div {
 		padding: 0 var(--standard-padding);
 	}

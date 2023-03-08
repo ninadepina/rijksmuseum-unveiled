@@ -10,6 +10,8 @@
 	background-color: var(--color-light);
 	z-index: 99;
 }
+
+/* clear color/search selection */
 .colorFilter p {
 	display: inline-block;
 	line-height: 1.4em;
@@ -26,6 +28,8 @@
 .colorFilter p:is(:hover, :focus, :active)::after {
 	width: 100%;
 }
+
+/* select color */
 .colorFilter input[type='radio'] {
 	display: none;
 }
