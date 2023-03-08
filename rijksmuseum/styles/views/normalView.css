@@ -299,7 +299,7 @@ main h2 {
 		max-width: none;
 	}
 	.mainContent .staticInfo header img {
-		width: 40em;
+		width: 90%;
 	}
 	.mainContent .staticInfo header div {
 		display: none;
