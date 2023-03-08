@@ -145,6 +145,20 @@ const templates = {
         </section>
 
         <section class="loadingData"></section>
+    `,
+    error: `
+        <section class="staticInfo">
+            <header>
+                <a href=""><img draggable="false" src="./assets/images/logoRijksmuseum.svg" alt="Rijksmuseum logo" /></a>
+            </header>
+        </section>
+        <section class="error">
+            <a href="">< back to the homepage</a>
+            <div>
+                <p>Unfortunately we couldn't find the page you were looking for..</p>
+                <p>You can try again, or navigate back to the homepage!</p>
+            </div>
+        </section>
     `
 };
 

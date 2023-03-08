@@ -24,7 +24,11 @@ const router = () => {
 		params.length > 0 ? _route.view(params[0]) : _route.view();
 		return true;
 	});
-	if (!route) console.log('No route found for path: ', path);
+	if (!route) {
+		console.log('No route found for path: ', path);
+		const errorRoute = routes.find((_route) => _route.path === '/error');
+		errorRoute.view();
+	}
 };
 
 export { router };

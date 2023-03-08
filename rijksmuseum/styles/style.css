@@ -1,6 +1,7 @@
 @import url(./views/normalView.css);
 @import url(./views/detailView.css);
 @import url(./views/colorFilterView.css);
+@import url(./views/errorView.css);
 @import url(./views/generateRandomArt.css);
 @import url(./views/staticInfo.css);
 
