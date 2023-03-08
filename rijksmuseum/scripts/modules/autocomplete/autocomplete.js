@@ -1,5 +1,6 @@
 const mainContent = document.querySelector('.mainContent');
 
+// idea from https://www.w3schools.com/howto/howto_js_autocomplete.asp
 const autocomplete = (input, array) => {
 	let currentFocus;
 
