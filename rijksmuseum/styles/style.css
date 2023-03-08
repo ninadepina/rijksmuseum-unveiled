@@ -109,7 +109,12 @@ strong {
 .hidden {
 	display: none;
 }
-
+@media only screen and (max-width: 999px) {
+	main {
+		display: flex;
+		flex-direction: column;
+	}
+}
 @media only screen and (min-width: 1000px) {
 	body {
 		background-color: var(--color-dark);
