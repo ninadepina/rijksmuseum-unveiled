@@ -21,6 +21,8 @@ for (let i = 0; i < radioLanguages.length; i++) {
 	});
 }
 
+if (window.location.hash === '') window.location.hash = '#/';
+
 firstLoad();
 defaultArt();
 removeSkeletonLoader();
