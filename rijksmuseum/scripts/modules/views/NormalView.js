@@ -16,6 +16,7 @@ const NormalView = async () => {
 	const radioButtonsText = document.querySelector('.searchArea div form p');
 	const searchPlaceholder = document.querySelector('.searchArea > form input');
 	const loadingText = document.querySelector('.searchArea > div:last-of-type p');
+	const colorFilterButton = document.querySelector('.language a');
 
 	if (localStorage.getItem('language') === 'nl') {
 		if (window.matchMedia('screen and (min-width: 1000px)').matches)
@@ -26,6 +27,7 @@ const NormalView = async () => {
 		expoText.textContent = 'Op dit moment zijn er geen tickets meer beschikbaar..';
 		searchPlaceholder.placeholder = 'Zoek op kunstenaars, kunstwerken en meer...';
 		loadingText.textContent = 'Afbeeldingen worden geladen.. dit kan een aantal seconden duren';
+		colorFilterButton.setAttribute('data-before', "Kleurfilter voor Sanne");
 	}
 
 	const loadingData = document.querySelector('.mainContent .loadingData');

@@ -9,8 +9,11 @@ const ColorFilterView = async () => {
 	mainContent.innerHTML = template;
 
 	const colorFilterButton = document.querySelector('.language a');
-	if (window.location.hash === '#/colorfilter')
+	if (window.location.hash === '#/colorfilter' && localStorage.getItem('language') === 'nl') {
+		colorFilterButton.setAttribute('data-before', "Terug naar 'normaal' zoeken");
+	} else if (window.location.hash === '#/colorfilter') {
 		colorFilterButton.setAttribute('data-before', "Back to 'normal' search");
+	}
 
 	colorFilterButton.addEventListener('click', () => {
 		window.location = '';
@@ -35,6 +38,7 @@ const ColorFilterView = async () => {
 		if (allArtObjects) allArtObjects.remove();
 		if (sessionStorage.colorFilter) sessionStorage.removeItem('colorFilter');
 	});
+	if (localStorage.getItem('language') === 'nl') clearColorSelection.textContent = 'Wis kleur/zoek selectie';
 
 	const randomRadioColorFilter = radioColorFilters[Math.floor(Math.random() * radioColorFilters.length)];
 	if (sessionStorage.colorFilter) {
