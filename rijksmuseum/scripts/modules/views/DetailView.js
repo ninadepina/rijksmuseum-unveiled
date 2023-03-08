@@ -44,8 +44,8 @@ const DetailView = async (artId) => {
 			</article>
 		`;
 
-		const a = document.querySelector('.artItemContainer a');
-		a.addEventListener('click', () => {
+		const backButton = document.querySelector('.artItemContainer a');
+		backButton.addEventListener('click', () => {
 			sessionStorage.setItem('back', true);
 			sessionStorage.setItem('visitedArt', window.location.hash);
 			if (sessionStorage.colorFilter) a.href = '#/colorfilter';
