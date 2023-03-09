@@ -48,7 +48,7 @@ const DetailView = async (artId) => {
 		backButton.addEventListener('click', () => {
 			sessionStorage.setItem('back', true);
 			sessionStorage.setItem('visitedArt', window.location.hash);
-			if (sessionStorage.colorFilter) a.href = '#/colorfilter';
+			if (sessionStorage.colorFilter) backButton.href = '#/colorfilter';
 		});
 
 		if (data.artObject.length === 0) throw new Error();
