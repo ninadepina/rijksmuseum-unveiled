@@ -68,3 +68,7 @@ This project is licensed under the MIT License - see the `LICENSE` file for more
 - [x] Loader on first load
 - [x] Switch between languages
 - [x] Responsive design
+
+Things that can be added (but chose not to):
+- [ ] Pagination
+- [ ] Favorites
